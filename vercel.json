@@ -1,0 +1,21 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "headers": [
+    { "source": "/(.*)", "headers": [{ "key": "X-Content-Type-Options", "value": "nosniff" }] },
+    { "source": "/newsletter(.*)", "headers": [
+      { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+      { "key": "Cache-Control", "value": "private, no-store" }
+    ]},
+    { "source": "/quantbench(.*)", "headers": [
+      { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+      { "key": "Cache-Control", "value": "private, no-store" }
+    ]},
+    { "source": "/data.html", "headers": [
+      { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
+      { "key": "Cache-Control", "value": "private, no-store" }
+    ]},
+    { "source": "/gate.html", "headers": [{ "key": "X-Robots-Tag", "value": "noindex, nofollow" }] }
+  ]
+}

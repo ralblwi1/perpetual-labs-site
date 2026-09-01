@@ -1,0 +1,663 @@
+{
+  "meta": {
+    "caveat": "Every score is the figure reported in its cited paper (linked), measured under that paper's own harness, prompt, and date. Cross-row and cross-benchmark comparisons are indicative only — not controlled."
+  },
+  "benchmarks": [
+    {
+      "name": "MMLU",
+      "domain": "general knowledge",
+      "rows": [
+        {
+          "model": "phi-3-medium (14B)",
+          "score": "78.2%",
+          "split": "5-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-3-small (7B)",
+          "score": "75.3%",
+          "split": "5-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "GPT-3.5",
+          "score": "71.4%",
+          "split": "5-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-3-mini (3.8B)",
+          "score": "68.8%",
+          "split": "5-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "Mixtral 8x7B",
+          "score": "68.4%",
+          "split": "5-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "Chinchilla (70B)",
+          "score": "67.5%",
+          "split": "",
+          "paper_id": "2203.15556",
+          "year": 2022,
+          "source": "arXiv:2203.15556"
+        }
+      ]
+    },
+    {
+      "name": "MMLU-Pro",
+      "domain": "general knowledge",
+      "rows": [
+        {
+          "model": "GPT-4o",
+          "score": "72.6%",
+          "split": "",
+          "paper_id": "2406.01574",
+          "year": 2024,
+          "source": "arXiv:2406.01574"
+        }
+      ]
+    },
+    {
+      "name": "MATH",
+      "domain": "math",
+      "rows": [
+        {
+          "model": "DeepSeekMath-7B (self-consistency)",
+          "score": "60.9%",
+          "split": "maj@64",
+          "paper_id": "2402.03300",
+          "year": 2024,
+          "source": "arXiv:2402.03300"
+        },
+        {
+          "model": "DeepSeekMath-7B",
+          "score": "51.7%",
+          "split": "no tools, greedy",
+          "paper_id": "2402.03300",
+          "year": 2024,
+          "source": "arXiv:2402.03300"
+        },
+        {
+          "model": "Math-Shepherd + Mistral-7B (verified)",
+          "score": "43.5%",
+          "split": "",
+          "paper_id": "2312.08935",
+          "year": 2023,
+          "source": "arXiv:2312.08935"
+        },
+        {
+          "model": "Minerva (540B)",
+          "score": "33.6%",
+          "split": "",
+          "paper_id": "2402.03300",
+          "year": 2024,
+          "source": "arXiv:2402.03300"
+        },
+        {
+          "model": "Math-Shepherd + Mistral-7B (PPO)",
+          "score": "33.0%",
+          "split": "greedy",
+          "paper_id": "2312.08935",
+          "year": 2023,
+          "source": "arXiv:2312.08935"
+        },
+        {
+          "model": "Mistral-7B (baseline)",
+          "score": "28.6%",
+          "split": "greedy",
+          "paper_id": "2312.08935",
+          "year": 2023,
+          "source": "arXiv:2312.08935"
+        },
+        {
+          "model": "Llemma 34B",
+          "score": "25.0%",
+          "split": "4-shot greedy",
+          "paper_id": "2310.10631",
+          "year": 2023,
+          "source": "arXiv:2310.10631"
+        },
+        {
+          "model": "MetaMath-7B",
+          "score": "19.4%",
+          "split": "",
+          "paper_id": "2309.12284",
+          "year": 2023,
+          "source": "arXiv:2309.12284"
+        }
+      ]
+    },
+    {
+      "name": "MATH-500",
+      "domain": "math",
+      "rows": [
+        {
+          "model": "DeepSeek-R1",
+          "score": "97.3%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "Qwen-2.5-7B + RLVR (pass@256)",
+          "score": "97.2%",
+          "split": "pass@256",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "OpenAI o1-1217",
+          "score": "96.4%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "Qwen-2.5-7B base (pass@256)",
+          "score": "96.2%",
+          "split": "pass@256",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "DeepSeek-R1-Zero",
+          "score": "95.9%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "LIMO (Qwen2.5-32B, ~800 samples)",
+          "score": "95.6%",
+          "split": "",
+          "paper_id": "2502.03387",
+          "year": 2025,
+          "source": "arXiv:2502.03387"
+        },
+        {
+          "model": "Qwen-2.5-7B + RLVR",
+          "score": "74.4%",
+          "split": "pass@1",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "Qwen-2.5-7B base",
+          "score": "34.5%",
+          "split": "pass@1",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        }
+      ]
+    },
+    {
+      "name": "AIME 2024",
+      "domain": "math",
+      "rows": [
+        {
+          "model": "DeepSeek-R1",
+          "score": "79.8%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "OpenAI o1-1217",
+          "score": "79.2%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "DeepSeek-R1-Zero",
+          "score": "71.0%",
+          "split": "pass@1",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        },
+        {
+          "model": "LIMO (Qwen2.5-32B, ~800 samples)",
+          "score": "63.3%",
+          "split": "",
+          "paper_id": "2502.03387",
+          "year": 2025,
+          "source": "arXiv:2502.03387"
+        }
+      ]
+    },
+    {
+      "name": "GSM8K",
+      "domain": "math",
+      "rows": [
+        {
+          "model": "phi-3-medium (14B)",
+          "score": "90.3%",
+          "split": "CoT",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "Math-Shepherd + Mistral-7B (verified)",
+          "score": "89.1%",
+          "split": "",
+          "paper_id": "2312.08935",
+          "year": 2023,
+          "source": "arXiv:2312.08935"
+        },
+        {
+          "model": "phi-3-small (7B)",
+          "score": "88.9%",
+          "split": "CoT",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "Math-Shepherd + Mistral-7B (PPO)",
+          "score": "84.1%",
+          "split": "greedy",
+          "paper_id": "2312.08935",
+          "year": 2023,
+          "source": "arXiv:2312.08935"
+        },
+        {
+          "model": "phi-3-mini (3.8B)",
+          "score": "82.5%",
+          "split": "CoT",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "MetaMath-70B",
+          "score": "82.3%",
+          "split": "",
+          "paper_id": "2309.12284",
+          "year": 2023,
+          "source": "arXiv:2309.12284"
+        },
+        {
+          "model": "Self-improved PaLM 540B",
+          "score": "82.1%",
+          "split": "",
+          "paper_id": "2210.11610",
+          "year": 2022,
+          "source": "arXiv:2210.11610"
+        },
+        {
+          "model": "GPT-3.5",
+          "score": "78.1%",
+          "split": "CoT",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        }
+      ]
+    },
+    {
+      "name": "SWE-bench Verified",
+      "domain": "code / agentic",
+      "rows": [
+        {
+          "model": "SA-SWE-32B (from Qwen3-32B)",
+          "score": "39.4%",
+          "split": "pass@1",
+          "paper_id": "2511.16108",
+          "year": 2025,
+          "source": "arXiv:2511.16108"
+        },
+        {
+          "model": "Qwen-2.5-72B-Instruct + Agent-RLVR",
+          "score": "22.4%",
+          "split": "pass@1",
+          "paper_id": "2506.11425",
+          "year": 2025,
+          "source": "arXiv:2506.11425"
+        },
+        {
+          "model": "Qwen-2.5-72B-Instruct (baseline)",
+          "score": "9.4%",
+          "split": "pass@1",
+          "paper_id": "2506.11425",
+          "year": 2025,
+          "source": "arXiv:2506.11425"
+        },
+        {
+          "model": "Claude 2 + BM25 (original SWE-bench)",
+          "score": "1.96%",
+          "split": "",
+          "paper_id": "2310.06770",
+          "year": 2023,
+          "source": "arXiv:2310.06770"
+        }
+      ]
+    },
+    {
+      "name": "FrontierMath",
+      "domain": "math (research)",
+      "rows": [
+        {
+          "model": "Leading models at launch",
+          "score": "<2%",
+          "split": "Tiers 1-3, Nov 2024",
+          "paper_id": "2411.04872",
+          "year": 2024,
+          "source": "arXiv:2411.04872"
+        }
+      ]
+    },
+    {
+      "name": "HumanEval",
+      "domain": "code",
+      "rows": [
+        {
+          "model": "Code Llama (open SOTA)",
+          "score": "67%",
+          "split": "0-shot",
+          "paper_id": "2308.12950",
+          "year": 2023,
+          "source": "arXiv:2308.12950"
+        },
+        {
+          "model": "GPT-3.5",
+          "score": "62.2%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "Llama-3-Instruct (8B)",
+          "score": "60.4%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-3-small (7B)",
+          "score": "59.1%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-3-mini (3.8B)",
+          "score": "58.5%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-3-medium (14B)",
+          "score": "55.5%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        },
+        {
+          "model": "phi-1 (1.3B)",
+          "score": "50.6%",
+          "split": "pass@1",
+          "paper_id": "2306.11644",
+          "year": 2023,
+          "source": "arXiv:2306.11644"
+        },
+        {
+          "model": "Mixtral 8x7B",
+          "score": "37.8%",
+          "split": "0-shot",
+          "paper_id": "2404.14219",
+          "year": 2024,
+          "source": "arXiv:2404.14219"
+        }
+      ]
+    },
+    {
+      "name": "MBPP",
+      "domain": "code",
+      "rows": [
+        {
+          "model": "Code Llama (open SOTA)",
+          "score": "65%",
+          "split": "",
+          "paper_id": "2308.12950",
+          "year": 2023,
+          "source": "arXiv:2308.12950"
+        },
+        {
+          "model": "phi-1 (1.3B)",
+          "score": "55.5%",
+          "split": "",
+          "paper_id": "2306.11644",
+          "year": 2023,
+          "source": "arXiv:2306.11644"
+        }
+      ]
+    },
+    {
+      "name": "MedQA (USMLE)",
+      "domain": "medicine",
+      "rows": [
+        {
+          "model": "Med-PaLM 2",
+          "score": "86.5%",
+          "split": "",
+          "paper_id": "2305.09617",
+          "year": 2023,
+          "source": "arXiv:2305.09617"
+        },
+        {
+          "model": "Flan-PaLM (540B)",
+          "score": "67.6%",
+          "split": "",
+          "paper_id": "2212.13138",
+          "year": 2022,
+          "source": "arXiv:2212.13138"
+        },
+        {
+          "model": "Baseline (2020)",
+          "score": "36.7%",
+          "split": "",
+          "paper_id": "2009.13081",
+          "year": 2020,
+          "source": "arXiv:2009.13081"
+        }
+      ]
+    },
+    {
+      "name": "Humanity's Last Exam",
+      "domain": "frontier knowledge",
+      "rows": [
+        {
+          "model": "Frontier at launch (range)",
+          "score": "9.4%",
+          "split": "Jan 2025",
+          "paper_id": "2501.14249",
+          "year": 2025,
+          "source": "arXiv:2501.14249"
+        }
+      ]
+    },
+    {
+      "name": "LiveCodeBench",
+      "domain": "code",
+      "rows": [
+        {
+          "model": "Qwen-2.5-7B base (pass@256)",
+          "score": "~50%",
+          "split": "pass@256",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "Qwen-2.5-7B + RLVR (pass@256)",
+          "score": "42.8%",
+          "split": "pass@256",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "Qwen-2.5-7B + RLVR",
+          "score": "28.1%",
+          "split": "pass@1",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        },
+        {
+          "model": "Qwen-2.5-7B base",
+          "score": "23.8%",
+          "split": "pass@1",
+          "paper_id": "2504.13837",
+          "year": 2025,
+          "source": "arXiv:2504.13837"
+        }
+      ]
+    },
+    {
+      "name": "Codeforces",
+      "domain": "code / competitive",
+      "rows": [
+        {
+          "model": "DeepSeek-R1",
+          "score": "2029 Elo",
+          "split": "96.3 percentile",
+          "paper_id": "2501.12948",
+          "year": 2025,
+          "source": "arXiv:2501.12948"
+        }
+      ]
+    },
+    {
+      "name": "AlpacaEval 2.0",
+      "domain": "instruction following",
+      "rows": [
+        {
+          "model": "Self-Rewarding Llama-2-70B (iter 3)",
+          "score": "20.44%",
+          "split": "win rate",
+          "paper_id": "2401.10020",
+          "year": 2024,
+          "source": "arXiv:2401.10020"
+        },
+        {
+          "model": "Self-Rewarding Llama-2-70B (iter 2)",
+          "score": "15.38%",
+          "split": "win rate",
+          "paper_id": "2401.10020",
+          "year": 2024,
+          "source": "arXiv:2401.10020"
+        },
+        {
+          "model": "Self-Rewarding Llama-2-70B (iter 1)",
+          "score": "9.94%",
+          "split": "win rate",
+          "paper_id": "2401.10020",
+          "year": 2024,
+          "source": "arXiv:2401.10020"
+        }
+      ]
+    },
+    {
+      "name": "Financial NLP (BloombergGPT 5-task suite)",
+      "domain": "finance",
+      "rows": [
+        {
+          "model": "BloombergGPT (Headline)",
+          "score": "82.20",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "BloombergGPT (FiQA SA)",
+          "score": "75.07",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "GPT-NeoX (20B, Headline)",
+          "score": "73.22",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "BloombergGPT (5-task average)",
+          "score": "62.51",
+          "split": "",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "GPT-NeoX (20B, NER)",
+          "score": "60.98",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "BloombergGPT (NER)",
+          "score": "60.82",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "GPT-NeoX (20B, 5-task average)",
+          "score": "51.90",
+          "split": "",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        },
+        {
+          "model": "BloombergGPT (FPB sentiment)",
+          "score": "51.07",
+          "split": "F1",
+          "paper_id": "2303.17564",
+          "year": 2023,
+          "source": "arXiv:2303.17564"
+        }
+      ]
+    }
+  ]
+}

@@ -1,774 +1,817 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perpetual Labs — The data & deployment layer for AI</title>
+  <meta name="description" content="Perpetual Labs builds the AI that runs the machine around essential businesses: training data from how the work actually gets done, and post-trained models deployed into production.">
+  <link rel="canonical" href="https://perpetual-labs.ai/">
+  <meta name="theme-color" content="#FFFFFF">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Perpetual Labs">
+  <meta property="og:title" content="Perpetual Labs — The data & deployment layer for AI">
+  <meta property="og:description" content="Perpetual Labs builds the AI that runs the machine around essential businesses: training data from how the work actually gets done, and post-trained models deployed into production.">
+  <meta property="og:url" content="https://perpetual-labs.ai/">
+  <meta property="og:image" content="https://perpetual-labs.ai/assets/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Perpetual Labs — The data & deployment layer for AI">
+  <meta name="twitter:description" content="Perpetual Labs builds the AI that runs the machine around essential businesses: training data from how the work actually gets done, and post-trained models deployed into production.">
+  <meta name="twitter:image" content="https://perpetual-labs.ai/assets/og.png">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <style>
 
-<!-- Primary meta -->
-<title>Perpetual Labs — Intelligence that runs forever</title>
-<meta name="description" content="Perpetual Labs is an applied-AI research lab. We partner with essential businesses, learn everything they know, and build domain-specific intelligence that compounds inside daily operations — forever.">
-<meta name="author" content="Perpetual Labs">
-<meta name="theme-color" content="#05070F">
-<meta name="color-scheme" content="dark">
-<meta name="robots" content="index,follow,max-image-preview:large">
-<link rel="canonical" href="https://perpetual-labs.ai/">
+    html,body{margin:0;padding:0;background:#FFFFFF;}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+    body{overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+    a{color:#1B2A5E;}
+    a:hover{color:#3D53C6;}
+    ::selection{background:rgba(61,83,198,.14);color:#0A0F1E;}
+    body{overflow-x:hidden;}
+    @keyframes plPulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+    @keyframes plBlink{0%,49%{opacity:1;}50%,100%{opacity:0;}}
+    @keyframes plFlow{0%{transform:translateX(-16px);opacity:0;}30%{opacity:1;}70%{opacity:1;}100%{transform:translateX(16px);opacity:0;}}
+    @keyframes plMarquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+    @keyframes plExRight{0%{transform:translateX(0);opacity:0;}12%{opacity:1;}88%{opacity:1;}100%{transform:translateX(104px);opacity:0;}}
+    @keyframes plExLeft{0%{transform:translateX(0);opacity:0;}12%{opacity:1;}88%{opacity:1;}100%{transform:translateX(-104px);opacity:0;}}
+  </style>
+  <style>
+    .plp1:hover{color:#0A0F1E !important}
+    .plp2:hover{color:#0A0F1E !important}
+    .plp3:hover{color:#0A0F1E !important}
+    .plp4:hover{color:#0A0F1E !important}
+    .plp5:hover{background:#1B2A5E !important}
+    .plp6:hover{background:#1B2A5E !important;transform:translateY(-1px) !important}
+    .plp7:hover{border-color:#0C1430 !important;background:#F6F8FB !important}
+    .plp8:hover{background:#3D53C6 !important;color:#FFFFFF !important}
+    .plp9:focus-within{border-color:rgba(61,83,198,.55) !important}
+    .plp10:hover{background:#1B2A5E !important}
+    .plp11:hover{color:#0A0F1E !important}
 
-<!-- Structured data: machine-readable identity for search + LLMs -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "Perpetual Labs",
-  "url": "https://perpetual-labs.ai/",
-  "logo": "https://perpetual-labs.ai/assets/logo.png",
-  "image": "https://perpetual-labs.ai/assets/og.png",
-  "slogan": "Intelligence that runs forever",
-  "description": "An applied-AI research lab that partners with essential businesses, extracts their proprietary operational data, trains domain-specific AI, and compounds value in production.",
-  "knowsAbout": ["Applied AI","Domain-specific models","Operational intelligence","Logistics","Healthcare","Legal","Manufacturing","Finance","Energy","Insurance"]
-}
-</script>
-
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Perpetual Labs">
-<meta property="og:title" content="Perpetual Labs — Intelligence that runs forever">
-<meta property="og:description" content="We partner with essential businesses, learn everything they know, and build intelligence that never stops improving.">
-<meta property="og:url" content="https://perpetual-labs.ai/">
-<meta property="og:image" content="https://perpetual-labs.ai/assets/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Perpetual Labs — an infinity ribbon of light over a dark navy field. Intelligence that runs forever.">
-
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Perpetual Labs — Intelligence that runs forever">
-<meta name="twitter:description" content="We partner with essential businesses, learn everything they know, and build intelligence that never stops improving.">
-<meta name="twitter:image" content="https://perpetual-labs.ai/assets/og.png">
-
-<!-- Favicon: p∞ mark -->
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23080C18'/%3E%3Cpath d='M32 50c0-9 12-9 18 0s18 9 18 0-12-9-18 0-18 9-18 0z' fill='none' stroke='%23E9C88C' stroke-width='4'/%3E%3C/svg%3E">
-<link rel="apple-touch-icon" href="assets/logo.png">
-
-<!-- Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-
-<style>
-  :root{
-    --bg-0:#05070F; --bg-1:#080C18; --bg-2:#0C1430;
-    --panel:rgba(11,17,34,.66); --panel-solid:#0B1122;
-    --line:rgba(150,165,200,.16); --line-soft:rgba(150,165,200,.10);
-    --text-hi:#F4EEDF; --text:#ECE7DA; --text-dim:rgba(214,219,233,.62);
-    --text-faint:rgba(214,219,233,.40);
-    --gold:#D6B173; --gold-bright:#E9C88C;
-    --blue:#5AA8FF; --violet:#7C8CFF; --arg:#9fb4d8;
-    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
-    --serif:'Newsreader',Georgia,'Times New Roman',serif;
-    --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
-    --maxw:1080px; --panelw:960px;
-    --ease:cubic-bezier(.16,1,.3,1);
-    --pad-x:clamp(20px,5vw,40px);
-  }
-
-  *{box-sizing:border-box;}
-  html,body{margin:0;padding:0;}
-  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
-  body{
-    background:var(--bg-0);
-    color:var(--text);
-    font-family:var(--sans);
-    font-size:16px;
-    line-height:1.6;
-    overflow-x:hidden;
-    -webkit-font-smoothing:antialiased;
-    text-rendering:optimizeLegibility;
-  }
-  ::selection{background:rgba(214,177,115,.28); color:var(--text-hi);}
-
-  a{color:inherit;}
-  img{display:block; max-width:100%;}
-  button,input{font-family:inherit;}
-
-  /* Accessible focus */
-  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px; border-radius:4px;}
-  :focus:not(:focus-visible){outline:none;}
-
-  .skip-link{
-    position:absolute; left:50%; top:-100px; transform:translateX(-50%);
-    background:var(--gold-bright); color:#0A0E1A; padding:10px 18px; border-radius:8px;
-    font:600 13px/1 var(--mono); z-index:200; transition:top .25s var(--ease);
-  }
-  .skip-link:focus{top:14px;}
-
-  /* App field + vignette */
-  #app{
-    position:relative; width:100%; overflow:hidden;
-    background:radial-gradient(130% 90% at 50% 0%, var(--bg-2) 0%, var(--bg-1) 55%, var(--bg-0) 100%);
-  }
-  #app::before{ /* faint scanline grid + vignette */
-    content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
-    background:
-      linear-gradient(rgba(150,165,200,.022) 1px, transparent 1px) 0 0/100% 3px,
-      radial-gradient(120% 80% at 50% 0%, transparent 55%, rgba(2,3,8,.55) 100%);
-  }
-
-  /* ============ NAV ============ */
-  header.nav{
-    position:fixed; inset:0 0 auto 0; z-index:50;
-    display:flex; align-items:center; justify-content:space-between;
-    gap:16px; padding:16px var(--pad-x);
-    background:linear-gradient(180deg, rgba(8,12,24,.72), rgba(8,12,24,0));
-    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
-    transition:background .35s var(--ease), border-color .35s var(--ease), padding .35s var(--ease);
-    border-bottom:1px solid transparent;
-  }
-  header.nav.scrolled{
-    background:rgba(7,10,20,.86);
-    border-bottom:1px solid var(--line-soft);
-    padding-top:12px; padding-bottom:12px;
-  }
-  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; white-space:nowrap;}
-  .brand img{width:30px; height:30px; border-radius:7px;}
-  .brand b{font:600 14px/1 var(--sans); letter-spacing:.16em; color:var(--text);}
-  .nav-right{display:flex; align-items:center; gap:clamp(18px,3vw,32px);}
-  .nav-links{display:flex; align-items:center; gap:clamp(18px,3vw,32px);}
-  .nav-link{
-    font:500 12px/1 var(--mono); letter-spacing:.08em; color:var(--text-dim);
-    text-decoration:none; position:relative; padding:6px 0; transition:color .25s var(--ease);
-  }
-  .nav-link::after{
-    content:''; position:absolute; left:0; bottom:-1px; height:1px; width:0;
-    background:var(--gold); transition:width .35s var(--ease);
-  }
-  .nav-link:hover{color:var(--text);} .nav-link:hover::after{width:100%;}
-
-  .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:8px;
-    font:600 13px/1 var(--mono); letter-spacing:.04em; text-decoration:none; cursor:pointer;
-    border-radius:9px; padding:11px 18px; transition:transform .2s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
-    border:1px solid transparent;
-  }
-  .btn-ghost{color:var(--text); border-color:rgba(214,177,115,.5); background:rgba(214,177,115,.02);}
-  .btn-ghost:hover{background:rgba(214,177,115,.12); border-color:var(--gold-bright);}
-  .btn-solid{background:var(--gold-bright); color:#0A0E1A; box-shadow:0 6px 24px rgba(233,200,140,.12);}
-  .btn-solid:hover{background:#F4DBA6; transform:translateY(-1px); box-shadow:0 10px 30px rgba(233,200,140,.22);}
-  .btn-line{color:var(--text-dim); padding:11px 4px;}
-  .btn-line:hover{color:var(--text);}
-  .btn:active{transform:translateY(0) scale(.99);}
-
-  /* ============ HERO ============ */
-  main{position:relative; z-index:2;}
-  .hero{
-    position:relative; min-height:100dvh; display:flex; flex-direction:column;
-    align-items:center; justify-content:center; text-align:center;
-    padding:120px var(--pad-x) 64px; overflow:hidden;
-  }
-  #ribbon{
-    position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
-    width:min(1320px,100vw); height:min(760px,86vh); z-index:0; pointer-events:none;
-  }
-  .hero-scrim{
-    position:absolute; left:50%; top:48%; transform:translate(-50%,-50%);
-    width:min(820px,94vw); height:min(460px,60vh); z-index:0; pointer-events:none;
-    background:radial-gradient(closest-side, rgba(5,7,15,.82), rgba(5,7,15,.42) 52%, transparent 78%);
-  }
-  .hero-inner{position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; max-width:760px;}
-  .eyebrow{
-    font:500 12px/1 var(--mono); letter-spacing:.34em; text-transform:uppercase;
-    color:var(--gold); margin-bottom:26px;
-    display:inline-flex; align-items:center; gap:10px;
-  }
-  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 9px var(--gold); animation:pulse 2.2s ease-in-out infinite;}
-  h1{
-    font:500 clamp(34px,6.2vw,66px)/1.03 var(--serif); letter-spacing:-.015em;
-    color:var(--text-hi); margin:0; max-width:15ch;
-    text-shadow:0 4px 44px rgba(5,7,15,.95), 0 1px 14px rgba(5,7,15,.95);
-  }
-  h1 em{font-style:italic; color:var(--gold-bright);}
-  .hero-sub{
-    font-size:clamp(16px,2.1vw,18px); line-height:1.7; color:var(--text-dim);
-    margin:26px 0 0; max-width:50ch;
-    text-shadow:0 2px 18px rgba(5,7,15,.95);
-  }
-  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px;}
-  .status{
-    display:flex; align-items:center; gap:18px; margin-top:30px; flex-wrap:wrap; justify-content:center;
-    font:500 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--text-faint);
-    background:rgba(5,7,15,.5); padding:10px 16px; border-radius:999px; border:1px solid var(--line-soft);
-    backdrop-filter:blur(2px);
-  }
-  .status .live{display:flex; align-items:center; gap:8px;}
-  .status .live i{width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 9px var(--gold); animation:pulse 2.2s ease-in-out infinite;}
-  .status .sep{width:1px; height:12px; background:rgba(214,219,233,.2);}
-  .status b{color:var(--gold-bright); font-weight:500; font-variant-numeric:tabular-nums;}
-
-  /* ============ SECTORS STRIP ============ */
-  .sectors{
-    position:relative; z-index:2; padding:30px var(--pad-x);
-    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
-    background:rgba(7,10,20,.4);
-  }
-  .sectors-inner{max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center;}
-  .sectors p{margin:0; font:500 11px/1.4 var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--text-faint);}
-  .sector-tags{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 12px;}
-  .sector-tags span{
-    font:600 12px/1 var(--mono); letter-spacing:.12em; color:var(--text-dim);
-    padding:7px 14px; border:1px solid var(--line); border-radius:999px; background:rgba(11,17,34,.4);
-    transition:color .25s var(--ease), border-color .25s var(--ease);
-  }
-  .sector-tags span:hover{color:var(--gold-bright); border-color:rgba(214,177,115,.4);}
-
-  /* ============ SECTIONS ============ */
-  section.block{position:relative; z-index:2; padding:clamp(64px,9vw,100px) var(--pad-x); display:flex; flex-direction:column; align-items:center;}
-  .sec-head{width:100%; max-width:var(--panelw); display:flex; align-items:center; gap:18px; margin-bottom:30px;}
-  .sec-head .idx{font:700 13px/1 var(--mono); color:var(--gold); letter-spacing:.1em;}
-  .sec-head .name{font:600 16px/1 var(--mono); letter-spacing:.24em; color:var(--gold);}
-  .sec-head .rule{flex:1; height:1px; background:linear-gradient(90deg, rgba(150,165,200,.22), transparent);}
-
-  .panel{
-    width:100%; max-width:var(--panelw); border:1px solid var(--line); border-radius:14px;
-    overflow:hidden; background:var(--panel); box-shadow:0 18px 50px rgba(0,0,0,.3);
-    backdrop-filter:blur(3px);
-  }
-  .panel-body{padding:clamp(24px,4vw,40px); font:400 14px/1.9 var(--mono);}
-  .cmd{margin-bottom:20px; color:var(--blue);}
-  .cmd .typed{color:var(--gold-bright);}
-  .cur{display:inline-block; color:var(--gold-bright); animation:blink 1.1s step-end infinite;}
-  .lede{font:500 clamp(18px,2vw,24px)/1.45 var(--serif); color:var(--text-hi); margin:0 0 22px; max-width:30ch;}
-  .comment{color:var(--text-dim); max-width:64ch;}
-  .comment .c{color:var(--violet);}
-  .hr{margin:32px 0; height:1px; background:var(--line-soft); border:0;}
-
-  .thesis{display:flex; flex-direction:column; gap:18px;}
-  .thesis .row{display:grid; grid-template-columns:34px 1fr; gap:16px;}
-  .thesis .n{color:var(--gold); font-weight:700;}
-  .thesis .t{color:rgba(225,230,242,.82); font-size:14.5px; line-height:1.65;}
-  .thesis .t b{color:var(--text-hi); font-weight:600;}
-
-  /* APPROACH CARDS */
-  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; width:100%; max-width:var(--panelw);}
-  .card{
-    border:1px solid var(--line); border-radius:14px; background:var(--panel);
-    padding:26px 24px; display:flex; flex-direction:column; gap:14px;
-    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
-  }
-  .card:hover{transform:translateY(-3px); border-color:rgba(214,177,115,.34); box-shadow:0 22px 50px rgba(0,0,0,.34);}
-  .card .ico{width:40px; height:40px; border-radius:10px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; background:rgba(214,177,115,.06);}
-  .card .ico svg{width:20px; height:20px; stroke:var(--gold-bright);}
-  .card h3{margin:0; font:600 16px/1.3 var(--mono); letter-spacing:.02em; color:var(--text-hi);}
-  .card p{margin:0; font-size:14px; line-height:1.65; color:var(--text-dim);}
-  .card .tag{font:600 11px/1 var(--mono); letter-spacing:.14em; color:var(--gold); text-transform:uppercase;}
-
-  /* FLYWHEEL */
-  #fly{display:flex; flex-direction:column; gap:8px;}
-  .fly-row{
-    display:grid; grid-template-columns:34px 160px 1fr; align-items:center; gap:18px;
-    padding:15px 18px; border-radius:10px; transition:background .4s var(--ease), color .4s var(--ease);
-  }
-  .fly-row .fly-i{color:rgba(214,219,233,.3); font-weight:700;}
-  .fly-row .fly-k{color:var(--text); font-weight:600;}
-  .fly-row .fly-v{color:rgba(214,219,233,.5);}
-  .fly-foot{margin-top:22px; padding-top:18px; border-top:1px solid var(--line-soft); color:rgba(214,219,233,.5); font-size:13px;}
-  .fly-foot .a{color:var(--blue);} .fly-foot b{color:var(--gold-bright); font-weight:500;}
-
-  /* OUTREACH */
-  .outreach-lede{font:500 clamp(20px,2.6vw,28px)/1.3 var(--serif); color:var(--text-hi); margin:0 0 14px; max-width:20ch;}
-  .outreach-note{font-family:var(--sans); font-size:14px; line-height:1.6; color:var(--text-dim); margin:0 0 24px; max-width:54ch;}
-  .form{
-    display:flex; flex-direction:column; gap:0; max-width:560px;
-    border:1px solid var(--line); border-radius:12px; padding:4px 16px 14px;
-    background:rgba(255,255,255,.02); transition:border-color .25s var(--ease);
-  }
-  .form:focus-within{border-color:rgba(214,177,115,.55);}
-  .form-line{display:flex; align-items:center; gap:10px;}
-  .form .gt{color:var(--gold-bright);}
-  .form input, .form textarea{
-    flex:1; width:100%; min-width:0; background:transparent; border:none; outline:none; color:var(--text);
-    font:400 14px/1.55 var(--mono);
-  }
-  .form input{padding:13px 0;}
-  .form textarea{resize:vertical; min-height:66px; padding:12px 0; border-top:1px solid var(--line-soft);}
-  .form input::placeholder, .form textarea::placeholder{color:var(--text-faint);}
-  .form-foot{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:10px;}
-  .form-hint{font:500 11px/1 var(--mono); letter-spacing:.06em; color:var(--text-faint);}
-  .form button{border:none; cursor:pointer; padding:12px 22px; border-radius:8px; background:var(--gold-bright); color:#0A0E1A; font:600 13px/1 var(--mono); transition:background .25s var(--ease), transform .2s var(--ease), opacity .2s; white-space:nowrap;}
-  .form button:hover{background:#F4DBA6;} .form button:active{transform:scale(.98);}
-  .form button:disabled{opacity:.55; cursor:default;}
-  .form-msg{min-height:20px; margin:12px 2px 0; font:500 13px/1.4 var(--mono);}
-  .form-msg.err{color:#FF9B8A;} .form-msg.ok{color:var(--gold-bright);}
-  .socials{display:flex; gap:22px; margin-top:24px; font:500 12px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--text-faint);}
-  .socials a{color:inherit; text-decoration:none; position:relative; padding:4px 0; transition:color .25s var(--ease);}
-  .socials a::after{content:''; position:absolute; left:0; bottom:-1px; height:1px; width:0; background:var(--gold); transition:width .3s var(--ease);}
-  .socials a:hover{color:var(--text);} .socials a:hover::after{width:100%;}
-
-  footer{
-    width:100%; max-width:var(--panelw); margin:44px auto 0; padding:0 0 8px;
-    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
-    font:400 12px/1 var(--mono); color:var(--text-faint);
-  }
-  footer .fbrand{display:flex; align-items:center; gap:11px;}
-  footer .fbrand img{width:24px; height:24px; border-radius:6px;}
-
-  /* Reveal animation */
-  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
-  .reveal.in{opacity:1; transform:none;}
-
-  @keyframes blink{0%,48%{opacity:1;} 49%,100%{opacity:0;}}
-  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
-
-  /* ---------- RESPONSIVE ---------- */
-  @media (max-width:860px){
-    .cards{grid-template-columns:1fr;}
-  }
-  @media (max-width:720px){
-    .nav-links{display:none;}
-    .fly-row{grid-template-columns:30px 1fr; row-gap:4px; gap:8px 14px; padding:14px 14px;}
-    .fly-row .fly-v{grid-column:2; font-size:13px;}
-    #ribbon{top:43%; width:128vw; height:62vh; opacity:.6;}
-    .hero-scrim{width:min(900px,124vw); height:min(560px,66vh);
-      background:radial-gradient(closest-side, rgba(5,7,15,.92), rgba(5,7,15,.58) 50%, transparent 82%);}
-    .hero{padding-top:104px;}
-    h1{max-width:18ch;}
-  }
-  @media (max-width:480px){
-    /* wordmark text would collide with the CTA — keep the logo mark only */
-    .brand b{display:none;}
-    .btn-ghost{padding:10px 14px; font-size:12px;}
-  }
-  @media (max-width:420px){
-    .status{font-size:11px; gap:12px; padding:9px 12px;}
-    .socials{gap:18px;}
-  }
-
-  @media (prefers-reduced-motion:reduce){
-    html{scroll-behavior:auto;}
-    *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
-    .reveal{opacity:1; transform:none;}
-  }
-
-  @media print{
-    #ribbon,#app::before,.status,.hero-cta,.form,.socials{display:none !important;}
-    *{background:#fff !important; color:#111 !important; box-shadow:none !important; text-shadow:none !important;}
-    .reveal{opacity:1 !important; transform:none !important;}
-    a{text-decoration:underline;}
-  }
-</style>
+    @media (max-width:700px){
+      #pl-nav{padding-left:16px !important;padding-right:16px !important;}
+      #pl-nav nav a[href^="#"]{display:none !important;}
+      #pl-nav > div{gap:14px !important;}
+    }
+    @media (max-width:400px){
+      #pl-nav b{display:none !important;}
+    }
+  </style>
 </head>
 <body>
-<a class="skip-link" href="#mission">Skip to content</a>
+<div id="pl-app" style="position:relative;width:100%;background:#FFFFFF;color:#0A0F1E;font-family:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;font-size:16px;line-height:1.6;">
 
-<div id="app">
-
-  <!-- ============ NAV ============ -->
-  <header class="nav" id="nav">
-    <a class="brand" href="#app" aria-label="Perpetual Labs home">
-      <img src="assets/logo.png" alt="Perpetual Labs logo" width="30" height="30">
-      <b>PERPETUAL LABS</b>
+  <header id="pl-nav" style="position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px clamp(20px,5vw,48px);background:rgba(255,255,255,.88);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid transparent;transition:border-color .35s;">
+    <a href="#pl-app" aria-label="Perpetual Labs home" style="display:flex;align-items:center;gap:12px;text-decoration:none;white-space:nowrap;">
+      <img src="assets/logo.png" alt="Perpetual Labs logo" width="27" height="27" style="display:block;width:27px;height:27px;border-radius:7px;">
+      <b style="font:600 13.5px/1 'EB Garamond',Georgia,serif;letter-spacing:.2em;color:#0A0F1E;">PERPETUAL LABS</b>
     </a>
-    <div class="nav-right">
-      <nav class="nav-links" aria-label="Primary">
-        <a class="nav-link" href="#mission">mission</a>
-        <a class="nav-link" href="#approach">approach</a>
-        <a class="nav-link" href="#flywheel">flywheel</a>
+    <div style="display:flex;align-items:center;gap:clamp(18px,2.6vw,30px);">
+      <nav aria-label="Primary" style="display:flex;align-items:center;gap:clamp(18px,2.6vw,30px);">
+        <a href="#work" style="font:400 15px/1 'EB Garamond',Georgia,serif;color:#4C5566;text-decoration:none;transition:color .25s;" class="plp2">What we do</a>
+
+          <a href="#team" style="font:400 15px/1 'EB Garamond',Georgia,serif;color:#4C5566;text-decoration:none;transition:color .25s;" class="plp3">Team</a>
+
+
+          <a href="newsletter.html" style="font:400 15px/1 'EB Garamond',Georgia,serif;color:#4C5566;text-decoration:none;transition:color .25s;" class="plp4">Research</a>
+
       </nav>
-      <a class="btn btn-ghost" href="#outreach">partner_with_us</a>
+      <a href="#contact" style="display:inline-flex;align-items:center;font:600 13px/1 'Hanken Grotesk',sans-serif;letter-spacing:.02em;text-decoration:none;border-radius:8px;padding:11px 18px;color:#FFFFFF;background:#0C1430;transition:background .25s;" class="plp5">Book a demo</a>
     </div>
   </header>
 
-  <main>
-    <!-- ============ HERO ============ -->
-    <section class="hero" aria-label="Introduction">
-      <canvas id="ribbon" aria-hidden="true"></canvas>
-      <div class="hero-scrim" aria-hidden="true"></div>
-      <div class="hero-inner">
-        <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Perpetual Labs · Applied AI</span>
-        <h1>Intelligence that runs <em>forever.</em></h1>
-        <p class="hero-sub">We partner with essential businesses, learn everything they know, and build intelligence that never stops improving.</p>
-        <div class="hero-cta">
-          <a class="btn btn-solid" href="#outreach">partner_with_us →</a>
-          <a class="btn btn-line" href="#mission">read the thesis</a>
+  <main style="position:relative;">
+
+    <section id="pl-hero" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(460px,100%),1fr));gap:clamp(24px,4vw,48px);align-items:center;max-width:1160px;margin:0 auto;padding:clamp(130px,16vh,170px) clamp(20px,5vw,48px) clamp(64px,8vw,96px);">
+      <div data-reveal="">
+
+        <h1 style="font:500 clamp(40px,5.2vw,64px)/1.08 'EB Garamond',Georgia,serif;letter-spacing:-.01em;color:#0C1430;margin:0;max-width:19ch;text-wrap:pretty;">The data &amp; deployment layer for AI.</h1>
+        <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;">
+          <a href="#contact" style="display:inline-flex;align-items:center;gap:8px;font:600 14px/1 'Hanken Grotesk',sans-serif;text-decoration:none;border-radius:8px;padding:13px 22px;background:#0C1430;color:#FFFFFF;transition:background .25s,transform .2s;" class="plp6">Partner with us →</a>
         </div>
-        <div class="status" role="status" aria-label="System status">
-          <span class="live"><i aria-hidden="true"></i>uptime ∞</span>
-          <span class="sep" aria-hidden="true"></span>
-          <span>iterations <b id="count">1,048,576</b></span>
-        </div>
+      </div>
+      <div data-reveal="" aria-hidden="true" style="position:relative;min-height:420px;">
+        <canvas id="pl-ribbon" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(760px,104%);height:min(560px,110%);pointer-events:none;"></canvas>
       </div>
     </section>
 
-    <!-- ============ 01 MISSION ============ -->
-    <section class="block" id="mission">
-      <div class="sec-head reveal"><span class="idx">01</span><span class="name">MISSION</span><span class="rule"></span></div>
-      <div class="panel reveal">
-        <div class="panel-body">
-          <div class="cmd"><span>~/mission</span> <span>$</span> <span class="typed" id="cmd-mission"></span><span class="cur">▊</span></div>
-          <p class="lede">We turn essential businesses into intelligence that runs forever.</p>
-          <p class="comment"><span class="c">//</span> We partner with real-world companies, surface the knowledge buried in their operations, and build domain AI that keeps compounding — long after launch. Not generic models. Operating intelligence for the businesses the economy actually runs on.</p>
-          <hr class="hr">
-          <div class="cmd"><span>~/mission</span> <span>$</span> <span style="color:var(--arg)">cat thesis.txt</span></div>
-          <div class="thesis">
-            <div class="row"><span class="n">01</span><span class="t"><b>Operational data is a use case, encoded.</b> Every dispatch, claim, and underwriting call is a record of how the work is actually done.</span></div>
-            <div class="row"><span class="n">02</span><span class="t"><b>Intelligence is operated, not demoed.</b> Real value compounds inside daily operations — never on a benchmark.</span></div>
-            <div class="row"><span class="n">03</span><span class="t"><b>A model that stops learning is already depreciating.</b> We build systems that keep improving — forever.</span></div>
+    <section aria-label="Perpetual Labs perspective" style="border-top:1px solid rgba(10,15,30,.08);padding:clamp(54px,7vw,80px) clamp(20px,5vw,48px);">
+      <figure data-reveal="" style="max-width:960px;margin:0 auto;padding-left:30px;border-left:3px solid rgba(61,83,198,.5);">
+        <blockquote style="margin:0;font:400 italic clamp(24px,3.2vw,38px)/1.35 'EB Garamond',Georgia,serif;color:#1B2A5E;text-wrap:pretty;">“Models learned from the internet. That’s why they’re superhuman at code, math, and text, and still can’t run a lemonade stand.”</blockquote>
+      </figure>
+    </section>
+
+    <section id="work" style="border-top:1px solid rgba(10,15,30,.08);background:#F6F8FB;padding:clamp(64px,9vw,104px) clamp(20px,5vw,48px);">
+      <div style="max-width:1160px;margin:0 auto;">
+        <div data-reveal="">
+          <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#3D53C6;margin-bottom:14px;">What we do</div>
+          <h2 style="font:500 clamp(30px,3.6vw,44px)/1.2 'EB Garamond',Georgia,serif;letter-spacing:-.01em;color:#0C1430;margin:0 0 44px;text-wrap:pretty;">We turn how work is done into intelligence that does the work.</h2>
+        </div>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;gap:0;margin-bottom:20px;">
+          <div style="flex:1 1 300px;min-width:260px;text-align:center;">
+            <h3 style="font:500 clamp(25px,2.7vw,33px)/1.15 'EB Garamond',Georgia,serif;letter-spacing:-.005em;color:#0C1430;margin:0;">The Foundry</h3>
+            <p style="margin:12px auto 0;font:400 16px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;max-width:44ch;text-wrap:pretty;">We turn real work into training. The traces, workflows, and judgment calls your people make every day become the data that post-trains a model. You choose what to capture.</p>
+          </div>
+          <div aria-hidden="true" style="flex:0 0 132px;"></div>
+          <div style="flex:1 1 300px;min-width:260px;text-align:center;">
+            <h3 style="font:500 clamp(25px,2.7vw,33px)/1.15 'EB Garamond',Georgia,serif;letter-spacing:-.005em;color:#0C1430;margin:0;">PerpetualOS</h3>
+            <p style="margin:12px auto 0;font:400 16px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;max-width:44ch;text-wrap:pretty;">The post-trained model runs your machine, and in your domain it's faster, cheaper, and more accurate than frontier intelligence. Every action it takes writes a new trace.</p>
           </div>
         </div>
-      </div>
-    </section>
 
-    <!-- ============ 02 APPROACH ============ -->
-    <section class="block" id="approach">
-      <div class="sec-head reveal"><span class="idx">02</span><span class="name">APPROACH</span><span class="rule"></span></div>
-      <div class="cards">
-        <div class="card reveal">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
-          <span class="tag">partner &amp; embed</span>
-          <h3>We work alongside operators</h3>
-          <p>We embed where the work happens — the dispatch desk, the claims queue, the shop floor — and learn the judgment behind each decision before we model anything.</p>
-        </div>
-        <div class="card reveal">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V5a2 2 0 0 1 2-2h2M16 3h2a2 2 0 0 1 2 2v2M20 17v2a2 2 0 0 1-2 2h-2M8 21H6a2 2 0 0 1-2-2v-2"/><circle cx="12" cy="12" r="3"/></svg></div>
-          <span class="tag">data to models</span>
-          <h3>Proprietary data, domain models</h3>
-          <p>Your operational record becomes a domain-specific model that runs in production: routing loads, triaging claims, scheduling jobs. The data stays yours; the intelligence is built on how your work is actually done.</p>
-        </div>
-        <div class="card reveal">
-          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
-          <span class="tag">compound together</span>
-          <h3>Value compounds, shared</h3>
-          <p>Models in production generate sharper data, which trains sharper models. That loop runs continuously, and the gains accrue to the partnership — intelligence that compounds with the operator, never extracted from them.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ 03 FLYWHEEL ============ -->
-    <section class="block" id="flywheel">
-      <div class="sec-head reveal"><span class="idx">03</span><span class="name">FLYWHEEL</span><span class="rule"></span></div>
-      <div class="panel reveal">
-        <div class="panel-body">
-          <div class="cmd"><span>~/flywheel</span> <span>$</span> <span class="typed" id="cmd-flywheel"></span><span class="cur">▊</span></div>
-          <div id="fly">
-            <div class="fly-row"><span class="fly-i">01</span><span class="fly-k">partner</span><span class="fly-v">with essential real-world businesses</span></div>
-            <div class="fly-row"><span class="fly-i">02</span><span class="fly-k">extract</span><span class="fly-v">proprietary operational data</span></div>
-            <div class="fly-row"><span class="fly-i">03</span><span class="fly-k">train</span><span class="fly-v">domain-specific AI systems</span></div>
-            <div class="fly-row"><span class="fly-i">04</span><span class="fly-k">operate</span><span class="fly-v">to drive real outcomes</span></div>
-            <div class="fly-row"><span class="fly-i">05</span><span class="fly-k">compound</span><span class="fly-v">value, forever <span style="color:var(--gold)">↺</span></span></div>
-          </div>
-          <div class="fly-foot"><span class="a">→</span> better data → better models → better operations → more value. <b>the loop never stops.</b></div>
-        </div>
-      </div>
-    </section>
-
-    <!--
-      ============================================================
-      PROOF LAYER — the one thing standing between this site and
-      "best-in-class." The council was unanimous: add real proof.
-      It is intentionally COMMENTED OUT, not shipped empty (an empty
-      "Portfolio" reads worse than confident restraint). Fill with
-      REAL content, then delete these comment markers to go live.
-      Renumber sections if you enable it (this would become 04;
-      Flywheel→… up to you).
-      ============================================================
-
-    <section class="block" id="proof">
-      <div class="sec-head reveal"><span class="idx">04</span><span class="name">PROOF</span><span class="rule"></span></div>
-      <div class="cards">
-        <div class="card reveal">
-          <span class="tag">SECTOR — e.g. logistics</span>
-          <h3>Company / situation</h3>
-          <p>One concrete outcome, with a number. e.g. "Retrained routing models weekly on live operational data — cut dead-head miles 18% in two quarters."</p>
-        </div>
-        <div class="card reveal">
-          <span class="tag">SECTOR</span>
-          <h3>Company / situation</h3>
-          <p>Second real outcome. Redact the name if needed, keep the metric.</p>
-        </div>
-        <div class="card reveal">
-          <span class="tag">SECTOR</span>
-          <h3>Company / situation</h3>
-          <p>Third real outcome.</p>
-        </div>
-      </div>
-    </section>
-
-    TEAM (optional — even 2-3 names with credentials beats anonymity):
-    <section class="block" id="team">
-      <div class="sec-head reveal"><span class="idx">05</span><span class="name">TEAM</span><span class="rule"></span></div>
-      <div class="cards">
-        <div class="card reveal"><h3>Name</h3><span class="tag">role</span><p>One line: prior company / why credible for this thesis.</p></div>
-        <div class="card reveal"><h3>Name</h3><span class="tag">role</span><p>…</p></div>
-        <div class="card reveal"><h3>Name</h3><span class="tag">role</span><p>…</p></div>
-      </div>
-    </section>
-    -->
-
-    <!-- ============ 04 OUTREACH ============ -->
-    <section class="block" id="outreach">
-      <div class="sec-head reveal"><span class="idx">04</span><span class="name">OUTREACH</span><span class="rule"></span></div>
-      <div class="panel reveal">
-        <div class="panel-body">
-          <div class="cmd"><span>~/outreach</span> <span>$</span> <span class="typed" id="cmd-outreach"></span><span class="cur">▊</span></div>
-          <p class="outreach-lede">Let's build something that runs <em style="color:var(--gold-bright)">forever.</em></p>
-          <p class="outreach-note">For owners, operators, and investors in essential businesses. Tell us what you run — we'll reach out to start a conversation.</p>
-          <form class="form" id="connect" novalidate>
-            <div class="form-line">
-              <span class="gt" aria-hidden="true">&gt;</span>
-              <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your email</label>
-              <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="your_email" aria-describedby="form-msg" required>
+        <div data-reveal="" style="display:flex;flex-wrap:wrap;align-items:stretch;justify-content:center;gap:0;">
+          <div style="flex:1 1 300px;min-width:260px;display:flex;flex-direction:column;">
+            <div style="flex:1;position:relative;background:#FFFFFF;border:1px solid rgba(10,15,30,.10);border-radius:12px;box-shadow:0 20px 60px rgba(10,15,30,.10);overflow:hidden;">
+              <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(rgba(12,20,48,.035) 1px,transparent 1px) 0 0/100% 26px, linear-gradient(90deg,rgba(12,20,48,.035) 1px,transparent 1px) 0 0/26px 100%;"></div>
+              <div style="position:relative;display:flex;align-items:center;justify-content:space-between;padding:13px 18px;border-bottom:1px solid rgba(10,15,30,.08);background:#F6F8FB;">
+                <span style="font:600 10.5px/1 'JetBrains Mono',monospace;letter-spacing:.2em;color:#0C1430;">FOUNDRY</span>
+                <span style="display:inline-flex;align-items:center;gap:8px;font:500 10.5px/1 'JetBrains Mono',monospace;color:rgba(10,15,30,.5);"><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:#3D53C6;box-shadow:0 0 8px rgba(61,83,198,.7);animation:plPulse 2.2s ease-in-out infinite;"></span>TRACE → TRAINING ASSET</span>
+              </div>
+              <div style="position:relative;display:grid;grid-template-columns:1fr auto 1fr;gap:14px;align-items:center;padding:22px 18px 24px;">
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0;">
+                  <span style="font:600 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.18em;color:rgba(10,15,30,.45);">RAW TRACE</span>
+                  <div id="pl-trace" style="border:1px solid rgba(10,15,30,.12);border-radius:8px;padding:12px 12px;font:400 11px/1.9 'JetBrains Mono',monospace;color:#4C5566;white-space:nowrap;overflow:hidden;transition:opacity .3s;background:#FBFCFE;">
+                    <div>06:40 reroute #4821</div>
+                    <div>reason: <span style="color:#0A0F1E;">"storm, I-40"</span></div>
+                    <div>action: OAK→DFW alt</div>
+                    <div>outcome: <span style="color:#3D53C6;">on-time ✓</span></div>
+                  </div>
+                </div>
+                <div aria-hidden="true" style="position:relative;width:44px;height:16px;display:flex;align-items:center;justify-content:center;overflow:hidden;">
+                  <span style="position:absolute;width:5px;height:5px;border-radius:50%;background:#8FB4FF;box-shadow:0 0 7px rgba(143,180,255,.9);animation:plFlow 1.6s linear infinite;"></span>
+                  <span style="position:absolute;width:5px;height:5px;border-radius:50%;background:#5F7AE0;animation:plFlow 1.6s linear infinite .53s;"></span>
+                  <span style="position:absolute;width:5px;height:5px;border-radius:50%;background:#3D53C6;animation:plFlow 1.6s linear infinite 1.06s;"></span>
+                </div>
+                <div style="display:flex;flex-direction:column;gap:8px;min-width:0;">
+                  <span style="font:600 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.18em;color:rgba(10,15,30,.45);">TRAINING ASSETS</span>
+                  <div id="pl-assets" style="display:flex;flex-direction:column;gap:6px;">
+                    <span data-chip="" style="display:block;border:1px solid rgba(61,83,198,.35);background:rgba(61,83,198,.06);border-radius:6px;padding:7px 10px;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:#1B2A5E;transition:border-color .35s,background .35s,color .35s,box-shadow .35s,transform .35s;">RL ENVIRONMENT</span>
+                    <span data-chip="" style="display:block;border:1px solid rgba(61,83,198,.35);background:rgba(61,83,198,.06);border-radius:6px;padding:7px 10px;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:#1B2A5E;transition:border-color .35s,background .35s,color .35s,box-shadow .35s,transform .35s;">TASKS + REWARDS</span>
+                    <span data-chip="" style="display:block;border:1px solid rgba(61,83,198,.35);background:rgba(61,83,198,.06);border-radius:6px;padding:7px 10px;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:#1B2A5E;transition:border-color .35s,background .35s,color .35s,box-shadow .35s,transform .35s;">VERIFIERS</span>
+                    <span data-chip="" style="display:block;border:1px solid rgba(61,83,198,.35);background:rgba(61,83,198,.06);border-radius:6px;padding:7px 10px;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.12em;color:#1B2A5E;transition:border-color .35s,background .35s,color .35s,box-shadow .35s,transform .35s;">ROLLOUTS</span>
+                  </div>
+                </div>
+              </div>
             </div>
-            <label for="message" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your message</label>
-            <textarea id="message" name="message" rows="3" placeholder="your_message — tell us what you run" aria-describedby="form-msg" required></textarea>
-            <div class="form-foot">
-              <span class="form-hint">we read every message.</span>
-              <button type="submit">send →</button>
+          </div>
+          <div style="flex:0 0 132px;align-self:center;display:flex;flex-direction:column;align-items:center;gap:9px;padding:6px 2px;">
+            <div style="font:600 8px/1.4 'JetBrains Mono',monospace;letter-spacing:.1em;color:#3D53C6;text-align:center;">POST-TRAINED<br>MODEL ▸</div>
+            <div style="position:relative;width:100%;height:152px;border-left:1px dashed rgba(12,20,48,.16);border-right:1px dashed rgba(12,20,48,.16);overflow:hidden;">
+              <div style="position:absolute;top:22px;left:0;width:100%;height:16px;">
+                <span style="position:absolute;left:4px;top:0;display:inline-block;border:1px solid rgba(61,83,198,.5);background:rgba(61,83,198,.12);color:#3D53C6;border-radius:5px;padding:3px 6px;font:600 8px/1 'JetBrains Mono',monospace;letter-spacing:.04em;white-space:nowrap;animation:plExRight 2.6s linear infinite;">model ▸</span>
+                <span style="position:absolute;left:4px;top:0;display:inline-block;border:1px solid rgba(61,83,198,.5);background:rgba(61,83,198,.12);color:#3D53C6;border-radius:5px;padding:3px 6px;font:600 8px/1 'JetBrains Mono',monospace;letter-spacing:.04em;white-space:nowrap;animation:plExRight 2.6s linear infinite 1.3s;">model ▸</span>
+              </div>
+              <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:2;">
+                <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(61,83,198,.12);border:1px solid rgba(61,83,198,.4);color:#3D53C6;border-radius:999px;padding:7px 13px;font:700 12.5px/1 'JetBrains Mono',monospace;letter-spacing:.04em;box-shadow:0 4px 14px rgba(61,83,198,.16);"><span style="width:6px;height:6px;border-radius:50%;background:#3D53C6;box-shadow:0 0 8px rgba(61,83,198,.8);animation:plPulse 1.8s ease-in-out infinite;"></span>v<span id="pl-gen">1</span></span>
+              </div>
+              <div style="position:absolute;bottom:22px;left:0;width:100%;height:16px;">
+                <span style="position:absolute;right:4px;top:0;display:inline-block;border:1px solid rgba(150,112,46,.5);background:rgba(150,112,46,.10);color:#96702E;border-radius:5px;padding:3px 6px;font:600 8px/1 'JetBrains Mono',monospace;letter-spacing:.04em;white-space:nowrap;animation:plExLeft 2.6s linear infinite .65s;">◂ trace</span>
+                <span style="position:absolute;right:4px;top:0;display:inline-block;border:1px solid rgba(150,112,46,.5);background:rgba(150,112,46,.10);color:#96702E;border-radius:5px;padding:3px 6px;font:600 8px/1 'JetBrains Mono',monospace;letter-spacing:.04em;white-space:nowrap;animation:plExLeft 2.6s linear infinite 1.95s;">◂ trace</span>
+              </div>
+            </div>
+            <div style="font:600 8px/1.4 'JetBrains Mono',monospace;letter-spacing:.1em;color:#96702E;text-align:center;">◂ NEW TRACES<br>data · workflows · learnings</div>
+          </div>
+          <div style="flex:1 1 300px;min-width:260px;display:flex;flex-direction:column;">
+            <div style="flex:1;background:#FFFFFF;border:1px solid rgba(10,15,30,.10);border-radius:12px;box-shadow:0 20px 60px rgba(10,15,30,.10);overflow:hidden;">
+              <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid rgba(10,15,30,.08);background:#F6F8FB;">
+                <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:rgba(10,15,30,.14);"></span>
+                <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:rgba(10,15,30,.14);"></span>
+                <span aria-hidden="true" style="width:9px;height:9px;border-radius:50%;background:rgba(10,15,30,.14);"></span>
+                <span style="margin-left:8px;font:500 11px/1 'JetBrains Mono',monospace;color:rgba(10,15,30,.5);">PerpetualOS · your company</span>
+                <span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font:600 9.5px/1 'JetBrains Mono',monospace;letter-spacing:.14em;color:#3D53C6;"><span aria-hidden="true" style="width:5px;height:5px;border-radius:50%;background:#3D53C6;box-shadow:0 0 8px rgba(61,83,198,.7);animation:plPulse 2.2s ease-in-out infinite;"></span>LIVE</span>
+              </div>
+              <div id="pl-osfeed" style="padding:18px 20px;display:flex;flex-direction:column;gap:12px;font:400 13px/1.5 'Hanken Grotesk',sans-serif;color:#4C5566;">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span>Reviewing this quarter's renewals…</span>
+                  <span style="font:500 10.5px/1 'JetBrains Mono',monospace;color:rgba(10,15,30,.4);">09:12:44</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span>3 accounts need attention, notes drafted</span>
+                  <span style="font:600 10.5px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#1B2A5E;background:rgba(27,42,94,.07);border-radius:5px;padding:4px 8px;">DRAFT</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:rgba(61,83,198,.06);border:1px solid rgba(61,83,198,.22);border-radius:8px;padding:10px 12px;margin:0 -2px;">
+                  <span style="color:#0A0F1E;">Waiting for a human OK…</span>
+                  <span style="display:inline-flex;align-items:center;gap:8px;"><button data-approve="" type="button" style="border:1px solid rgba(61,83,198,.45);background:rgba(61,83,198,.10);color:#3D53C6;font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.08em;border-radius:5px;padding:5px 9px;cursor:pointer;transition:background .2s,color .2s;" class="plp8">APPROVE</button><span style="font:600 10.5px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#3D53C6;">REVIEW</span></span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span>✓ Approved by Sam · recorded</span>
+                  <span style="font:600 10.5px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:#96702E;">LOGGED</span>
+                </div>
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">
+                  <span>Drafting Monday's ops report…</span>
+                  <span style="font:500 10.5px/1 'JetBrains Mono',monospace;color:rgba(10,15,30,.4);">09:13:02</span>
+                </div>
+              </div>
+              <div aria-hidden="true" style="padding:0 20px 14px;font:500 12px/1 'JetBrains Mono',monospace;color:#3D53C6;"><span style="display:inline-block;animation:plBlink 1.1s step-end infinite;">▮</span></div>
+            </div>
+          </div>
+        </div>
+
+        <p style="margin:18px auto 0;max-width:64ch;text-align:center;font:400 14.5px/1.6 'EB Garamond',Georgia,serif;color:#6D7280;"><b style="font-style:normal;font-weight:600;color:#3E4454;">Figure 1.</b> The machinery, live. The Foundry turns traces into training assets; PerpetualOS runs the resulting model, and every action writes new traces.</p>
+
+        <div data-reveal="" style="margin-top:clamp(40px,6vw,64px);border-top:1px solid rgba(10,15,30,.08);padding-top:clamp(30px,4vw,44px);">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:24px 0;">
+            <div style="flex:1 1 300px;min-width:260px;">
+              <div style="font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.24em;color:rgba(10,15,30,.4);margin-bottom:16px;">EACH CYCLE, A SHARPER MODEL</div>
+              <p style="margin:0;font:400 clamp(19px,2.2vw,24px)/1.55 'EB Garamond',Georgia,serif;color:#3E4454;max-width:30em;text-wrap:pretty;">Every deployment sharpens the data. Sharper data post-trains a sharper model. Each generation runs more of your machine, <span style="color:#0A0F1E;font-weight:600;">handing your people back their time.</span></p>
+            </div>
+            <div aria-hidden="true" style="flex:0 0 132px;"></div>
+            <div style="flex:1 1 300px;min-width:260px;">
+              <div id="pl-ladder" style="display:flex;align-items:flex-end;gap:7px;height:128px;width:100%;"></div>
+              <div style="margin-top:14px;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;">
+                <span id="pl-genlabel" style="font:700 12px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:#3D53C6;">v1 / 10</span>
+                <span style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:#4C5566;">ACCURACY <b id="pl-acc" style="color:#0C1430;">62%</b></span>
+                <span style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.06em;color:#4C5566;">DEPLOYED <b id="pl-dep" style="color:#0C1430;">10%</b></span>
+              </div>
+              <div id="pl-cap" style="margin-top:10px;font:400 16px/1.5 'EB Garamond',Georgia,serif;color:#4C5566;">Drafts replies for review</div>
+            </div>
+          </div>
+          <p style="margin:clamp(20px,3vw,28px) auto 0;max-width:64ch;text-align:center;font:400 14.5px/1.6 'EB Garamond',Georgia,serif;color:#6D7280;"><b style="font-weight:600;color:#3E4454;">Figure 2.</b> The model ladder, generation by generation. Hover a bar to see what each version runs on its own.</p>
+        </div>
+      </div>
+    </section>
+
+
+      <section id="team" style="border-top:1px solid rgba(10,15,30,.08);padding:clamp(68px,8vw,100px) clamp(20px,5vw,48px);">
+        <div style="max-width:1160px;margin:0 auto;">
+          <div data-reveal="" style="margin-bottom:clamp(30px,4vw,44px);">
+            <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#3D53C6;margin-bottom:22px;">Team</div>
+            <h2 style="font:500 clamp(30px,3.6vw,44px)/1.2 'EB Garamond',Georgia,serif;letter-spacing:-.01em;color:#0C1430;margin:0 0 16px;max-width:26ch;text-wrap:pretty;">Who we are</h2>
+            <p style="margin:0;font:400 17.5px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;max-width:60ch;text-wrap:pretty;">We've done each piece of this work at the places that defined it. Perpetual is those three crafts, run as one loop.</p>
+          </div>
+          <div data-reveal="" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:clamp(24px,4vw,48px);">
+            <div>
+              <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.18em;color:#3D53C6;margin-bottom:14px;">FRONTIER DATA</div>
+              <p style="margin:0;font:400 16.5px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;text-wrap:pretty;">We ran some of the largest data programs the frontier ever bought. Moonshots, coding, expert knowledge work. We learned exactly which data makes a model better.</p>
+            </div>
+            <div>
+              <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.18em;color:#3D53C6;margin-bottom:14px;">POST-TRAINING</div>
+              <p style="margin:0;font:400 16.5px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;text-wrap:pretty;">Then we built the other side: post-training, evals, and RL across coding, science, and audio. We know what actually sharpens a model, and what just burns compute and tokens.</p>
+            </div>
+            <div>
+              <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.18em;color:#3D53C6;margin-bottom:14px;">DEPLOYMENT</div>
+              <p style="margin:0;font:400 16.5px/1.7 'EB Garamond',Georgia,serif;color:#3E4454;text-wrap:pretty;">Finally, we've shipped agents into production for F500 enterprises, in operations where a wrong answer costs real money.</p>
+            </div>
+          </div>
+          <div data-reveal="" style="margin-top:clamp(44px,6vw,64px);border-top:1px solid rgba(10,15,30,.08);padding-top:28px;">
+            <div style="font:600 10px/1 'JetBrains Mono',monospace;letter-spacing:.24em;color:rgba(10,15,30,.4);margin-bottom:22px;">OUR ROOTS</div>
+            <div id="pl-marquee" style="overflow:hidden;mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 6%,black 94%,transparent);">
+              <div id="pl-marquee-track" style="display:flex;align-items:center;gap:64px;width:max-content;animation:plMarquee 30s linear infinite;">
+              <div style="display:flex;align-items:center;gap:64px;opacity:.82;">
+                <img src="assets/logo-scale-clean.png" alt="Scale AI" style="display:block;height:23px;width:auto;">
+                <img src="assets/logo-xai.png" alt="xAI" style="display:block;height:34px;width:auto;">
+                <img src="assets/logo-sierra.png" alt="Sierra" style="display:block;height:29px;width:auto;">
+                <img src="assets/logo-bridgewater.png" alt="Bridgewater" style="display:block;height:40px;width:auto;">
+                <img src="assets/logo-mckinsey.png" alt="McKinsey &amp; Company" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-magicleap.png" alt="Magic Leap" style="display:block;height:34px;width:auto;">
+                <img src="assets/logo-stanford.png" alt="Stanford University" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-berkeley.png" alt="UC Berkeley" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-imc.png" alt="IMC" style="display:block;height:29px;width:auto;">
+              </div>
+              <div aria-hidden="true" style="display:flex;align-items:center;gap:64px;opacity:.82;">
+                <img src="assets/logo-scale-clean.png" alt="" style="display:block;height:23px;width:auto;">
+                <img src="assets/logo-xai.png" alt="" style="display:block;height:34px;width:auto;">
+                <img src="assets/logo-sierra.png" alt="" style="display:block;height:29px;width:auto;">
+                <img src="assets/logo-bridgewater.png" alt="" style="display:block;height:40px;width:auto;">
+                <img src="assets/logo-mckinsey.png" alt="" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-magicleap.png" alt="" style="display:block;height:34px;width:auto;">
+                <img src="assets/logo-stanford.png" alt="" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-berkeley.png" alt="" style="display:block;height:42px;width:auto;">
+                <img src="assets/logo-imc.png" alt="" style="display:block;height:29px;width:auto;">
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <section id="quantbench" style="border-top:1px solid rgba(10,15,30,.08);background:#FFFFFF;padding:clamp(64px,8vw,88px) clamp(20px,5vw,48px);">
+      <div data-reveal="" style="max-width:1160px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:end;justify-content:space-between;gap:28px;">
+        <div>
+          <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#3D53C6;margin-bottom:14px;">Research</div>
+          <h2 style="font:500 clamp(30px,3.6vw,44px)/1.2 'EB Garamond',Georgia,serif;letter-spacing:-.01em;color:#0C1430;margin:0;">QuantBench</h2>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;">
+          <a href="/quantbench.html" style="display:inline-flex;align-items:center;justify-content:center;background:#0C1430;color:#FFFFFF;padding:13px 20px;border:1px solid #0C1430;border-radius:4px;font:600 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;text-decoration:none;">View Evaluation &amp; samples</a>
+          <a href="/api/quantbench?path=quantbench%2Fquantbench_calibration_companion.pdf" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;background:#FFFFFF;color:#0C1430;padding:13px 20px;border:1px solid rgba(12,20,48,.24);border-radius:4px;font:600 12px/1 'JetBrains Mono',monospace;letter-spacing:.04em;text-decoration:none;">Read Paper</a>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="contact" style="border-top:1px solid rgba(10,15,30,.08);background:#F6F8FB;padding:clamp(64px,9vw,104px) clamp(20px,5vw,48px) 40px;">
+      <div style="max-width:1160px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(420px,100%),1fr));gap:clamp(32px,5vw,64px);align-items:start;">
+        <div data-reveal="">
+          <div style="font:600 11px/1 'JetBrains Mono',monospace;letter-spacing:.3em;text-transform:uppercase;color:#3D53C6;margin-bottom:14px;">Contact</div>
+          <h2 style="font:500 clamp(30px,3.4vw,42px)/1.22 'EB Garamond',Georgia,serif;letter-spacing:-.01em;color:#0C1430;margin:0 0 14px;max-width:20ch;text-wrap:pretty;">Compounds forever.</h2>
+        </div>
+        <div data-reveal="">
+          <form id="pl-connect" novalidate="" style="display:flex;flex-direction:column;border:1px solid rgba(10,15,30,.12);border-radius:12px;padding:4px 16px 14px;background:#FFFFFF;box-shadow:0 12px 40px rgba(10,15,30,.06);transition:border-color .25s;" class="plp9">
+            <label for="pl-company" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Company name</label>
+            <input id="pl-company" name="company" type="text" autocomplete="organization" placeholder="Company name" required="" style="width:100%;min-width:0;background:transparent;border:none;outline:none;color:#0A0F1E;font:400 14px/1.55 'Hanken Grotesk',sans-serif;padding:13px 0;">
+            <label for="pl-first-name" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">First name</label>
+            <input id="pl-first-name" name="first_name" type="text" autocomplete="given-name" placeholder="First name" required="" style="width:100%;min-width:0;background:transparent;border:none;outline:none;border-top:1px solid rgba(10,15,30,.08);color:#0A0F1E;font:400 14px/1.55 'Hanken Grotesk',sans-serif;padding:13px 0;">
+            <label for="pl-last-name" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Last name</label>
+            <input id="pl-last-name" name="last_name" type="text" autocomplete="family-name" placeholder="Last name" required="" style="width:100%;min-width:0;background:transparent;border:none;outline:none;border-top:1px solid rgba(10,15,30,.08);color:#0A0F1E;font:400 14px/1.55 'Hanken Grotesk',sans-serif;padding:13px 0;">
+            <label for="pl-email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your email</label>
+            <input id="pl-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Work email" required="" style="width:100%;min-width:0;background:transparent;border:none;outline:none;border-top:1px solid rgba(10,15,30,.08);color:#0A0F1E;font:400 14px/1.55 'Hanken Grotesk',sans-serif;padding:13px 0;">
+            <label for="pl-message" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Your message</label>
+            <textarea id="pl-message" name="message" rows="3" placeholder="Tell us what you run, we'll take it from there." required="" style="resize:vertical;min-height:66px;width:100%;background:transparent;border:none;outline:none;border-top:1px solid rgba(10,15,30,.08);color:#0A0F1E;font:400 14px/1.55 'Hanken Grotesk',sans-serif;padding:12px 0;"></textarea>
+            <div style="display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:10px;">
+              <button id="pl-send" type="submit" style="border:none;cursor:pointer;padding:12px 24px;border-radius:8px;background:#0C1430;color:#FFFFFF;font:600 13px/1 'Hanken Grotesk',sans-serif;transition:background .25s,opacity .2s;white-space:nowrap;" class="plp10">Book a demo →</button>
             </div>
           </form>
-          <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
-          <div class="socials">
-            <a href="#" rel="noopener">twitter</a>
-            <a href="#" rel="noopener">linkedin</a>
-            <a href="#" rel="noopener">github</a>
-          </div>
+          <p id="pl-form-msg" role="status" aria-live="polite" style="min-height:20px;margin:12px 2px 0;font:500 13px/1.5 'Hanken Grotesk',sans-serif;color:#4C5566;"></p>
         </div>
       </div>
-      <footer>
-        <div class="fbrand"><img src="assets/logo.png" alt="Perpetual Labs logo" width="24" height="24"><span>Perpetual Labs · intelligence that runs forever</span></div>
-        <span>© <span id="year">2026</span> · est. ∞</span>
+      <footer style="max-width:1160px;margin:56px auto 0;padding:18px 0 8px;border-top:1px solid rgba(10,15,30,.08);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;font:400 12px/1 'JetBrains Mono',monospace;color:rgba(10,15,30,.45);">
+        <span style="display:flex;align-items:center;gap:11px;">
+          <img src="assets/logo.png" alt="Perpetual Labs logo" width="22" height="22" style="display:block;width:22px;height:22px;border-radius:6px;">
+          <span>Perpetual Labs · intelligence that compounds forever</span>
+        </span>
+        <span style="display:flex;align-items:center;gap:22px;">
+          <a href="https://www.linkedin.com/company/perpetual-labs-inc" target="_blank" rel="noopener" style="color:inherit;text-decoration:none;letter-spacing:.1em;transition:color .25s;" class="plp11">LINKEDIN ↗</a>
+          <span>© <span id="pl-year">2026</span> · est. ∞</span>
+        </span>
       </footer>
     </section>
   </main>
 </div>
 
 <script>
-(function(){
-  "use strict";
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var ACCENT = { edge:[233,200,140], hot:[255,239,200] }; // gold
-
-  document.getElementById('year').textContent = new Date().getFullYear();
-
-  /* ---- nav scroll state ---- */
-  var nav = document.getElementById('nav');
-  var onScroll = function(){ nav.classList.toggle('scrolled', window.scrollY > 24); };
-  onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
-
-  /* ---- reveal on scroll ---- */
-  var reveals = document.querySelectorAll('.reveal');
-  if (reduce || !('IntersectionObserver' in window)){
-    reveals.forEach(function(el){ el.classList.add('in'); });
-  } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
-    reveals.forEach(function(el){ io.observe(el); });
+(function () {
+  // Minimal stand-in for the artifact runtime's base class: the component body
+  // below is copied verbatim from the export so future re-exports drop straight in.
+  class DCLogic {
+    constructor(props) { this.props = props || {}; }
   }
 
-  /* ---- terminal typing ---- */
-  function typeInto(id, text, delay){
-    var el = document.getElementById(id); if(!el) return;
-    if (reduce){ el.textContent = text; return; }
-    var i = 0;
-    function step(){ el.textContent = text.slice(0,i); i++; if(i<=text.length) setTimeout(step, 52 + Math.random()*52); }
-    setTimeout(step, delay||0);
-  }
-  typeInto('cmd-mission', 'cat mission.txt', 250);
-  typeInto('cmd-flywheel', 'perpetual --loop --forever', 600);
-  typeInto('cmd-outreach', './connect --forever', 900);
+  class Component extends DCLogic {
+    componentDidMount() {
+      this._dead = false;
+      this._cleanups = [];
+      this._reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+      var y = document.getElementById('pl-year');
+      if (y) y.textContent = String(new Date().getFullYear());
+      this._nav();
+      this._reveals();
+      this._ribbon();
+      this._foundry();
+      this._osFeed();
+      this._marquee();
+      this._cycle();
+      this._notes();
+    }
 
-  /* ---- contact form: email + message -> rashid@perpetual-labs.ai ----
-     Static site, so delivery uses Web3Forms (free, no server): submissions
-     POST to their API and land in the registered inbox WITHOUT the visitor
-     needing a mail client, and your address stays out of the page source.
-     >>> To go fully live: get a free access key at https://web3forms.com
-         (enter rashid@perpetual-labs.ai — they email you a key) and paste it
-         into WEB3FORMS_KEY below.
-     Until a key is set, it falls back to a mailto: compose so nothing is lost. */
-  var WEB3FORMS_KEY = '64580993-66cd-42e6-acee-18ba5470dad3'; // Web3Forms -> rashid@perpetual-labs.ai
-  var CONTACT_EMAIL = 'rashid@perpetual-labs.ai'; // mailto fallback destination
-  var form = document.getElementById('connect');
-  var msg = document.getElementById('form-msg');
-  var input = document.getElementById('email');
-  var message = document.getElementById('message');
-  var btn = form.querySelector('button');
-  var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  function setMsg(kind, text){ msg.className = 'form-msg ' + kind; msg.textContent = text; }
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    var v = (input.value||'').trim();
-    var m = (message.value||'').trim();
-    if(!EMAIL.test(v)){ setMsg('err', '✗ that doesn’t look like an email — try again.'); input.focus(); return; }
-    if(m.length < 2){ setMsg('err', '✗ add a short message so we know what you run.'); message.focus(); return; }
+    _cycle() {
+      var self = this;
+      var badge = document.getElementById('pl-gen');
+      var ladder = document.getElementById('pl-ladder');
+      var label = document.getElementById('pl-genlabel');
+      var accEl = document.getElementById('pl-acc'), depEl = document.getElementById('pl-dep'), capEl = document.getElementById('pl-cap');
+      var ACC = [62, 68, 74, 79, 84, 88, 92, 95, 98, 100];
+      var DEP = [10, 20, 32, 45, 58, 70, 80, 88, 95, 100];
+      var CAP = ['Drafts replies for review', 'Handles routine tickets end-to-end', 'Reconciles records automatically', 'Flags risks before they surface', 'Runs multi-step workflows', 'Coordinates across systems', 'Plans and schedules autonomously', 'Negotiates routine exceptions', 'Self-audits every action', 'Runs the machine, human-verified'];
+      var N = 10, hMin = 20, hMax = 128, r = Math.pow(hMax / hMin, 1 / (N - 1));
+      var bars = [], active = 0, hover = -1;
+      if (ladder) {
+        ladder.innerHTML = '';
+        for (var i = 0; i < N; i++) {
+          var h = Math.round(hMin * Math.pow(r, i));
+          var b = document.createElement('div');
+          b.setAttribute('title', 'v' + (i + 1));
+          b.setAttribute('style', 'flex:1 1 0;height:' + h + 'px;border-radius:3px 3px 0 0;cursor:pointer;background:rgba(61,83,198,.13);transition:background .3s,box-shadow .3s;');
+          (function (idx) {
+            self._on(b, 'mouseenter', function () { hover = idx; render(); });
+            self._on(b, 'mouseleave', function () { hover = -1; render(); });
+          })(i);
+          ladder.appendChild(b); bars.push(b);
+        }
+      }
+      function render() {
+        var a = hover >= 0 ? hover : active;
+        for (var i = 0; i < N; i++) {
+          var on = i <= a, top = i === a;
+          bars[i].style.background = on ? (top ? '#3D53C6' : 'rgba(61,83,198,' + (0.30 + i * 0.045).toFixed(2) + ')') : 'rgba(61,83,198,.13)';
+          bars[i].style.boxShadow = top ? '0 0 12px rgba(61,83,198,.6)' : 'none';
+        }
+        var v = a + 1;
+        if (badge) badge.textContent = v;
+        if (label) label.textContent = 'v' + v + ' / ' + N;
+        if (accEl) accEl.textContent = ACC[a] + '%';
+        if (depEl) depEl.textContent = DEP[a] + '%';
+        if (capEl) capEl.textContent = CAP[a];
+      }
+      render();
+      if (this._reduce) { active = N - 1; render(); return; }
+      var t = setInterval(function () { if (self._dead || hover >= 0) return; active = (active + 1) % N; render(); }, 2000);
+      this._cleanups.push(function () { clearInterval(t); });
+    }
 
-    if(WEB3FORMS_KEY){
-      // Real delivery — message lands in the inbox, no mail client needed.
-      btn.disabled = true; setMsg('ok', 'sending…');
+    _notes() {
+      var self = this;
+      Array.prototype.slice.call(document.querySelectorAll('sup[data-ref]')).forEach(function (sup) {
+        var note = document.getElementById(sup.getAttribute('data-ref'));
+        if (!note) return;
+        self._on(sup, 'mouseenter', function () { note.style.color = '#0C1430'; sup.style.color = '#3D53C6'; });
+        self._on(sup, 'mouseleave', function () { note.style.color = '#6D7280'; sup.style.color = '#96702E'; });
+      });
+    }
+
+    _marquee() {
+      var track = document.getElementById('pl-marquee-track');
+      var wrap = document.getElementById('pl-marquee');
+      if (!track || !wrap) return;
+      if (this._reduce) {
+        track.style.animation = 'none';
+        track.style.flexWrap = 'wrap';
+        track.style.width = 'auto';
+        wrap.style.maskImage = 'none';
+        wrap.style.webkitMaskImage = 'none';
+        return;
+      }
+      this._on(wrap, 'mouseenter', function () { track.style.animationPlayState = 'paused'; });
+      this._on(wrap, 'mouseleave', function () { track.style.animationPlayState = 'running'; });
+    }
+
+    componentWillUnmount() {
+      this._dead = true;
+      (this._cleanups || []).forEach(function (f) { try { f(); } catch (e) {} });
+      this._cleanups = [];
+    }
+
+    _on(t, ev, fn, opts) {
+      t.addEventListener(ev, fn, opts);
+      this._cleanups.push(function () { t.removeEventListener(ev, fn, opts); });
+    }
+
+    _nav() {
+      var nav = document.getElementById('pl-nav');
+      if (!nav) return;
+      var onScroll = function () {
+        nav.style.borderBottom = window.scrollY > 24 ? '3px double rgba(12,20,48,.35)' : '1px solid transparent';
+      };
+      onScroll();
+      this._on(window, 'scroll', onScroll, { passive: true });
+    }
+
+    _reveals() {
+      var els = Array.prototype.slice.call(document.querySelectorAll('[data-reveal]'));
+      if (!els.length || this._reduce || !('IntersectionObserver' in window)) return;
+      els.forEach(function (el) {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(14px)';
+        el.style.transition = 'opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1)';
+      });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach(function (el) { io.observe(el); });
+      this._cleanups.push(function () { io.disconnect(); });
+    }
+
+    _ribbon() {
+      var self = this;
+      var canvas = document.getElementById('pl-ribbon');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var edge = [27, 42, 94], hot = [61, 83, 198];
+      var TAU = Math.PI * 2, M = 170, w = 0.2, persp = 3.0;
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      var W = 0, H = 0;
+      function fit() {
+        W = canvas.offsetWidth; H = canvas.offsetHeight;
+        canvas.width = Math.max(1, W * dpr);
+        canvas.height = Math.max(1, H * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      fit();
+      var resizeT;
+      this._on(window, 'resize', function () {
+        clearTimeout(resizeT);
+        resizeT = setTimeout(function () { fit(); if (self._reduce) draw(7.4); }, 120);
+      }, { passive: true });
+      var mouse = { x: 0, y: 0, tx: 0, ty: 0 };
+      var hero = document.getElementById('pl-hero');
+      if (!this._reduce && hero) {
+        this._on(hero, 'mousemove', function (e) {
+          var r = canvas.getBoundingClientRect();
+          mouse.tx = (e.clientX - r.left - r.width / 2) / r.width;
+          mouse.ty = (e.clientY - r.top - r.height / 2) / r.height;
+        });
+        this._on(hero, 'mouseleave', function () { mouse.tx = 0; mouse.ty = 0; });
+      }
+      function lem(t) { return { x: Math.cos(t), y: Math.sin(t) * Math.cos(t) * 1.15 }; }
+      var t0 = performance.now();
+      function draw(timeOverride) {
+        var time = timeOverride != null ? timeOverride : (performance.now() - t0) / 1000 + 7.4;
+        mouse.x += (mouse.tx - mouse.x) * 0.05;
+        mouse.y += (mouse.ty - mouse.y) * 0.05;
+        var cx = W / 2, cy = H / 2, S = Math.min(W * 0.37, H * 0.52);
+        var rotY = Math.sin(time * 0.22) * 0.2 + mouse.x * 0.28, rotX = -0.16 + Math.sin(time * 0.32) * 0.05 + mouse.y * 0.16;
+        var cosy = Math.cos(rotY), siny = Math.sin(rotY), cosx = Math.cos(rotX), sinx = Math.sin(rotX);
+        function proj(t, v) {
+          var A = lem(t), B = lem(t + 0.012);
+          var tx = B.x - A.x, ty = B.y - A.y, tl = Math.hypot(tx, ty) || 1;
+          tx /= tl; ty /= tl;
+          var phi = t + time * 0.14, cp = Math.cos(phi), sp = Math.sin(phi);
+          var X = A.x + (-ty) * cp * w * v, Y = A.y + tx * cp * w * v, Z = sp * w * v;
+          var x1 = X * cosy + Z * siny, z1 = -X * siny + Z * cosy;
+          var y2 = Y * cosx - z1 * sinx, z2 = Y * sinx + z1 * cosx;
+          var sc = persp / (persp + z2);
+          return { sx: cx + x1 * S * sc, sy: cy + y2 * S * sc, z: z2 };
+        }
+        ctx.clearRect(0, 0, W, H);
+        ctx.lineCap = 'round';
+        var charge = ((-time * 0.6) % TAU + TAU) % TAU;
+        var STR = 15;
+        for (var s = 0; s < STR; s++) {
+          var v = -1 + 2 * s / (STR - 1);
+          var edgeBoost = 0.42 + 0.58 * Math.abs(v);
+          var prev = proj(0, v);
+          for (var i = 1; i <= M; i++) {
+            var t = i / M * TAU;
+            var p = proj(t, v);
+            var nf = Math.max(0, Math.min(1, ((prev.z + p.z) / 2 + 1.2) / 2.4));
+            var mid = (i - 0.5) / M * TAU;
+            var d = Math.abs(mid - charge); d = Math.min(d, TAU - d);
+            var ch = Math.max(0, 1 - d / 0.7);
+            var shim = 0.7 + 0.3 * Math.sin(time * 2.2 - mid * 3 + s * 0.45);
+            var a = Math.min(1, (0.05 + nf * 0.42) * edgeBoost * shim);
+            var er = (edge[0] + (hot[0] - edge[0]) * nf * 0.6) | 0;
+            var eg = (edge[1] + (hot[1] - edge[1]) * nf * 0.6) | 0;
+            var eb = (edge[2] + (hot[2] - edge[2]) * nf * 0.6) | 0;
+            ctx.beginPath();
+            ctx.moveTo(prev.sx, prev.sy);
+            ctx.lineTo(p.sx, p.sy);
+            ctx.strokeStyle = 'rgba(' + er + ',' + eg + ',' + eb + ',' + a + ')';
+            ctx.lineWidth = 0.55 + nf * 0.95;
+            ctx.stroke();
+            if (ch > 0.02) {
+              var kk = ch * ch * (3 - 2 * ch);
+              ctx.beginPath();
+              ctx.moveTo(prev.sx, prev.sy);
+              ctx.lineTo(p.sx, p.sy);
+              ctx.strokeStyle = 'rgba(' + hot[0] + ',' + hot[1] + ',' + hot[2] + ',' + Math.min(1, kk * (0.32 + nf * 0.5) * edgeBoost) + ')';
+              ctx.lineWidth = 1.0 + nf * 1.8 + kk * 1.4;
+              ctx.stroke();
+            }
+            prev = p;
+          }
+        }
+        var stages = ['PARTNER', 'LEARN', 'TRAIN', 'OPERATE', 'COMPOUND'];
+        var tvals = [Math.PI, 3 * Math.PI / 4, Math.PI / 4, 7 * Math.PI / 4, 5 * Math.PI / 4];
+        ctx.textBaseline = 'middle';
+        var compact = W < 520;
+        for (var k = 0; k < 5; k++) {
+          var hd = proj(tvals[k], 1.0);
+          var ax = hd.sx, ay = hd.sy;
+          var dt = Math.abs(charge - tvals[k]); dt = Math.min(dt, TAU - dt);
+          var near = Math.max(0, 1 - dt / 0.5);
+          var ne = near * near * (3 - 2 * near);
+          var rad = 14 + ne * 26;
+          var hg = ctx.createRadialGradient(ax, ay, 0, ax, ay, rad);
+          hg.addColorStop(0, 'rgba(' + hot[0] + ',' + hot[1] + ',' + hot[2] + ',' + Math.min(1, 0.10 + ne * 0.30) + ')');
+          hg.addColorStop(1, 'rgba(61,83,198,0)');
+          ctx.fillStyle = hg;
+          ctx.beginPath(); ctx.arc(ax, ay, rad, 0, TAU); ctx.fill();
+          if (ne > 0.35) {
+            ctx.beginPath();
+            ctx.arc(ax, ay, 7 + ne * 5, 0, TAU);
+            ctx.strokeStyle = 'rgba(' + hot[0] + ',' + hot[1] + ',' + hot[2] + ',' + ((ne - 0.35) * 0.8) + ')';
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+          }
+          ctx.beginPath();
+          ctx.arc(ax, ay, 2.4 + ne * 2, 0, TAU);
+          ctx.fillStyle = 'rgba(' + (edge[0] + (hot[0] - edge[0]) * ne | 0) + ',' + (edge[1] + (hot[1] - edge[1]) * ne | 0) + ',' + (edge[2] + (hot[2] - edge[2]) * ne | 0) + ',' + (0.75 + ne * 0.25) + ')';
+          ctx.fill();
+          if (compact) continue;
+          var dx = ax - cx, dy = ay - cy;
+          var dl = Math.hypot(dx, dy) || 1; dx /= dl; dy /= dl;
+          var lo = k === 0 ? 134 : 92;
+          var wx = ax + dx * lo, wy = Math.max(18, Math.min(H - 14, ay + dy * lo));
+          if (wx < 80) { wx = Math.max(8, wx); ctx.textAlign = 'left'; }
+          else if (wx > W - 80) { wx = Math.min(W - 8, wx); ctx.textAlign = 'right'; }
+          else { ctx.textAlign = Math.abs(dx) < 0.32 ? 'center' : (dx > 0 ? 'left' : 'right'); }
+          ctx.font = '700 10px "JetBrains Mono", monospace';
+          ctx.fillStyle = 'rgba(61,83,198,' + (0.55 + ne * 0.45) + ')';
+          ctx.fillText('0' + (k + 1), wx, wy - 10);
+          ctx.font = '700 13px "JetBrains Mono", monospace';
+          ctx.fillStyle = 'rgba(' + (12 + (hot[0] - 12) * ne | 0) + ',' + (20 + (hot[1] - 20) * ne | 0) + ',' + (48 + (hot[2] - 48) * ne | 0) + ',' + (0.8 + ne * 0.2) + ')';
+          ctx.fillText(stages[k], wx, wy + 5);
+        }
+      }
+      if (this._reduce) { draw(7.4); return; }
+      var rafId;
+      function loop() {
+        if (self._dead) return;
+        if (!W || !H) fit();
+        draw();
+        rafId = requestAnimationFrame(loop);
+      }
+      rafId = requestAnimationFrame(loop);
+      this._cleanups.push(function () { cancelAnimationFrame(rafId); });
+    }
+
+    _foundry() {
+      if (this._reduce) return;
+      var trace = document.getElementById('pl-trace');
+      var chips = Array.prototype.slice.call(document.querySelectorAll('#pl-assets [data-chip]'));
+      var self = this;
+      var traces = [
+        '<div>06:40 reroute #4821</div><div>reason: <span style="color:#0A0F1E">"storm, I-40"</span></div><div>action: OAK\u2192DFW alt</div><div>outcome: <span style="color:#3D53C6">on-time \u2713</span></div>',
+        '<div>11:05 claim CLM-0973</div><div>triage: <span style="color:#0A0F1E">urgent</span></div><div>action: adjuster assigned</div><div>outcome: <span style="color:#3D53C6">approved \u2713</span></div>',
+        '<div>14:22 recall slot #88</div><div>reason: <span style="color:#0A0F1E">no-show risk</span></div><div>action: overbook +1</div><div>outcome: <span style="color:#3D53C6">filled \u2713</span></div>'
+      ];
+      var ti = 0, ci = 0, holdUntil = 0;
+      function setChip(idx) {
+        chips.forEach(function (c, i) {
+          var on = i === idx;
+          c.style.borderColor = on ? 'rgba(61,83,198,.8)' : 'rgba(61,83,198,.35)';
+          c.style.background = on ? 'rgba(61,83,198,.13)' : 'rgba(61,83,198,.06)';
+          c.style.color = on ? '#0C1430' : '#1B2A5E';
+          c.style.boxShadow = on ? '0 0 16px rgba(61,83,198,.22)' : 'none';
+          c.style.transform = on ? 'translateX(3px)' : 'none';
+        });
+      }
+      setChip(0);
+      chips.forEach(function (c, i) {
+        c.style.cursor = 'default';
+        self._on(c, 'mouseenter', function () { ci = i; setChip(i); holdUntil = performance.now() + 4000; });
+      });
+      var chipT = setInterval(function () {
+        if (performance.now() < holdUntil) return;
+        ci = (ci + 1) % chips.length; setChip(ci);
+      }, 1100);
+      this._cleanups.push(function () { clearInterval(chipT); });
+      if (trace) {
+        var traceT = setInterval(function () {
+          trace.style.opacity = '0';
+          setTimeout(function () {
+            if (self._dead) return;
+            ti = (ti + 1) % traces.length;
+            trace.innerHTML = traces[ti];
+            trace.style.opacity = '1';
+          }, 300);
+        }, 4400);
+        this._cleanups.push(function () { clearInterval(traceT); });
+      }
+    }
+
+    _osFeed() {
+      var box = document.getElementById('pl-osfeed');
+      if (!box) return;
+      var self = this;
+      function approveBtn() {
+        return '<button data-approve="" type="button" style="border:1px solid rgba(61,83,198,.45);background:rgba(61,83,198,.10);color:#3D53C6;font:600 10px/1 \'JetBrains Mono\',monospace;letter-spacing:.08em;border-radius:5px;padding:5px 9px;cursor:pointer;transition:background .2s,color .2s;">APPROVE</button>';
+      }
+      function doApprove(btn) {
+        var row = btn;
+        while (row && row.parentElement !== box) row = row.parentElement;
+        if (!row) return;
+        row.style.background = 'rgba(150,112,46,.05)';
+        row.style.borderColor = 'rgba(150,112,46,.25)';
+        row.innerHTML = '<span style="color:#0A0F1E;">✓ Approved by you · recorded</span><span style="font:600 10.5px/1 \'JetBrains Mono\',monospace;letter-spacing:.08em;color:#96702E;">LOGGED</span>';
+      }
+      this._on(box, 'click', function (e) {
+        var t = e.target;
+        while (t && t !== box && !t.hasAttribute('data-approve')) t = t.parentElement;
+        if (t && t !== box) doApprove(t);
+      });
+      if (this._reduce) return;
+      var paused = false;
+      var card = box.parentElement;
+      if (card) {
+        this._on(card, 'mouseenter', function () { paused = true; });
+        this._on(card, 'mouseleave', function () { paused = false; });
+      }
+      function chip(text, color, bg) {
+        return '<span style="font:600 10.5px/1 \'JetBrains Mono\',monospace;letter-spacing:.08em;color:' + color + ';' + (bg ? 'background:' + bg + ';border-radius:5px;padding:4px 8px;' : '') + '">' + text + '</span>';
+      }
+      function timeChip(t) {
+        return '<span style="font:500 10.5px/1 \'JetBrains Mono\',monospace;color:rgba(10,15,30,.4);">' + t + '</span>';
+      }
+      var h = 9, m = 13, s = 2;
+      function nextTime() {
+        s += 5 + ((Math.random() * 20) | 0);
+        if (s > 59) { s -= 60; m++; }
+        if (m > 59) { m -= 60; h++; }
+        function p(n) { return (n < 10 ? '0' : '') + n; }
+        return p(h) + ':' + p(m) + ':' + p(s);
+      }
+      var lines = [
+        function () { return ['Checking support tickets for early warnings…', timeChip(nextTime())]; },
+        function () { return ['Reading the newest contract…', chip('DRAFT', '#1B2A5E', 'rgba(27,42,94,.07)')]; },
+        function () { return ['Waiting for a human OK…', '<span style="display:inline-flex;align-items:center;gap:8px;">' + approveBtn() + chip('REVIEW', '#3D53C6') + '</span>', true]; },
+        function () { return ['✓ Approved · recorded', chip('LOGGED', '#96702E')]; },
+        function () { return ['Reconciling March numbers…', timeChip(nextTime())]; },
+        function () { return ['Answering a routine customer question…', timeChip(nextTime())]; },
+        function () { return ['Drafting Monday\u2019s ops report…', chip('DRAFT', '#1B2A5E', 'rgba(27,42,94,.07)')]; },
+        function () { return ['✓ Done · every step recorded', chip('LOGGED', '#96702E')]; },
+        function () { return ['Watching this quarter’s renewals…', timeChip(nextTime())]; }
+      ];
+      var i = 0;
+      var t = setInterval(function () {
+        if (self._dead || paused) return;
+        var spec = lines[i % lines.length](); i++;
+        var hl = spec[2] === true;
+        var row = document.createElement('div');
+        row.setAttribute('style', 'display:flex;align-items:center;justify-content:space-between;gap:12px;opacity:0;transform:translateY(6px);transition:opacity .45s,transform .45s;' + (hl ? 'background:rgba(61,83,198,.06);border:1px solid rgba(61,83,198,.22);border-radius:8px;padding:10px 12px;margin:0 -2px;' : ''));
+        row.innerHTML = '<span' + (hl ? ' style="color:#0A0F1E;"' : '') + '>' + spec[0] + '</span>' + spec[1];
+        box.appendChild(row);
+        requestAnimationFrame(function () { requestAnimationFrame(function () { row.style.opacity = '1'; row.style.transform = 'none'; }); });
+        while (box.children.length > 5) box.removeChild(box.firstChild);
+      }, 2100);
+      this._cleanups.push(function () { clearInterval(t); });
+    }
+
+    onSubmit = (e) => {
+      e.preventDefault();
+      var company = document.getElementById('pl-company');
+      var firstName = document.getElementById('pl-first-name');
+      var lastName = document.getElementById('pl-last-name');
+      var input = document.getElementById('pl-email');
+      var message = document.getElementById('pl-message');
+      var msg = document.getElementById('pl-form-msg');
+      var btn = document.getElementById('pl-send');
+      var EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      function setMsg(kind, text) {
+        msg.style.color = kind === 'err' ? '#B4372A' : '#1B2A5E';
+        msg.textContent = text;
+      }
+      var c = (company.value || '').trim();
+      var f = (firstName.value || '').trim();
+      var l = (lastName.value || '').trim();
+      var v = (input.value || '').trim();
+      var m = (message.value || '').trim();
+      if (c.length < 2) { setMsg('err', 'Please add your company name.'); company.focus(); return; }
+      if (!f) { setMsg('err', 'Please add your first name.'); firstName.focus(); return; }
+      if (!l) { setMsg('err', 'Please add your last name.'); lastName.focus(); return; }
+      if (!EMAIL.test(v)) { setMsg('err', 'That doesn\u2019t look like an email. Mind checking it?'); input.focus(); return; }
+      if (m.length < 2) { setMsg('err', 'Add a short note so we know what you run.'); message.focus(); return; }
+      btn.disabled = true;
+      btn.style.opacity = '.55';
+      setMsg('ok', 'Sending…');
       fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
         body: JSON.stringify({
-          access_key: WEB3FORMS_KEY,
-          subject: 'Perpetual Labs — new inquiry',
-          from_name: 'Perpetual Labs site',
-          email: v,            // used as reply-to
+          access_key: '64580993-66cd-42e6-acee-18ba5470dad3',
+          subject: 'Perpetual Labs, demo request from ' + c,
+          from_name: f + ' ' + l,
+          company: c,
+          first_name: f,
+          last_name: l,
+          email: v,
           message: m
         })
-      }).then(function(r){ return r.json(); }).then(function(d){
+      }).then(function (r) { return r.json(); }).then(function (d) {
         btn.disabled = false;
-        if(d && d.success){ setMsg('ok', '→ sent. we’ll be in touch. // the loop never stops.'); form.reset(); }
-        else { setMsg('err', '✗ couldn’t send — please email us directly.'); }
-      }).catch(function(){ btn.disabled = false; setMsg('err', '✗ network error — try again in a moment.'); });
-    } else {
-      // Fallback with no backend: open the visitor's mail client, pre-filled.
-      var subject = encodeURIComponent('Perpetual Labs — inquiry');
-      var body = encodeURIComponent(m + '\n\n— ' + v);
-      window.location.href = 'mailto:' + CONTACT_EMAIL + '?subject=' + subject + '&body=' + body;
-      setMsg('ok', '→ opening your mail client to send your message…');
-      form.reset();
-    }
-  });
-
-  /* ---- flywheel ticker ---- */
-  (function(){
-    var rows = Array.prototype.slice.call(document.querySelectorAll('#fly .fly-row'));
-    if(!rows.length) return;
-    var c = ACCENT, idx = 0;
-    function paint(active){
-      rows.forEach(function(r,i){
-        var on = i===active;
-        r.style.background = on ? 'rgba('+c.edge[0]+','+c.edge[1]+','+c.edge[2]+',0.12)' : 'transparent';
-        var k=r.querySelector('.fly-k'), ic=r.querySelector('.fly-i'), v=r.querySelector('.fly-v');
-        if(k) k.style.color = on ? '#F4EEDF' : '#ECE7DA';
-        if(ic) ic.style.color = on ? 'rgb('+c.edge[0]+','+c.edge[1]+','+c.edge[2]+')' : 'rgba(214,219,233,.3)';
-        if(v) v.style.color = on ? 'rgba(214,219,233,.8)' : 'rgba(214,219,233,.5)';
+        btn.style.opacity = '1';
+        if (d && d.success) {
+          setMsg('ok', 'Sent. We\u2019ll be in touch soon.');
+          document.getElementById('pl-connect').reset();
+        } else {
+          setMsg('err', 'That didn\u2019t go through. Please email us directly.');
+        }
+      }).catch(function () {
+        btn.disabled = false;
+        btn.style.opacity = '1';
+        setMsg('err', 'Network hiccup, try again in a moment.');
       });
     }
-    paint(0);
-    if(reduce) return;
-    var last = performance.now();
-    function tick(now){
-      if(now - last > 1100){
-        last = now;
-        var next = (idx+1) % rows.length;
-        if(next === 0) typeInto('cmd-flywheel', 'perpetual --loop --forever', 0);
-        idx = next; paint(idx);
-      }
-      requestAnimationFrame(tick);
+
+    renderVals() {
+      return {
+        onSubmit: this.onSubmit,
+        showTeam: this.props.showTeam != null ? this.props.showTeam : true,
+        showResearchTab: this.props.showResearchTab != null ? this.props.showResearchTab : true
+      };
     }
-    requestAnimationFrame(tick);
-  })();
+  }
 
-  /* ---- infinity ribbon engine (ported from source) ---- */
-  (function(){
-    var canvas = document.getElementById('ribbon'); if(!canvas) return;
-    var ctx = canvas.getContext('2d');
-    var dpr = Math.min(2, window.devicePixelRatio || 1);
-    var W=0, H=0;
-    function fit(){
-      var r = canvas.getBoundingClientRect(); W=r.width; H=r.height;
-      canvas.width = Math.max(1, W*dpr); canvas.height = Math.max(1, H*dpr);
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-    }
-    fit();
-    var resizeT; window.addEventListener('resize', function(){ clearTimeout(resizeT); resizeT=setTimeout(function(){ dpr=Math.min(2,window.devicePixelRatio||1); fit(); if(reduce) draw(7.4); }, 120); }, {passive:true});
-
-    var M=170, TAU=Math.PI*2, twists=1;
-    function lem(t){ return { x:Math.cos(t), y:Math.sin(t)*Math.cos(t)*1.15, z:0 }; }
-    var mouse={x:0,y:0,tx:0,ty:0};
-    if(!reduce){
-      canvas.addEventListener('mousemove', function(e){ var r=canvas.getBoundingClientRect(); mouse.tx=(e.clientX-r.left-r.width/2)/r.width; mouse.ty=(e.clientY-r.top-r.height/2)/r.height; });
-      canvas.addEventListener('mouseleave', function(){ mouse.tx=0; mouse.ty=0; });
-    }
-    var stars=[]; for(var si=0; si<60; si++) stars.push({x:Math.random(),y:Math.random(),p:Math.random()*TAU,s:Math.random()*1.0+0.3});
-    var t0 = performance.now();
-    var stages=['PARTNER','EXTRACT','TRAIN','OPERATE','COMPOUND'];
-    var tvals=[Math.PI, 3*Math.PI/4, Math.PI/4, 7*Math.PI/4, 5*Math.PI/4];
-    var countEl = document.getElementById('count');
-
-    function draw(timeOverride){
-      var c = ACCENT;
-      var time = timeOverride!=null ? timeOverride : (performance.now()-t0)/1000;
-      mouse.x += (mouse.tx-mouse.x)*0.05; mouse.y += (mouse.ty-mouse.y)*0.05;
-      if(countEl) countEl.textContent = (1048576 + Math.floor(time*4096)).toLocaleString();
-
-      var compact = W < 760;
-      var cx=W/2, cy=H/2, S=Math.min(W*(compact?0.40:0.32), H*(compact?0.40:0.55));
-      var rotY=Math.sin(time*0.22)*0.2 + mouse.x*0.5;
-      var rotX=-0.16 + Math.sin(time*0.32)*0.05 + mouse.y*0.3;
-      var cosy=Math.cos(rotY), siny=Math.sin(rotY), cosx=Math.cos(rotX), sinx=Math.sin(rotX);
-      var persp=3.0, w=0.2;
-
-      function proj(t,v){
-        var t2=t+0.012, A=lem(t), B=lem(t2);
-        var tx=B.x-A.x, ty=B.y-A.y; var tl=Math.hypot(tx,ty)||1; tx/=tl; ty/=tl;
-        var nx=-ty, ny=tx; var phi=t*twists+time*0.14; var cp=Math.cos(phi), sp=Math.sin(phi);
-        var ox=nx*cp*w*v, oy=ny*cp*w*v, oz=sp*w*v;
-        var X=A.x+ox, Y=A.y+oy, Z=A.z+oz;
-        var x1=X*cosy+Z*siny, z1=-X*siny+Z*cosy, y1=Y;
-        var y2=y1*cosx-z1*sinx, z2=y1*sinx+z1*cosx, x2=x1;
-        var sc=persp/(persp+z2);
-        return { sx:cx+x2*S*sc, sy:cy+y2*S*sc, z:z2 };
-      }
-
-      ctx.clearRect(0,0,W,H);
-      ctx.globalCompositeOperation='source-over';
-      for(var k0=0;k0<stars.length;k0++){ var s0=stars[k0]; var a0=0.06+0.10*(Math.sin(time*1.3+s0.p)*0.5+0.5); ctx.beginPath(); ctx.arc(s0.x*W,s0.y*H,s0.s,0,TAU); ctx.fillStyle='rgba(150,175,225,'+a0+')'; ctx.fill(); }
-      ctx.globalCompositeOperation='lighter';
-      var ag=ctx.createRadialGradient(cx,cy,0,cx,cy,S*1.25);
-      ag.addColorStop(0,'rgba('+c.edge[0]+','+c.edge[1]+','+c.edge[2]+',0.045)'); ag.addColorStop(1,'rgba(0,0,0,0)');
-      ctx.fillStyle=ag; ctx.fillRect(cx-S*1.25,cy-S*1.25,S*2.5,S*2.5);
-
-      ctx.lineCap='round';
-      var charge=((-time*0.6)%TAU+TAU)%TAU;
-      var STR=15;
-      for(var s=0;s<STR;s++){
-        var v=-1+2*s/(STR-1); var edgeBoost=0.42+0.58*Math.abs(v);
-        var prev=proj(0,v);
-        for(var i=1;i<=M;i++){
-          var t=i/M*TAU; var p=proj(t,v);
-          var nf=Math.max(0,Math.min(1,((prev.z+p.z)/2+1.2)/2.4));
-          var mid=(i-0.5)/M*TAU; var d=Math.abs(mid-charge); d=Math.min(d,TAU-d);
-          var ch=Math.max(0,1-d/0.7);
-          var shim=0.7+0.3*Math.sin(time*2.2-mid*3+s*0.45);
-          var a=(0.055+nf*0.44)*edgeBoost*shim;
-          var er=(c.edge[0]+(c.hot[0]-c.edge[0])*nf*0.55)|0;
-          var eg=(c.edge[1]+(c.hot[1]-c.edge[1])*nf*0.55)|0;
-          var eb=(c.edge[2]+(c.hot[2]-c.edge[2])*nf*0.55)|0;
-          ctx.beginPath(); ctx.moveTo(prev.sx,prev.sy); ctx.lineTo(p.sx,p.sy);
-          ctx.strokeStyle='rgba('+er+','+eg+','+eb+','+a+')'; ctx.lineWidth=0.55+nf*0.95; ctx.stroke();
-          if(ch>0.02){ var kk=ch*ch*(3-2*ch); ctx.beginPath(); ctx.moveTo(prev.sx,prev.sy); ctx.lineTo(p.sx,p.sy); ctx.strokeStyle='rgba('+c.hot[0]+','+c.hot[1]+','+c.hot[2]+','+(kk*(0.42+nf*0.55)*edgeBoost)+')'; ctx.lineWidth=1.0+nf*2.0+kk*1.6; ctx.stroke(); }
-          prev=p;
-        }
-      }
-      ctx.textBaseline='middle';
-      for(var kx=0;kx<5;kx++){
-        var hd=proj(tvals[kx],1.0); var ax=hd.sx, ay=hd.sy;
-        var dt=Math.abs(charge-tvals[kx]); dt=Math.min(dt,TAU-dt);
-        var near=Math.max(0,1-dt/0.5); var ne=near*near*(3-2*near);
-        var rad=16+ne*36; var hg=ctx.createRadialGradient(ax,ay,0,ax,ay,rad);
-        hg.addColorStop(0,'rgba('+c.hot[0]+','+c.hot[1]+','+c.hot[2]+','+(0.16+ne*0.55)+')'); hg.addColorStop(1,'rgba(0,0,0,0)');
-        ctx.fillStyle=hg; ctx.beginPath(); ctx.arc(ax,ay,rad,0,TAU); ctx.fill();
-        if(ne>0.35){ ctx.beginPath(); ctx.arc(ax,ay,8+ne*6,0,TAU); ctx.strokeStyle='rgba('+c.hot[0]+','+c.hot[1]+','+c.hot[2]+','+((ne-0.35)*0.85)+')'; ctx.lineWidth=1.2; ctx.stroke(); }
-        ctx.beginPath(); ctx.arc(ax,ay,2.6+ne*2.4,0,TAU); ctx.fillStyle='rgba('+c.hot[0]+','+c.hot[1]+','+c.hot[2]+','+(0.7+ne*0.3)+')'; ctx.fill();
-        if(compact) continue;
-        var dx=ax-cx, dy=ay-cy; var dl=Math.hypot(dx,dy)||1; dx/=dl; dy/=dl;
-        var out=72; var wx=ax+dx*out, wy=ay+dy*out; var pad=12;
-        if(wx<84){ wx=Math.max(pad,wx); ctx.textAlign='left'; }
-        else if(wx>W-84){ wx=Math.min(W-pad,wx); ctx.textAlign='right'; }
-        else { ctx.textAlign = Math.abs(dx)<0.32 ? 'center' : (dx>0?'left':'right'); }
-        wy=Math.max(76,Math.min(H-14,wy));
-        ctx.font='800 12px "JetBrains Mono", monospace';
-        ctx.fillStyle='rgba('+c.hot[0]+','+c.hot[1]+','+c.hot[2]+','+(0.7+ne*0.3)+')';
-        ctx.fillText('0'+(kx+1), wx, wy-11);
-        ctx.font='800 17px "JetBrains Mono", monospace';
-        ctx.fillStyle='rgba('+((c.edge[0]+(c.hot[0]-c.edge[0])*ne)|0)+','+((c.edge[1]+(c.hot[1]-c.edge[1])*ne)|0)+','+((c.edge[2]+(c.hot[2]-c.edge[2])*ne)|0)+','+(0.85+ne*0.15)+')';
-        ctx.fillText(stages[kx], wx, wy+6);
-      }
-      ctx.globalCompositeOperation='source-over';
-    }
-
-    if(reduce){ draw(7.4); return; }                 // single static frame
-    (function loop(){ draw(); requestAnimationFrame(loop); })();
-  })();
+  function boot() {
+    var c = new Component({ showTeam: true, showResearchTab: true });
+    c.componentDidMount();
+    var form = document.getElementById('pl-connect');
+    if (form) form.addEventListener('submit', c.onSubmit);
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
 })();
 </script>
 </body>

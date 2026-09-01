@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#05070F">
+<meta name="color-scheme" content="dark">
+<title>Perpetual Labs — Research Brain Map</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz@0,6..72;1,6..72&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#05070F;
+    --c-model:#5AA8FF;   /* Model training */
+    --c-data:#E9C88C;    /* Data */
+    --c-vert:#7C8CFF;    /* Verticals */
+    --c-gold:#E9C88C;    /* insight / accent */
+    --ink:#E8ECF5;
+    --muted:#8893A8;
+    --card:rgba(8,12,22,.97);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;height:100%;background:var(--bg);overflow:hidden}
+  #wrap{position:fixed;inset:0;background:radial-gradient(120% 120% at 50% 42%, #0b1226 0%, #06091a 48%, #05070F 78%)}
+  #graph{position:absolute;inset:0}
+  /* soft vignette + central "glow" so the cloud reads as alive */
+  #wrap::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(46% 46% at 50% 50%, rgba(90,168,255,.06) 0%, rgba(233,200,140,.04) 35%, transparent 70%);
+    mix-blend-mode:screen;}
+  canvas{display:block;outline:none}
+
+  /* ---- Floating hover/tap card ---- */
+  #card{
+    position:absolute;top:0;left:0;max-width:320px;
+    background:var(--card);
+    border:1px solid rgba(233,200,140,.28);
+    border-radius:12px;
+    padding:13px 15px 14px;
+    color:var(--ink);
+    font-family:"JetBrains Mono",ui-monospace,monospace;
+    font-size:11.5px;line-height:1.5;
+    box-shadow:0 18px 50px rgba(0,0,0,.6),0 0 0 1px rgba(0,0,0,.4) inset;
+    pointer-events:none;opacity:0;transform:translateY(8px) scale(.97);transform-origin:top left;
+    transition:opacity .18s cubic-bezier(.16,1,.3,1), transform .22s cubic-bezier(.16,1,.3,1);
+    z-index:30;backdrop-filter:blur(3px);will-change:left,top,opacity,transform;
+  }
+  #card.show{opacity:1;transform:translateY(0) scale(1)}
+  #card .kicker{
+    display:inline-block;font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--c-gold);margin-bottom:6px;font-weight:600;
+  }
+  #card .title{
+    font-family:"Newsreader",Georgia,serif;font-size:16.5px;line-height:1.28;
+    color:#F4F1E9;margin:1px 0 8px;font-weight:500;
+  }
+  #card .meta{color:var(--muted);font-size:10.5px;margin:2px 0}
+  #card .meta b{color:var(--ink);font-weight:500}
+  #card .row{display:flex;align-items:center;gap:6px;margin-top:7px}
+  #card .dot{width:8px;height:8px;border-radius:50%;flex:0 0 auto;box-shadow:0 0 8px currentColor}
+  #card .cta{margin-top:9px;color:var(--c-gold);font-size:10px;letter-spacing:.06em;opacity:.9}
+
+  /* ---- Persistent, clickable INSIGHT labels (the map's primary targets) ---- */
+  #labels{position:absolute;inset:0;z-index:18;pointer-events:none;}
+  .ilabel{position:absolute;left:0;top:0;transform:translate(-50%,-140%);
+    font:600 10px/1.2 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.01em;
+    color:#FFE6B0;background:rgba(8,12,22,.62);border:1px solid rgba(233,200,140,.30);
+    border-radius:6px;padding:3px 8px;white-space:nowrap;max-width:200px;overflow:hidden;text-overflow:ellipsis;
+    cursor:pointer;pointer-events:none;opacity:0;backdrop-filter:blur(2px);
+    transition:opacity .25s ease, border-color .18s ease, background .18s ease, color .18s ease;}
+  .ilabel:hover{border-color:rgba(233,200,140,.75);background:rgba(12,18,32,.95);color:#fff;}
+  .ilabel.pulse{animation:ipulse 1.4s ease-out;}
+  @keyframes ipulse{0%{box-shadow:0 0 0 0 rgba(233,200,140,.5);border-color:rgba(233,200,140,.95);}
+    100%{box-shadow:0 0 0 14px rgba(233,200,140,0);border-color:rgba(233,200,140,.30);}}
+
+  /* ---- Legend ---- */
+  #legend{
+    position:absolute;left:14px;bottom:14px;z-index:20;
+    background:rgba(8,12,22,.78);border:1px solid rgba(255,255,255,.08);
+    border-radius:10px;padding:10px 12px;
+    font-family:"JetBrains Mono",monospace;font-size:10px;color:var(--muted);
+    backdrop-filter:blur(4px);
+  }
+  #legend .li{display:flex;align-items:center;gap:8px;margin:3px 0}
+  #legend .sw{width:9px;height:9px;border-radius:50%;box-shadow:0 0 7px currentColor;flex:0 0 auto}
+  #legend .sw.big{width:13px;height:13px}
+  #legend .lbl{color:var(--ink)}
+  #legend .lbl b{color:#FFE6B0;font-weight:600}
+  #legend .li.note{display:block;color:var(--muted);margin-top:7px;padding-top:6px;border-top:1px solid rgba(255,255,255,.07);
+    font-size:9px;line-height:1.45;max-width:158px}
+
+  /* ---- Top-left title + hint ---- */
+  #brand{position:absolute;left:16px;top:14px;z-index:20;font-family:"JetBrains Mono",monospace;pointer-events:none}
+  #brand .h{font-family:"Newsreader",serif;font-size:15px;color:#F4F1E9;letter-spacing:.01em}
+  #brand .h b{color:var(--c-gold);font-weight:600}
+  #hint{margin-top:4px;font-size:10px;color:var(--muted);letter-spacing:.04em}
+
+  /* loading + error */
+  #loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    z-index:40;color:var(--muted);font-family:"JetBrains Mono",monospace;font-size:12px;
+    letter-spacing:.08em;background:var(--bg);transition:opacity .5s ease}
+  #loading.hide{opacity:0;pointer-events:none}
+  #loading .pulse{display:inline-block;animation:pulse 1.4s ease-in-out infinite}
+  @keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+  #err{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    z-index:41;color:#ff9a9a;font-family:"JetBrains Mono",monospace;font-size:12px;padding:24px;text-align:center}
+
+  @media (max-width:560px){
+    #card{max-width:74vw;font-size:11px}
+    #brand .h{font-size:13px}
+    #legend{font-size:9px;padding:8px 10px}
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+  <div id="graph"></div>
+
+  <div id="brand">
+    <div id="hint">drag to rotate · hover to preview · <b style="color:#FFE6B0">click an insight to read it</b></div>
+  </div>
+
+  <div id="legend">
+    <div class="li"><span class="sw big" style="color:#FFE6B0;background:#FFE6B0"></span><span class="lbl"><b>Insight</b> — click to read</span></div>
+    <div class="li"><span class="sw" style="color:#5AA8FF;background:#5AA8FF"></span><span class="lbl">Model training</span></div>
+    <div class="li"><span class="sw" style="color:#E9C88C;background:#E9C88C"></span><span class="lbl">Data</span></div>
+    <div class="li"><span class="sw" style="color:#7C8CFF;background:#7C8CFF"></span><span class="lbl">Verticals</span></div>
+    <div class="li note">the small dots are the papers — context behind the insights</div>
+  </div>
+
+  <div id="card"></div>
+  <div id="loading"><span class="pulse">wiring the brain…</span></div>
+  <div id="err"></div>
+</div>
+
+<!-- 3d-force-graph bundles its own Three.js; do NOT load a second Three (causes a fatal multi-instance render conflict) -->
+<script
+  src="assets/3d-force-graph-1.73.4.min.js"
+  integrity="sha384-GNPicn8pBA2/PGSyPTpxIlPurgLUYcNYJ2zskIq782dE9+gp5E32WSyuxZqA7J+u"
+  crossorigin="anonymous"></script>
+<script>
+(function(){
+  "use strict";
+  var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var TOUCH = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  if(TOUCH){ var _h=document.getElementById('hint'); if(_h) _h.innerHTML='tap an insight to read it · drag to rotate'; }
+
+  // ---- palette ----
+  var THEME_COLOR = {
+    "Model training": "#5AA8FF",
+    "Data":           "#E9C88C",
+    "Verticals":      "#7C8CFF"
+  };
+  var INSIGHT_COLOR = "#FFE6B0";   // brighter gold so insights pop as the "hot" nodes
+  var THEME_HUB = { "Model training":"#9CCBFF", "Data":"#F4DDB0", "Verticals":"#A9B4FF" };
+
+  var REL_COLOR = {
+    "agrees":      "rgba(90,168,255,0.55)",
+    "contradicts": "rgba(124,140,255,0.6)",
+    "extends":     "rgba(233,200,140,0.55)",
+    "supports":    "rgba(233,200,140,0.14)",
+    "draws-from":  "rgba(165,180,215,0.08)",
+    "contains":    "rgba(150,165,200,0.06)"
+  };
+  var REL_HI = {
+    "agrees":"#7FC0FF", "contradicts":"#A8B4FF", "extends":"#FFE0AC",
+    "supports":"rgba(233,200,140,0.7)", "draws-from":"rgba(190,205,235,0.5)", "contains":"rgba(190,205,235,0.45)"
+  };
+  var REL_WIDTH = { agrees:0.9, contradicts:0.9, extends:0.9, supports:0.5, "draws-from":0.35, contains:0.3 };
+
+  // three distinct lobe anchors -> three brain lobes (kept moderate so the cloud reads as one brain)
+  var LOBE = {
+    "Model training": { x:-230, y:  50, z:   0 },
+    "Data":           { x: 210, y:  70, z: -30 },
+    "Verticals":      { x:  10, y:-200, z:  40 }
+  };
+
+  var elCard = document.getElementById('card');
+  var elLoad = document.getElementById('loading');
+  var elErr  = document.getElementById('err');
+  function showErr(msg){ elErr.style.display='flex'; elErr.textContent = msg; elLoad.classList.add('hide'); }
+
+  fetch('reasoning_map.json', {cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(build)
+    .catch(function(e){ showErr('Could not load reasoning_map.json — '+e.message); });
+
+  function build(data){
+    var rawNodes = data.nodes || [];
+    var rawEdges = data.edges || [];
+    var byId = {}; rawNodes.forEach(function(n){ byId[n.id] = n; });
+
+    // how many distinct insights "support" each paper, and #papers per insight
+    var supportsByPaper = {}, papersByInsight = {};
+    rawEdges.forEach(function(e){
+      if(e.relation === 'supports'){
+        var ins = byId[e.src], pap = byId[e.dst];
+        if(ins && ins.type==='insight' && pap){
+          (supportsByPaper[pap.id] = supportsByPaper[pap.id] || {})[ins.id] = 1;
+          papersByInsight[ins.id] = (papersByInsight[ins.id]||0)+1;
+        }
+      }
+    });
+
+    // ---- nodes: size, color, lobe seeding ----
+    var nodes = rawNodes.map(function(n){
+      var o = Object.assign({}, n);
+      if(n.type === 'theme'){
+        o.__size = 28;
+        o.__color = THEME_HUB[n.label] || INSIGHT_COLOR;
+        var L = LOBE[n.label];
+        if(L){ o.fx = L.x; o.fy = L.y; o.fz = L.z; }   // pin hubs so lobes stay separated
+      } else if(n.type === 'insight'){
+        o.__size = 21;                 // insights are the heroes — big, bright, labelled
+        o.__color = INSIGHT_COLOR;
+        var th = n.themes || [], sx=0,sy=0,sz=0,c=0;
+        th.forEach(function(t){ var L=LOBE[t]; if(L){sx+=L.x;sy+=L.y;sz+=L.z;c++;} });
+        if(c){ o.x = sx/c + (Math.random()-0.5)*70; o.y = sy/c + (Math.random()-0.5)*70; o.z = sz/c + (Math.random()-0.5)*70; }
+      } else { // paper — small, receding context behind the insights
+        var cites = (supportsByPaper[n.id] ? Object.keys(supportsByPaper[n.id]).length : (n.cited_by&&n.cited_by.length)||0);
+        o.__size = 2 + Math.min(cites,3)*0.9;
+        o.__color = THEME_COLOR[n.theme] || "#9aa6c0";
+        var L2 = LOBE[n.theme];
+        if(L2){ o.x = L2.x + (Math.random()-0.5)*230; o.y = L2.y + (Math.random()-0.5)*230; o.z = L2.z + (Math.random()-0.5)*230; }
+      }
+      o.__cited = (supportsByPaper[n.id] ? Object.keys(supportsByPaper[n.id]).length : ((n.cited_by&&n.cited_by.length)||0));
+      return o;
+    });
+    var nodeById = {}; nodes.forEach(function(n){ nodeById[n.id] = n; });
+
+    var links = rawEdges.map(function(e){
+      return { source:e.src, target:e.dst, relation:e.relation, note:e.note,
+               __color: REL_COLOR[e.relation] || 'rgba(150,160,190,0.06)',
+               __w: REL_WIDTH[e.relation] || 0.3 };
+    });
+
+    // adjacency for hover highlight
+    var adj = {};
+    links.forEach(function(l){
+      (adj[l.source] = adj[l.source] || {})[l.target] = 1;
+      (adj[l.target] = adj[l.target] || {})[l.source] = 1;
+    });
+
+    var highlightNodes = new Set();
+    var highlightLinks = new Set();
+    var hoverNode = null;
+    // popup state — card persists across adjacent nodes and glides to the cursor
+    var hideTimer = null, cardShown = false, cardX = 0, cardY = 0, tgtX = 0, tgtY = 0;
+
+    var Graph = ForceGraph3D({ rendererConfig:{ antialias:true, alpha:true, powerPreference:'high-performance' } })
+      (document.getElementById('graph'))
+      .backgroundColor('rgba(0,0,0,0)')
+      .showNavInfo(false)
+      .nodeRelSize(1)
+      .nodeVal(function(n){ return n.__size; })
+      .nodeColor(function(n){
+        if(highlightNodes.size && !highlightNodes.has(n.id)) return dim(n.__color);
+        return n.__color;
+      })
+      .nodeOpacity(0.96)
+      .nodeResolution(16)
+      .nodeLabel(function(){ return ''; })   // we use a custom HTML card instead of the default tooltip
+      .linkColor(function(l){ return highlightLinks.has(l) ? (REL_HI[l.relation]||l.__color) : l.__color; })
+      .linkWidth(function(l){ return highlightLinks.has(l) ? Math.max(1.1, l.__w*2) : l.__w; })
+      .linkOpacity(0.72)
+      // ambient "firing" — a signal travels every reasoning synapse so the brain reads as alive,
+      // and a hovered node lights its whole neighbourhood brighter/faster
+      .linkDirectionalParticles(function(l){
+        if(highlightLinks.has(l)) return 4;
+        return (l.relation==='agrees'||l.relation==='contradicts'||l.relation==='extends') ? 1 : 0;
+      })
+      .linkDirectionalParticleWidth(function(l){ return highlightLinks.has(l) ? 2.6 : 1.5; })
+      .linkDirectionalParticleSpeed(function(l){ return highlightLinks.has(l) ? 0.009 : 0.004; })
+      .linkDirectionalParticleColor(function(l){ return REL_HI[l.relation] || l.__color; })
+      .onNodeHover(onHover)
+      .onNodeClick(onClick)
+      .onBackgroundClick(function(){ if(hoverNode) onHover(null); })
+      .graphData({ nodes: nodes, links: links });
+
+    // forces: denser packing so the cloud reads as one organic mass; short "contains" so papers hug their hub
+    Graph.d3Force('charge').strength(-92);
+    Graph.d3Force('link').distance(function(l){
+      var rel = l.relation;
+      if(rel==='contains') return 34;
+      if(rel==='draws-from') return 95;
+      return 60;
+    });
+    Graph.cooldownTicks(200);
+
+    // lighting (uses the library's bundled three internally)
+    try{
+      var scene = Graph.scene();
+      var T = window.__pl_three || null;
+    }catch(e){}
+
+    var renderer = Graph.renderer();
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));   // cap DPR at 2
+
+    // deliberate framing: lobes live within ~±230, so this distance shows the whole brain
+    var CAM_Z = 680;
+    Graph.cameraPosition({ x:30, y:-20, z:CAM_Z }, {x:0,y:-30,z:0});
+
+    // ---- auto-rotate, pauses ~2.5s after interaction; off for reduced-motion ----
+    var controls = Graph.controls();
+    var autoRotate = !REDUCED;
+    // hold auto-rotation off for the first ~3.5s so it doesn't fight the layout settling
+    var lastInteract = performance.now() + 1000, ROT = 0.0005;
+    ['mousedown','touchstart','wheel'].forEach(function(ev){
+      renderer.domElement.addEventListener(ev, function(){ lastInteract = performance.now(); }, {passive:true});
+    });
+    controls.addEventListener('start', function(){ lastInteract = performance.now(); });
+
+    Graph.onEngineTick(function(){
+      if(!autoRotate) return;
+      if(performance.now() - lastInteract < 2500) return;
+      var cam = Graph.camera(), a = ROT;
+      var x = cam.position.x, z = cam.position.z;
+      cam.position.x = x*Math.cos(a) - z*Math.sin(a);
+      cam.position.z = x*Math.sin(a) + z*Math.cos(a);
+      cam.lookAt(0,0,0);
+    });
+
+    var settled = false;
+    Graph.onEngineStop(function(){ if(!settled){ settled = true; elLoad.classList.add('hide'); } });
+    setTimeout(function(){ elLoad.classList.add('hide'); }, 2600); // safety
+
+    // ---------- hover / highlight ----------
+    function onHover(node){
+      if(node === hoverNode) return;
+      hoverNode = node;
+      highlightNodes.clear(); highlightLinks.clear();
+      if(node){
+        highlightNodes.add(node.id);
+        var nb = adj[node.id] || {};
+        Object.keys(nb).forEach(function(id){ highlightNodes.add(id); });
+        links.forEach(function(l){
+          var s = (l.source.id!=null?l.source.id:l.source), t = (l.target.id!=null?l.target.id:l.target);
+          if(s===node.id || t===node.id) highlightLinks.add(l);
+        });
+        clearTimeout(hideTimer);
+        showCard(node);
+        renderer.domElement.style.cursor = 'pointer';
+      } else {
+        renderer.domElement.style.cursor = '';
+        // brief grace so sliding from one node to an adjacent one doesn't flash the card off
+        hideTimer = setTimeout(hideCard, 140);
+      }
+      refresh();
+    }
+    // re-trigger accessors so colors / widths / firing particles update
+    function refresh(){
+      Graph.nodeColor(Graph.nodeColor());
+      Graph.linkColor(Graph.linkColor()).linkWidth(Graph.linkWidth())
+           .linkDirectionalParticles(Graph.linkDirectionalParticles());
+    }
+
+    // open an insight's analysis (sibling file iNN.html), breaking out of the iframe
+    function openInsight(n){
+      try { window.open(n.id + '.html', '_top'); }
+      catch(e){ try{ window.top.location.href = n.id + '.html'; }catch(e2){ location.href = n.id + '.html'; } }
+    }
+
+    // ---------- click ----------
+    function onClick(node){
+      if(!node) return;
+      if(node.type === 'insight'){
+        openInsight(node);                       // INSIGHTS are the one-click destination
+      } else if(node.type === 'paper'){
+        // papers never exit to arXiv from the map — clicking one TRACES the analyses it feeds,
+        // routing attention toward the insights (read those via the analysis pages / source lists)
+        var insIds = supportsByPaper[node.id] ? Object.keys(supportsByPaper[node.id]) : [];
+        highlightNodes.clear(); highlightLinks.clear();
+        highlightNodes.add(node.id);
+        insIds.forEach(function(id){ highlightNodes.add(id); });
+        links.forEach(function(l){
+          var s=(l.source.id!=null?l.source.id:l.source), t=(l.target.id!=null?l.target.id:l.target);
+          if((s===node.id && insIds.indexOf(t)>=0) || (t===node.id && insIds.indexOf(s)>=0)) highlightLinks.add(l);
+        });
+        hoverNode = node; clearTimeout(hideTimer); showCard(node);
+        insIds.forEach(function(id){ var nn=nodeById[id]; if(nn && nn.__label){
+          nn.__label.classList.remove('pulse'); void nn.__label.offsetWidth; nn.__label.classList.add('pulse'); } });
+        refresh();
+      } else if(node.type === 'theme'){
+        var L = LOBE[node.label] || {x:0,y:0,z:0};
+        Graph.cameraPosition({ x:L.x*1.3, y:L.y*1.3, z:L.z*1.3 + 360 }, {x:L.x,y:L.y,z:L.z}, 900);
+      }
+    }
+
+    // ---------- floating card ----------
+    function esc(s){ return String(s==null?'':s).replace(/[&<>]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;'}[c];}); }
+    function themeDot(t){
+      var hx = THEME_COLOR[t] || '#9aa6c0';
+      return '<span class="dot" style="color:'+hx+';background:'+hx+'"></span>';
+    }
+    function showCard(n){
+      var html='';
+      if(n.type==='paper'){
+        var cb = n.__cited||0;
+        var pcta = cb>0 ? ('→ click to trace its '+cb+' analys'+(cb===1?'is':'es'))
+                        : 'context paper · reach it via an analysis';
+        html =
+          '<span class="kicker">Paper · context</span>'+
+          '<div class="title">'+esc(n.label)+'</div>'+
+          '<div class="meta"><b>'+esc(n.authors||'—')+'</b>'+(n.year?(' · '+esc(n.year)):'')+'</div>'+
+          '<div class="row">'+themeDot(n.theme)+'<span class="meta" style="margin:0">'+esc(n.theme||'')+'</span></div>'+
+          '<div class="meta" style="margin-top:6px">feeds <b>'+cb+'</b> insight'+(cb===1?'':'s')+'</div>'+
+          '<div class="cta">'+pcta+'</div>';
+      } else if(n.type==='insight'){
+        var th = (n.themes||[]);
+        var np = papersByInsight[n.id] || n.n_papers || 0;
+        html =
+          '<span class="kicker">Insight · '+esc(n.insight_type||'')+'</span>'+
+          '<div class="title">'+esc(n.label)+'</div>'+
+          '<div class="meta">connects '+th.map(function(t){return themeDot(t)+' '+esc(t);}).join(' &nbsp; ')+'</div>'+
+          '<div class="meta" style="margin-top:6px">drawn from <b>'+np+'</b> papers</div>'+
+          '<div class="cta" style="opacity:1;font-weight:600">→ click to read the analysis</div>';
+      } else { // theme
+        var pc = countPapers(n.label);
+        html =
+          '<span class="kicker">Theme · lobe</span>'+
+          '<div class="title">'+esc(n.label)+'</div>'+
+          '<div class="meta"><b>'+pc+'</b> papers in this lobe</div>'+
+          '<div class="cta">→ click to focus this lobe</div>';
+      }
+      elCard.innerHTML = html;
+      setTarget();
+      // first appearance: snap to the target so it fades in IN PLACE (no glide from a stale spot)
+      if(!cardShown){ cardX = tgtX; cardY = tgtY; elCard.style.left = cardX+'px'; elCard.style.top = cardY+'px'; }
+      cardShown = true;
+      elCard.classList.add('show');
+      setTarget();   // recompute now the card has real dimensions
+    }
+    function hideCard(){ cardShown = false; elCard.classList.remove('show'); }
+
+    var mouse = { x: window.innerWidth*0.5, y: 80 };
+    function setTarget(){
+      var pad=14, w=elCard.offsetWidth||300, h=elCard.offsetHeight||150;
+      var x = mouse.x + 18, y = mouse.y + 18;
+      if(x + w + pad > window.innerWidth) x = mouse.x - w - 18;
+      if(y + h + pad > window.innerHeight) y = window.innerHeight - h - pad;
+      if(x < pad) x = pad; if(y < pad) y = pad;
+      tgtX = x; tgtY = y;
+    }
+    document.addEventListener('mousemove', function(e){ mouse.x=e.clientX; mouse.y=e.clientY; if(cardShown) setTarget(); }, {passive:true});
+
+    // ---------- persistent, clickable INSIGHT labels — make the 17 insights the easy targets ----------
+    function shortLabel(s){
+      s = String(s||''); if(s.length<=34) return s;
+      var cut = s.slice(0,34), sp = cut.lastIndexOf(' ');
+      return (sp>18?cut.slice(0,sp):cut)+'…';
+    }
+    var labelLayer = document.createElement('div'); labelLayer.id='labels';
+    document.getElementById('wrap').appendChild(labelLayer);
+    var insightNodes = nodes.filter(function(n){ return n.type==='insight'; });
+    insightNodes.forEach(function(n){
+      var d = document.createElement('button'); d.type='button'; d.className='ilabel';
+      d.textContent = shortLabel(n.label); d.title = n.label;
+      d.setAttribute('aria-label', 'Read insight: ' + n.label);
+      d.addEventListener('click', function(ev){ ev.stopPropagation(); openInsight(n); });
+      d.addEventListener('mouseenter', function(){ onHover(n); });
+      d.addEventListener('mouseleave', function(){ onHover(null); });
+      labelLayer.appendChild(d); n.__label = d;
+    });
+    function updateLabels(){
+      var cp = Graph.camera().position, tg = (controls && controls.target) || {x:0,y:0,z:0};
+      var fx=tg.x-cp.x, fy=tg.y-cp.y, fz=tg.z-cp.z, fl=Math.hypot(fx,fy,fz)||1; fx/=fl; fy/=fl; fz/=fl;
+      // collect front-facing, in-range candidates
+      var cand=[];
+      for(var i=0;i<insightNodes.length;i++){
+        var n=insightNodes[i], d=n.__label;
+        if(n.x==null){ d.style.opacity=0; d.style.pointerEvents='none'; continue; }
+        var rx=n.x-cp.x, ry=n.y-cp.y, rz=n.z-cp.z;
+        var dist=Math.hypot(rx,ry,rz);
+        if((rx*fx+ry*fy+rz*fz)<=0 || dist>1250){ d.style.opacity=0; d.style.pointerEvents='none'; continue; }
+        var sc=Graph.graph2ScreenCoords(n.x,n.y,n.z);
+        cand.push({d:d, x:sc.x, y:sc.y, dist:dist});
+      }
+      // nearest wins; hide any label that would overlap one already placed (keeps it minimal, not cluttered)
+      cand.sort(function(a,b){ return a.dist-b.dist; });
+      var placed=[];
+      for(var j=0;j<cand.length;j++){
+        var c=cand[j], clash=false;
+        for(var k=0;k<placed.length;k++){
+          if(Math.abs(placed[k].x-c.x)<165 && Math.abs(placed[k].y-c.y)<21){ clash=true; break; }
+        }
+        if(clash){ c.d.style.opacity=0; c.d.style.pointerEvents='none'; continue; }
+        placed.push(c);
+        var op = c.dist>880?0.5:0.86;
+        c.d.style.opacity=op; c.d.style.pointerEvents='auto';
+        c.d.style.transform='translate(-50%,-140%) translate('+c.x.toFixed(1)+'px,'+c.y.toFixed(1)+'px)';
+      }
+    }
+    // one frame loop: glide the hover card toward the cursor + pin insight labels to their moving nodes
+    (function frame(){
+      requestAnimationFrame(frame);
+      if(cardShown){
+        cardX += (tgtX - cardX) * 0.2; cardY += (tgtY - cardY) * 0.2;
+        elCard.style.left = cardX.toFixed(1) + 'px'; elCard.style.top  = cardY.toFixed(1) + 'px';
+      }
+      updateLabels();
+    })();
+
+    function countPapers(theme){
+      var c=0; nodes.forEach(function(n){ if(n.type==='paper' && (n.theme===theme || (n.themes&&n.themes.indexOf(theme)>=0))) c++; }); return c;
+    }
+
+    // dim a hex/rgb color for the non-highlighted state
+    function dim(col){
+      if(col[0] === '#'){
+        var n = parseInt(col.slice(1),16);
+        var r=((n>>16)&255), g=((n>>8)&255), b=(n&255);
+        return 'rgba('+Math.round(r*0.4)+','+Math.round(g*0.4)+','+Math.round(b*0.4)+',0.35)';
+      }
+      return col;
+    }
+
+    // ---------- touch: tap shows card; tap empty clears ----------
+    var touchMoved=false;
+    renderer.domElement.addEventListener('touchstart', function(){ touchMoved=false; }, {passive:true});
+    renderer.domElement.addEventListener('touchmove', function(){ touchMoved=true; }, {passive:true});
+    renderer.domElement.addEventListener('touchend', function(e){
+      if(touchMoved) return;
+      var t = e.changedTouches && e.changedTouches[0];
+      if(t){ mouse.x=t.clientX; mouse.y=t.clientY; }
+    }, {passive:true});
+
+    // ---------- pause render when hidden / scrolled out of view ----------
+    function onVis(){ if(Graph.pauseAnimation){ document.hidden ? Graph.pauseAnimation() : Graph.resumeAnimation(); } }
+    document.addEventListener('visibilitychange', onVis);
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(en){
+        en.forEach(function(x){
+          if(x.isIntersecting){ Graph.resumeAnimation && Graph.resumeAnimation(); }
+          else { Graph.pauseAnimation && Graph.pauseAnimation(); }
+        });
+      }, {threshold:0.01});
+      io.observe(document.getElementById('wrap'));
+    }
+
+    // ---------- resize ----------
+    function resize(){ Graph.width(window.innerWidth).height(window.innerHeight); }
+    window.addEventListener('resize', resize);
+    resize();
+  } // build
+})();
+</script>
+</body>
+</html>

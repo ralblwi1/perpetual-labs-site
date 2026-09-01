@@ -1,0 +1,290 @@
+[
+  {
+    "id": "i01",
+    "headline": "The data wall makes verifiable-reward environments the next training-data asset class",
+    "text_block": "Three separate lines of evidence — that public human text runs out around 2026–2032, that repeating data past ~4 epochs stops helping, and that repetition actively damages the model's reasoning circuitry — converge on a conclusion none of them states alone: scaling on scraped text is ending, and the only data source that keeps producing fresh gradient signal is interaction with a verifiable environment. The same window saw RL-from-verifiable-rewards (RLVR) move from niche to the core recipe behind frontier reasoning models. That reframes 'environments with checkable outcomes' from a training trick into a durable, manufacturable data asset.",
+    "type": "opportunity",
+    "supporting_paper_ids": ["2211.04325", "2305.16264", "2205.10487", "2411.15124", "2501.12948", "2305.20050"],
+    "citations": [
+      {"claim": "The public stock of human text is forecast to be exhausted in the late 2020s.", "paper_id": "2211.04325", "quote": "If current trends continue, LMs will fully utilize the stock of human-generated public text between 2026 and 2032 (or slightly earlier if models are overtrained)."},
+      {"claim": "Repeating data is not a workaround — its value decays toward zero.", "paper_id": "2305.16264", "quote": "Up to 4 epochs of repeated data yields negligible changes to loss compared to unique data; beyond ~16 epochs, returns from added compute decay to zero."},
+      {"claim": "Repetition mechanistically degrades the circuits that drive generalization.", "paper_id": "2205.10487", "quote": "Data repetition disproportionately damages copying and induction heads, shifting models from generalization toward memorization."},
+      {"claim": "Verifiable rewards became a first-class post-training stage, not a niche.", "paper_id": "2411.15124", "quote": "Introduces and names RLVR (Reinforcement Learning with Verifiable Rewards), training on tasks with checkable answers like math and precise instruction-following."},
+      {"claim": "Reasoning capability can be created with RL on verifiable signal alone.", "paper_id": "2501.12948", "quote": "DeepSeek-R1-Zero is trained via large-scale RL with no supervised fine-tuning, yet develops emergent self-reflection, verification, and strategy adaptation."},
+      {"claim": "Verifiable, step-level signal beats more outcome labels for hard reasoning.", "paper_id": "2305.20050", "quote": "Process supervision significantly outperforms outcome supervision and majority voting, with the gap widening as the number of sampled solutions increases."}
+    ],
+    "why_non_obvious": "Each paper addresses its own question — when data runs out, whether repetition helps, what repetition does to circuits, how to do RLVR. None connects the data-exhaustion forecast to the RLVR turn. The synthesis — that the data wall is the economic reason verifiable environments become an asset class — is not in any single source.",
+    "pl_implication": "Building verifiable-reward environments in real verticals (e.g. clinical workflows with checkable coding/claims outcomes) is precisely the data asset that sidesteps the human-text data wall: it manufactures fresh, gradeable signal on demand rather than drawing down a finite stock. This is the core of Perpetual Labs' RL-environment thesis, and the literature says the timing is now.",
+    "pdf_path": "/data/pdf/i01.pdf"
+  },
+  {
+    "id": "i02",
+    "headline": "Capability leverage has shifted from compute to data engineering",
+    "text_block": "A run of results shows tiny models trained on curated or synthetic data beating models 5–700× larger, and shows that engineering the data mixture predictably buys accuracy at fixed compute. Read together, they mark a regime change: once Chinchilla established that models were undertrained on data, the binding constraint stopped being parameters and became the quality and composition of tokens. The frontier moved from 'who has the most GPUs' to 'who engineers the best data.'",
+    "type": "trend",
+    "supporting_paper_ids": ["2203.15556", "2306.11644", "2305.02301", "2305.10429", "2407.01492", "2406.11794"],
+    "citations": [
+      {"claim": "Models were systematically undertrained on data, elevating tokens to a first-class lever.", "paper_id": "2203.15556", "quote": "For compute-optimal training, model size and number of training tokens should be scaled equally; existing large models are significantly undertrained."},
+      {"claim": "Data quality can substitute for orders of magnitude of scale.", "paper_id": "2306.11644", "quote": "phi-1 (1.3B params) attains 50.6% pass@1 on HumanEval despite tiny scale, trained on 'textbook quality' web-filtered and synthetic data."},
+      {"claim": "Better supervision lets a small model beat a giant one.", "paper_id": "2305.02301", "quote": "A 770M T5 outperforms few-shot prompted 540B PaLM using only 80% of available examples, a >700x model-size reduction."},
+      {"claim": "Optimizing the data mixture is itself a predictable performance lever.", "paper_id": "2305.10429", "quote": "DoReMi uses a 280M proxy to set domain weights, then trains an 8B model reaching baseline accuracy with 2.6x fewer training steps."},
+      {"claim": "Mixture choice can be optimized as a regression and beats human selection.", "paper_id": "2407.01492", "quote": "RegMix predicts the best data mixture and outperforms human selection up to 7B models, matching DoReMi with only 10% of the compute."},
+      {"claim": "Model-based data filtering is the key lever for state-of-the-art training sets.", "paper_id": "2406.11794", "quote": "Model-based filtering was key; DCLM-Baseline trains a 7B model to 64% MMLU with 2.6T tokens, a 6.6 point gain while using 40% less compute."}
+    ],
+    "why_non_obvious": "Individually these are results about one model or one method. The cross-paper claim — that the competitive bottleneck has structurally migrated from compute to data engineering — emerges only when the small-model-quality, distillation, and mixture-optimization literatures are placed side by side.",
+    "pl_implication": "Data engineering is where capability value now accrues — but general-purpose curation tooling is a crowded, commoditizing market. The defensible move is to own the scarce *input* rather than the technique: build and control proprietary, verifiable vertical data (a corpus plus a reward signal competitors cannot assemble) and apply this engineering to it. For Perpetual Labs that means pointing data-engineering capability at proprietary vertical assets — consistent with the proprietary-data-anchor and verifiable-outcome-vertical findings elsewhere in this map.",
+    "pdf_path": "/data/pdf/i02.pdf"
+  },
+  {
+    "id": "i03",
+    "headline": "More data is not monotonically good — its marginal value can go negative",
+    "text_block": "The field's default intuition is 'more tokens, lower loss.' Four results break it: repeated data can raise test loss mid-training, multi-epoch training triggers overfitting governed by dataset size and parameters, low-precision quantization makes additional pretraining data actively harmful, and aggressive pruning beats power-law scaling. The consensus they form — that the marginal token can have zero or negative value — inverts the scaling-era reflex and makes selection, not accumulation, the lever.",
+    "type": "contradiction",
+    "supporting_paper_ids": ["2205.10487", "2305.13230", "2411.04330", "2206.14486"],
+    "citations": [
+      {"claim": "Repeated data can make the model worse partway through training.", "paper_id": "2205.10487", "quote": "Found a strong double-descent phenomenon where repeated data can cause test loss to increase midway through training."},
+      {"claim": "Multi-epoch repetition causes overfitting degradation driven by data and model size.", "paper_id": "2305.13230", "quote": "Repeating data for more epochs makes models susceptible to overfitting, causing multi-epoch degradation."},
+      {"claim": "Under quantization, more pretraining data eventually hurts.", "paper_id": "2411.04330", "quote": "Degradation from post-training quantization increases as models are trained on more data, eventually making additional pretraining data actively harmful."},
+      {"claim": "Throwing data away can beat scaling it up.", "paper_id": "2206.14486", "quote": "Good data pruning can beat power-law scaling, approaching exponential scaling of error with pruned dataset size."}
+    ],
+    "why_non_obvious": "Each paper reports a specific failure of 'more is better,' but none generalizes the point. The unifying claim — that data has a non-monotonic, sometimes negative marginal value, so the scarce skill is selection — is a synthesis across the repetition, precision, and pruning literatures.",
+    "pl_implication": "The product is not 'more data,' it is the judgment of which data to include and which to discard for a given model and deployment regime. A curation/selection service that can demonstrate negative-value removal is selling something volume vendors structurally cannot.",
+    "pdf_path": "/data/pdf/i03.pdf"
+  },
+  {
+    "id": "i04",
+    "headline": "Proprietary real data is the collapse-proof anchor — verticals that own it are defensible",
+    "text_block": "The model-collapse literature shows that recursively training on synthetic data destroys the distribution's tails — unless real data is kept in the mix, in which case collapse is avoided. Place that next to the vertical-LLM wins built on proprietary corpora (financial filings, experimentally-resolved protein structures, curated clinical text) and a defensibility thesis appears: the durable moat is the real-data anchor that synthetic generation cannot replace, and it is exactly the proprietary vertical corpora that supply it.",
+    "type": "vertical",
+    "supporting_paper_ids": ["2305.17493", "2307.01850", "2404.01413", "2303.17564", "alphafold-2021", "2311.16079"],
+    "citations": [
+      {"claim": "Training on generated data irreversibly erases the rare tails of the distribution.", "paper_id": "2305.17493", "quote": "Use of model-generated content in training causes irreversible defects where the tails of the original content distribution disappear ('model collapse')."},
+      {"claim": "Self-consuming loops degrade quality and diversity within a few generations.", "paper_id": "2307.01850", "quote": "Defines Model Autophagy Disorder (MAD); appreciable MADness arises in just a few generations, degrading quality and diversity."},
+      {"claim": "Keeping real data in the mix is what prevents collapse.", "paper_id": "2404.01413", "quote": "Accumulating successive generations of synthetic data alongside the original real data avoids model collapse."},
+      {"claim": "A proprietary financial corpus produced a defensible domain model.", "paper_id": "2303.17564", "quote": "BloombergGPT, a 50B model trained on a 363 billion token financial dataset, outperforms existing open models of similar size on financial tasks by large margins."},
+      {"claim": "An experimental-data moat enabled a landmark capability.", "paper_id": "alphafold-2021", "quote": "Success attributed to a novel neural architecture trained on available 3D experimentally-resolved protein structures, crossing 90% accuracy at CASP14."},
+      {"claim": "Curated clinical corpora close most of the gap to frontier models.", "paper_id": "2311.16079", "quote": "MEDITRON-70B, via continued pretraining on a curated medical corpus, is within 5% of GPT-4 and 10% of Med-PaLM-2 on major medical benchmarks."}
+    ],
+    "why_non_obvious": "The collapse papers are about training dynamics; the vertical papers are about domain performance. Neither connects them. The insight — that the economic reason proprietary real data stays valuable is precisely that synthetic collapses without a real anchor — is the bridge between the two literatures.",
+    "pl_implication": "Securing proprietary real data in a vertical is not just a one-time training input; it is a structural moat, because the synthetic-data economy makes a real-data anchor a permanent dependency. Perpetual Labs should prioritize verticals where it can own or exclusively license the real-data anchor.",
+    "pdf_path": "/data/pdf/i04.pdf"
+  },
+  {
+    "id": "i05",
+    "headline": "Data curation is compute-relative — it's a recurring service, not a one-time dataset",
+    "text_block": "Curation is usually treated as building a dataset once. But filtering decisions that are optimal at one compute budget are shown to be suboptimal at another, inference-aware scaling pushes toward training smaller models on far more tokens, and quantization changes how much data is even safe to use. Together they imply the optimal corpus is a moving target that must be re-derived per compute and deployment regime — turning curation into an ongoing, re-priced service rather than a static artifact.",
+    "type": "opportunity",
+    "supporting_paper_ids": ["2404.07177", "2401.00448", "2411.04330", "2402.09739"],
+    "citations": [
+      {"claim": "Optimal curation depends on the compute budget — there is no universal recipe.", "paper_id": "2404.07177", "quote": "Optimal data curation depends on compute budget; the same filtering recipe is not optimal across compute scales."},
+      {"claim": "Deployment economics change the token target dramatically.", "paper_id": "2401.00448", "quote": "Developers expecting large inference demand should train models smaller and longer than Chinchilla-optimal, scaling to up to 10,000 tokens per parameter."},
+      {"claim": "Precision regime changes how much data is even usable.", "paper_id": "2411.04330", "quote": "Degradation from quantization increases as models are trained on more data, eventually making additional pretraining data actively harmful."},
+      {"claim": "Quality scoring is itself a tunable, criterion-specific model.", "paper_id": "2402.09739", "quote": "Trains a QuRater model from pairwise judgments and annotates a 260B-token corpus, finding educational value and required expertise yield strong performance."}
+    ],
+    "why_non_obvious": "Each paper optimizes curation for a fixed setting. The claim that there is no fixed optimum — that curation must be continuously re-derived as compute, inference demand, and precision shift — only appears when the compute-aware-filtering, inference-aware-scaling, and precision-scaling results are combined.",
+    "pl_implication": "Sell curation as a parameterized, recurring service tied to a buyer's compute budget, inference demand, and target precision — not as a frozen dataset. The recurring re-derivation is a subscription surface that a one-time data dump cannot capture.",
+    "pdf_path": "/data/pdf/i05.pdf"
+  },
+  {
+    "id": "i06",
+    "headline": "Verifiable-outcome verticals are the selection criterion for what data to build",
+    "text_block": "Across reasoning, the decisive advantage comes from supervision that can be objectively checked: process-level rewards beat outcome rewards, automatically-verified step labels lift accuracy without humans, and the RLVR recipe is explicitly scoped to 'tasks with checkable answers.' This converts a training finding into a vertical-selection rule — the verticals worth building data for are exactly those where outcomes are objectively gradeable (code that runs, math that checks, claims that adjudicate, diagnoses that confirm).",
+    "type": "vertical",
+    "supporting_paper_ids": ["2211.14275", "2305.20050", "2312.08935", "2411.15124", "2310.06770", "2411.04872"],
+    "citations": [
+      {"claim": "Supervising the reasoning process, not just the answer, is what reduces errors.", "paper_id": "2211.14275", "quote": "Process-based feedback (or outcome feedback combined with a learned step-level reward model) is needed to substantially reduce reasoning trace errors."},
+      {"claim": "Process reward models beat outcome rewards and scale better.", "paper_id": "2305.20050", "quote": "The process-supervised reward model solves 78% of MATH; process supervision significantly outperforms outcome supervision and majority voting."},
+      {"claim": "Verifiable step supervision can be generated automatically, cheaply.", "paper_id": "2312.08935", "quote": "Math-Shepherd automatically constructs process-wise supervision and lifts Mistral-7B from 77.9% to 84.1% on GSM8K via step-by-step PPO."},
+      {"claim": "The state-of-the-art recipe is explicitly scoped to checkable-answer tasks.", "paper_id": "2411.15124", "quote": "RLVR trains on tasks with checkable answers like math and precise instruction-following."},
+      {"claim": "Real, test-verified tasks define hard, gradeable benchmarks (and data).", "paper_id": "2310.06770", "quote": "SWE-bench draws real GitHub issues whose fixes are verified by tests; the best system resolved only 1.96% of issues."},
+      {"claim": "Even at the frontier, verifiable hard tasks remain unsolved — leaving headroom.", "paper_id": "2411.04872", "quote": "Leading AI models solve less than 2% of FrontierMath problems despite near-perfect scores on GSM-8k and MATH."}
+    ],
+    "why_non_obvious": "These are methods-and-benchmark papers about reasoning quality. None proposes 'verifiability' as a market-selection filter for which verticals to invest in. Lifting the process-reward result up into a vertical-selection rubric is the non-obvious move.",
+    "pl_implication": "This is the evidence base for Perpetual Labs' 'Clear Reward Signal' factor: prioritize verticals whose workflows throw off objective pass/fail outcomes, because that is where verifiable-reward data is both buildable and uniquely valuable. It is exactly why the dental claims/coding workflow is a strong target.",
+    "pdf_path": "/data/pdf/i06.pdf"
+  },
+  {
+    "id": "i07",
+    "headline": "RLVR often elicits latent skill rather than teaching it — so data matters most where skill is absent",
+    "text_block": "A striking 2025 result shows RLVR improving a Qwen math model even with random or incorrect rewards — but the same trick fails on Llama and OLMo. Combined with R1-Zero's pure-RL reasoning emergence and self-rewarding's bounded gains, the picture is that RLVR frequently surfaces capability the base model already latently holds. The consequence for data strategy is counter-intuitive: verifiable-reward data adds the most genuine value precisely where the capability is not already latent — i.e. in novel, specialized domains absent from pretraining.",
+    "type": "contradiction",
+    "supporting_paper_ids": ["2506.10947", "2501.12948", "2401.10020", "2305.20050"],
+    "citations": [
+      {"claim": "RLVR gains can appear even from spurious rewards — and are model-dependent.", "paper_id": "2506.10947", "quote": "On Qwen2.5-Math, RLVR improves MATH-500 even with random or incorrect-label rewards, but spurious rewards that work for Qwen often fail on Llama3 or OLMo2."},
+      {"claim": "Large-scale RL can elicit reasoning behaviors without any supervised teaching.", "paper_id": "2501.12948", "quote": "DeepSeek-R1-Zero develops emergent self-reflection, verification, and strategy adaptation via RL with no supervised fine-tuning."},
+      {"claim": "Self-generated reward improves a model but is bounded by its own ability.", "paper_id": "2401.10020", "quote": "During Iterative DPO, both instruction-following and the model's own reward-modeling ability improve together — bounded by the model judging itself."},
+      {"claim": "Process-level signal still adds real capability on genuinely hard tasks.", "paper_id": "2305.20050", "quote": "Process supervision significantly outperforms outcome supervision, with the gap widening as more solutions are sampled."}
+    ],
+    "why_non_obvious": "The spurious-rewards paper is read as a cautionary tale about RLVR evaluation. Connecting it to R1-Zero and self-rewarding to argue 'elicitation vs teaching, therefore target domains without latent skill' is a strategic inference no single paper draws.",
+    "pl_implication": "The highest-value verifiable-reward data is in domains the base models have not absorbed — specialized, proprietary, under-documented verticals — rather than math/code where gains may be elicitation of existing skill. This sharpens vertical choice toward genuine knowledge frontiers, where created data teaches rather than merely reveals.",
+    "pdf_path": "/data/pdf/i07.pdf"
+  },
+  {
+    "id": "i08",
+    "headline": "Aggregate benchmarks mislead about where data is needed — distribution-matched eval is required",
+    "text_block": "Two debates collide productively here: whether emergent abilities are real or a metric artifact, and whether pretraining loss even tracks downstream performance. The mirage result shows benchmark jumps can be measurement choices; the downstream-scaling result shows more pretraining can improve loss while worsening the actual task under distribution mismatch. The shared lesson — that headline benchmarks are an unreliable guide to where capability (and therefore data) is lacking — implies you must measure on the deployment distribution, which makes bespoke, task-matched evaluation a prerequisite, not a nicety.",
+    "type": "gap",
+    "supporting_paper_ids": ["2304.15004", "2206.07682", "2402.04177", "2405.10938"],
+    "citations": [
+      {"claim": "Apparent capability jumps can be artifacts of the metric, not the model.", "paper_id": "2304.15004", "quote": "Nonlinear or discontinuous metrics produce apparent emergent abilities; linear metrics yield smooth, predictable changes."},
+      {"claim": "Some abilities genuinely appear only past scale thresholds — emergence is contested.", "paper_id": "2206.07682", "quote": "An ability is 'emergent' if not present in smaller models but present in larger models, appearing as sharp, unpredictable transitions."},
+      {"claim": "Pretraining loss can improve while the downstream task gets worse.", "paper_id": "2402.04177", "quote": "Under moderate misalignment, BLEU can fluctuate or worsen with more pretraining even as downstream cross-entropy monotonically improves."},
+      {"claim": "Performance lives in a low-dimensional capability space — aggregates hide structure.", "paper_id": "2405.10938", "quote": "LM performance is a function of a low-dimensional capability space; model families differ mainly in compute-to-capability efficiency."}
+    ],
+    "why_non_obvious": "The emergence debate and the loss-vs-downstream debate are usually discussed separately. Joining them to conclude that aggregate benchmarks cannot tell you where to invest data — only distribution-matched evals can — is the synthesis.",
+    "pl_implication": "Buyers cannot trust MMLU-style aggregates to find their capability gaps, so deployment-distribution-matched evaluation is a prerequisite for knowing where to invest data at all — the measurement problem precedes the data-creation decision, and bespoke task-aligned eval is the way to locate the real gap.",
+    "pdf_path": "/data/pdf/i08.pdf"
+  },
+  {
+    "id": "i09",
+    "headline": "Static benchmarks decay — evaluation is a recurring, contamination-free data product",
+    "text_block": "Benchmarks saturate (MMLU pushed to MMLU-Pro and Humanity's Last Exam), leak into training sets (documented contamination of named datasets), and even live human-preference arenas can be gamed by data-access asymmetries. The contamination-free response is to continuously regenerate held-out questions from fresh sources. Put together, the lesson is that an evaluation's value has a half-life — which makes eval a subscription-shaped data stream, not a fixed dataset.",
+    "type": "opportunity",
+    "supporting_paper_ids": ["2406.01574", "2501.14249", "2406.04244", "2406.19314", "2403.07974", "2504.20879"],
+    "citations": [
+      {"claim": "Headline benchmarks saturate and must be made harder.", "paper_id": "2406.01574", "quote": "MMLU-Pro causes a significant accuracy drop of 16% to 33% compared to MMLU by adding harder, reasoning-focused questions."},
+      {"claim": "Saturation pushed the field to frontier-of-knowledge exams.", "paper_id": "2501.14249", "quote": "Motivated by saturation — LLMs now exceed 90% on benchmarks like MMLU — Humanity's Last Exam is built from 2,500 expert questions."},
+      {"claim": "Contamination silently inflates measured performance.", "paper_id": "2406.04244", "quote": "Benchmark data contamination inflates measured performance and undermines fair comparison."},
+      {"claim": "The fix is continuously regenerated, objectively-scored questions.", "paper_id": "2406.19314", "quote": "LiveBench releases new questions monthly from recent arXiv papers, news, and IMDb synopses, scored automatically against ground truth, to limit contamination."},
+      {"claim": "Contamination-free code eval requires a rolling problem stream.", "paper_id": "2403.07974", "quote": "LiveCodeBench continuously collects new problems over time from LeetCode, AtCoder, and Codeforces to avoid contamination."},
+      {"claim": "Even live human arenas can be distorted by data-access asymmetry.", "paper_id": "2504.20879", "quote": "Access to Chatbot Arena data can yield relative gains of up to 112% on the arena distribution, indicating overfitting risk."}
+    ],
+    "why_non_obvious": "Saturation, contamination, and arena-gaming are usually treated as separate evaluation problems. The product insight — that all three force evaluation into a continuously-refreshed subscription data stream — is the cross-cutting conclusion.",
+    "pl_implication": "A continuously-refreshed, held-out, verifiable eval per vertical is a recurring product with a built-in reason to renew (today's eval is contaminated tomorrow). It pairs naturally with the training-data offering and resists the commoditization that hits static datasets.",
+    "pdf_path": "/data/pdf/i09.pdf"
+  },
+  {
+    "id": "i10",
+    "headline": "The scarce good is rare-tail coverage — and verticals are the web's underrepresented tails",
+    "text_block": "Deduplication and diversity-selection improve models by removing redundancy and concentrating coverage, pruning beats scaling, and model collapse is fundamentally the disappearance of distribution tails. The unifying quantity across all of them is coverage of rare regions of the data manifold. Since the open web is dominated by a few high-frequency domains, the rare tails are exactly the specialized verticals — making vertical data the highest marginal-value data to create.",
+    "type": "gap",
+    "supporting_paper_ids": ["2107.06499", "2308.12284", "2303.09540", "2206.14486", "2305.17493"],
+    "citations": [
+      {"claim": "Removing duplicates improves models and corrects evaluation.", "paper_id": "2107.06499", "quote": "Deduplication makes models emit memorized text ten times less frequently and requires fewer training steps to reach the same accuracy."},
+      {"claim": "Selecting for diversity, not volume, drives efficiency gains.", "paper_id": "2308.12284", "quote": "D4 deduplicates and selects cluster centers in embedding space for ~20% training-efficiency gains and up to 2% downstream accuracy at 6.7B."},
+      {"claim": "Semantic redundancy is pervasive and removable at web scale.", "paper_id": "2303.09540", "quote": "SemDeDup removes 50% of LAION with minimal performance loss, effectively halving training time."},
+      {"claim": "Coverage-aware pruning can beat power-law scaling.", "paper_id": "2206.14486", "quote": "Good data pruning can beat power-law scaling, approaching exponential scaling of error with pruned dataset size."},
+      {"claim": "Collapse is precisely the loss of the distribution's rare tails.", "paper_id": "2305.17493", "quote": "Model collapse causes the tails of the original content distribution to disappear, losing rare and unique elements."}
+    ],
+    "why_non_obvious": "Dedup, diversity, pruning, and collapse are separate techniques and phenomena. Recognizing that they all reduce to 'rare-tail coverage is the scarce good,' and that the tails are the verticals, reframes vertical data from niche to highest-leverage.",
+    "pl_implication": "Aim data creation at web-underrepresented verticals — the tails — because that is where the marginal token is worth most and where redundancy-removal on the open web has nothing left to give. Underrepresentation is a feature, not a risk.",
+    "pdf_path": "/data/pdf/i10.pdf"
+  },
+  {
+    "id": "i11",
+    "headline": "In a vertical, the corpus is the durable moat — methods commoditize",
+    "text_block": "Across medicine, math, finance, and code, the same pattern recurs: domain capability tracks the domain corpus, and from-scratch or continued pretraining on in-domain text beats general models regardless of architecture. As methods (LoRA, GRPO, distillation) are openly published and copied within months, the one component that does not commoditize is the proprietary or painstakingly-mined domain corpus. The moat is the data, not the recipe.",
+    "type": "trend",
+    "supporting_paper_ids": ["2007.15779", "2305.09617", "2310.10631", "2402.03300"],
+    "citations": [
+      {"claim": "For data-rich domains, in-domain pretraining beats adapting a general model.", "paper_id": "2007.15779", "quote": "Pretraining from scratch on in-domain biomedical text yields substantial gains over continual pretraining of general-domain models."},
+      {"claim": "Domain fine-tuning data drives expert-level performance.", "paper_id": "2305.09617", "quote": "Med-PaLM 2 scored up to 86.5% on MedQA, improving over Med-PaLM by over 19% and setting a new state-of-the-art."},
+      {"claim": "A curated domain corpus, not a new method, unlocks math capability.", "paper_id": "2310.10631", "quote": "Llemma continues pretraining Code Llama on Proof-Pile-2 (55B math tokens) and outperforms all known open base models on MATH."},
+      {"claim": "Mining a large in-domain corpus is the decisive step.", "paper_id": "2402.03300", "quote": "DeepSeekMath continues pretraining on 120B math-related tokens mined from Common Crawl, reaching 51.7% on MATH without external tools."}
+    ],
+    "why_non_obvious": "Each vertical paper credits its own corpus. Reading them together to conclude that the corpus is the cross-vertical invariant moat — while methods are the commoditizing variable — is the generalization none of them makes.",
+    "pl_implication": "Invest in owning or exclusively sourcing the domain corpus; treat the modeling method as a commodity to adopt off-the-shelf. The asset that holds value through method churn is the data, so that is where Perpetual Labs should concentrate capital and exclusivity.",
+    "pdf_path": "/data/pdf/i11.pdf"
+  },
+  {
+    "id": "i12",
+    "headline": "Deployment economics are fragmenting models into many small specialists — multiplying vertical data demand",
+    "text_block": "Inference-aware scaling says high-demand deployments should train smaller models longer; precision scaling says small low-precision models can be compute-optimal; and phi-3 shows a 3.8B model rivaling far larger ones can run on a phone. The trajectory is away from one giant generalist and toward a proliferation of small, specialized, deployable models. Each such model is a distinct data customer — so the fragmentation directly multiplies demand for curated vertical datasets.",
+    "type": "trend",
+    "supporting_paper_ids": ["2401.00448", "2411.04330", "2404.14219", "2308.12950"],
+    "citations": [
+      {"claim": "High inference demand favors smaller models trained on more data.", "paper_id": "2401.00448", "quote": "Developers expecting large inference demand should train models smaller and longer than Chinchilla-optimal."},
+      {"claim": "Smaller low-precision models can be compute-optimal.", "paper_id": "2411.04330", "quote": "Training larger models in lower precision may be compute-optimal; precision and data interact in the effective parameter count."},
+      {"claim": "Small models can now rival much larger ones and run on-device.", "paper_id": "2404.14219", "quote": "phi-3-mini (3.8B) achieves 69% on MMLU rivaling Mixtral 8x7B and GPT-3.5, small enough to run on a phone."},
+      {"claim": "Domain-specialized small models outperform larger generalists in-domain.", "paper_id": "2308.12950", "quote": "Code Llama - Python 7B outperforms Llama 2 70B on HumanEval and MBPP."}
+    ],
+    "why_non_obvious": "That deployment economics yield 'many small specialists' is a fairly direct read of inference/precision scaling. The sharper, less obvious point is that each specialist needs a *different*, compute-relative dataset (the curation that is optimal at one model's budget is not at another's — see the compute-relative-curation insight), so fragmentation multiplies not just buyers but distinct curation jobs.",
+    "pl_implication": "The customer base is not a handful of frontier labs but a growing field of vertical small-model builders, each needing its own curated dataset and eval. That favors a productized, repeatable data-and-eval offering over bespoke one-offs. Caveat: the literature evidences a structural demand *multiplier* (more distinct buyers/jobs), not absolute willingness-to-pay or budgets — that must be validated with real buyers.",
+    "pdf_path": "/data/pdf/i12.pdf"
+  },
+  {
+    "id": "i13",
+    "headline": "Self-improvement has a ceiling without external verification — human-anchored data stays scarce",
+    "text_block": "Bootstrapping looks like it could make data free: models generate their own training data and improve. But imitation of a stronger model closes little real capability gap, self-rewarding is bounded by the model judging itself, expectation-maximization self-training needs an external correctness signal to filter samples, and pure recursion collapses. The common thread is that every durable gain requires an external anchor — verifiable rewards or human-grounded data. That anchor is the scarce input, and it is what retains value even in a world flooded with synthetic data.",
+    "type": "opportunity",
+    "supporting_paper_ids": ["2305.15717", "2401.10020", "2312.06585", "2305.17493"],
+    "citations": [
+      {"claim": "Imitating a stronger model mimics style but not capability.", "paper_id": "2305.15717", "quote": "Imitation models adopt the style of the teacher but not its factuality or reasoning, closing little of the capability gap."},
+      {"claim": "Self-generated reward is bounded by the model's own ability.", "paper_id": "2401.10020", "quote": "The model acts as its own reward via LLM-as-a-Judge, improving over iterations but bounded by judging itself."},
+      {"claim": "Self-training that works relies on an external correctness filter.", "paper_id": "2312.06585", "quote": "ReST^EM uses binary correctness feedback to filter self-generated samples and surpasses finetuning on human data on verifiable tasks."},
+      {"claim": "Without a real-data anchor, recursion collapses irreversibly.", "paper_id": "2305.17493", "quote": "Training on model-generated content causes irreversible model collapse as the distribution's tails disappear."}
+    ],
+    "why_non_obvious": "Read individually, these papers sound like incremental progress toward self-sufficient AI. Read together, they impose a hard ceiling: external verification or human grounding is mandatory, making that anchor the durable scarce good. That inversion is the insight.",
+    "pl_implication": "This is the demand-side corollary to the data-collapse moat (insight i04): even as 'AI generates its own training data' scales, these self-improvement loops *require* an external human/verifiable anchor to avoid collapse and to exceed their teacher. So Perpetual Labs' human-grounded, verifiable vertical data sits on the structurally scarce side of the synthetic-data economy — a scarcity reinforced, not eroded, by the rise of self-training.",
+    "pdf_path": "/data/pdf/i13.pdf"
+  },
+  {
+    "id": "i14",
+    "headline": "AI's biggest vertical wins share one pattern: proprietary data plus checkable outcomes",
+    "text_block": "Look at where AI has delivered the most value in specific verticals and a single template repeats: a proprietary or hard-to-assemble dataset paired with an objective, verifiable outcome. Protein structure had experimental ground truth; code has executable tests; competition math has checkable answers; finance had a proprietary corpus. The pattern unifies otherwise unrelated breakthroughs and yields a concrete filter for choosing the next vertical to target.",
+    "type": "vertical",
+    "supporting_paper_ids": ["alphafold-2021", "esm2-science-2023", "2310.06770", "2411.04872", "2303.17564"],
+    "citations": [
+      {"claim": "A proprietary experimental dataset + objective accuracy metric drove the win.", "paper_id": "alphafold-2021", "quote": "Trained on experimentally-resolved protein structures, AlphaFold crossed 90% accuracy and outperformed all other approaches at CASP14."},
+      {"claim": "Scaling on the same structured biological data extended the capability.", "paper_id": "esm2-science-2023", "quote": "ESM-2 (up to 15B params) saw atomic-level structural information emerge with scale, enabling 600M+ predicted metagenomic structures."},
+      {"claim": "Code's value comes from test-verifiable, real-world tasks.", "paper_id": "2310.06770", "quote": "SWE-bench uses real GitHub issues whose fixes are verified by tests; the best system resolved only 1.96%."},
+      {"claim": "Hard verifiable math remains an open, gradeable frontier.", "paper_id": "2411.04872", "quote": "Leading models solve less than 2% of FrontierMath despite near-perfect GSM-8k and MATH scores."},
+      {"claim": "A proprietary corpus is the moat in finance.", "paper_id": "2303.17564", "quote": "BloombergGPT's edge comes from a 363B-token proprietary financial dataset."}
+    ],
+    "why_non_obvious": "These are celebrated results in unrelated fields, never analyzed as one class. Extracting the shared template — proprietary data × verifiable outcome — and turning it into a forward-looking vertical filter is the synthesis.",
+    "pl_implication": "This is the operational form of Perpetual Labs' selection lens: score candidate verticals on (1) a proprietary/hard-to-assemble data source and (2) an objective, checkable outcome. Verticals scoring high on both — clinical claims/coding, regulated-industry workflows, lab/test data — are where created data compounds into a defensible asset.",
+    "pdf_path": "/data/pdf/i14.pdf"
+  },
+  {
+    "id": "i15",
+    "headline": "A vertical scorecard: where proprietary data × verifiable outcomes actually point",
+    "text_block": "Insight i14 names the filter — proprietary, hard-to-assemble data crossed with an objective, checkable outcome — but stops short of applying it. Score candidate verticals on both axes and a shortlist falls out. High on BOTH: clinical claims/coding adjudication (proprietary EHR/claims data + CDT/ICD/X12 codes that pass or fail), insurance adjudication, lab/diagnostic test workflows, and contract/legal review (privileged corpora + checkable clause outcomes). Medium: code and competition math score high on verifiability but their data is largely public, so the moat is thinner. Dental claims/coding is the worked high-fit example: a private clinical record paired with a deterministic coding/claims outcome. This scorecard ranks only the DATA shape — it is necessary, not sufficient, for the full target decision.",
+    "type": "vertical",
+    "supporting_paper_ids": ["alphafold-2021", "2310.06770", "2411.04872", "2305.09617", "2311.16079", "2308.11462"],
+    "citations": [
+      {"claim": "Proprietary experimental data × an objective metric is the archetypal high-fit win.", "paper_id": "alphafold-2021", "quote": "Trained on experimentally-resolved protein structures, AlphaFold crossed 90% accuracy and outperformed all other approaches at CASP14."},
+      {"claim": "Code scores high on verifiability — fixes that pass tests — but its data is mostly public, thinning the moat.", "paper_id": "2310.06770", "quote": "SWE-bench draws real GitHub issues whose fixes are verified by tests; the best system resolved only 1.96% of issues."},
+      {"claim": "Math is objectively checkable and far from solved, but its corpus is open.", "paper_id": "2411.04872", "quote": "Leading AI models solve less than 2% of FrontierMath despite near-perfect GSM-8k and MATH scores."},
+      {"claim": "Clinical workflows have proprietary data that drives expert-level capability.", "paper_id": "2305.09617", "quote": "Med-PaLM 2 scored up to 86.5% on MedQA, improving over Med-PaLM by over 19% and setting a new state-of-the-art."},
+      {"claim": "A curated, hard-to-assemble clinical corpus closes most of the gap to frontier models — evidence the data is the moat.", "paper_id": "2311.16079", "quote": "MEDITRON-70B, via continued pretraining on a curated medical corpus, is within 5% of GPT-4 and 10% of Med-PaLM-2 on major medical benchmarks."},
+      {"claim": "Legal review has checkable, expert-defined outcomes — the second axis — over privileged corpora.", "paper_id": "2308.11462", "quote": "LegalBench consists of 162 tasks covering six different types of legal reasoning, hand-crafted by legal professionals."}
+    ],
+    "why_non_obvious": "i14 derives the two-axis filter but never runs it; a reader is left with a principle and no shortlist. Actually scoring verticals on both axes — and flagging that public-data verticals (code, math) score lower on defensibility despite high verifiability — converts the principle into a ranked target list, which is the decision the product promises but no other insight delivers.",
+    "pl_implication": "Shortlist (high on BOTH axes): clinical claims/coding (e.g. the dental bet), insurance adjudication, lab/diagnostic test, contract/legal review. IMPORTANT — this scores only two of Perpetual Labs' seven factors (Clear Reward Signal + proprietary-data demand). It does NOT score AI-automation alpha, vertical monopoly, AI-integration greenfield, market-entry ease, or competitor data-vendor gaps, and it does not weigh the dental bet's own binding constraints (data-resale/HIPAA rights, single-clinic supply ~n=673, behavior-cloning vs true-RL ceiling). Treat this as the data-shape filter that nominates candidates; the go/no-go still runs the full lens.",
+    "pdf_path": "/data/pdf/i15.pdf"
+  },
+  {
+    "id": "i16",
+    "headline": "The reasoning-RL boom makes verifiable vertical data the scarce input — connecting training, data, and verticals",
+    "text_block": "Frontier reasoning is now trained by reinforcement learning on checkable rewards rather than human labels, and open systems already match the closed frontier on those tasks. But the reward is only as good as the data behind it — the signal, not the algorithm, carries the gain — which makes assembling that signal a data-engineering problem. And the richest verifiable, proprietary outcomes sit inside vertical workflows. Read together, the 2025 RL wave ties all three themes into one thesis: the training method (RLVR) is bottlenecked on the data (verifiable signal), whose scarce, defensible supply is the verticals.",
+    "type": "opportunity",
+    "supporting_paper_ids": ["2501.12948", "2503.14476", "2506.10947", "2406.11794", "2305.09617", "2303.17564"],
+    "citations": [
+      {"claim": "Frontier reasoning is now trained by RL on checkable rewards, with no supervised labels needed.", "paper_id": "2501.12948", "quote": "DeepSeek-R1-Zero is trained via large-scale RL with no supervised fine-tuning, yet develops emergent self-reflection, verification, and strategy adaptation."},
+      {"claim": "Open RLVR systems already match the closed frontier on verifiable tasks, efficiently.", "paper_id": "2503.14476", "quote": "DAPO achieves 50 points on AIME 2024 with Qwen2.5-32B base, outperforming DeepSeek-R1-Zero-Qwen-32B (47 points) while using 50% of the training steps."},
+      {"claim": "The reward's value depends on the data behind it — the same recipe fails when the signal source changes.", "paper_id": "2506.10947", "quote": "Spurious rewards that work for Qwen often fail to help other model families like Llama3 or OLMo2."},
+      {"claim": "Assembling that signal is a data-engineering problem — the lever that defines strong training sets.", "paper_id": "2406.11794", "quote": "Model-based filtering was key; DCLM-Baseline trains a 7B model to 64% MMLU with 2.6T tokens, a 6.6 point gain while using 40% less compute."},
+      {"claim": "The richest verifiable, proprietary outcomes sit in vertical workflows where domain data drives capability.", "paper_id": "2305.09617", "quote": "Med-PaLM 2 scored up to 86.5% on MedQA, improving over Med-PaLM by over 19% and setting a new state-of-the-art."},
+      {"claim": "And in those verticals a proprietary corpus is the durable moat.", "paper_id": "2303.17564", "quote": "BloombergGPT, a 50B model trained on a 363 billion token financial dataset, outperforms existing open models of similar size on financial tasks by large margins."}
+    ],
+    "why_non_obvious": "The 2025 RL papers are read as training advances and the vertical papers as domain wins. Connecting them — the reward IS data, and the best verifiable data is vertical — fuses model training, data, and verticals into one thesis that no single paper states.",
+    "pl_implication": "This is the through-line of the whole issue. The training frontier (RLVR) is bottlenecked on verifiable data, and the scarce, defensible supply of it is proprietary vertical workflows. Building verifiable-reward environments in real verticals is therefore simultaneously a training-method bet, a data-asset bet, and a vertical bet — the same bet, seen from three sides.",
+    "pdf_path": "/data/pdf/i16.pdf"
+  },
+  {
+    "id": "i17",
+    "headline": "Does RL teach or just elicit? The answer decides whether new capability needs new vertical data",
+    "text_block": "A live 2025 debate splits the field: one camp shows RL only sharpens what the base model can already reach, while another shows prolonged RL expands into strategies the base model never finds. Either way, the ceiling traces back to the base model's data — and synthetic loops cannot lift it, because they erase the distribution's tails. So genuinely new capability requires genuinely new data, the kind that lives in under-documented vertical workflows. The training-method debate keeps pointing back to data, and the data points to verticals.",
+    "type": "contradiction",
+    "supporting_paper_ids": ["2504.13837", "2505.24864", "2305.17493", "2305.09617"],
+    "citations": [
+      {"claim": "One result finds RL only sharpens what the base model can already reach.", "paper_id": "2504.13837", "quote": "RLVR-trained models outperform base models at small k, but base models achieve higher pass@k when k is large, indicating RL narrows rather than expands the reasoning boundary."},
+      {"claim": "Another finds prolonged RL expands the boundary into strategies the base model never reaches.", "paper_id": "2505.24864", "quote": "Prolonged RL uncovers novel reasoning strategies inaccessible to base models even under extensive sampling, contrasting with the pass@k narrowing claim."},
+      {"claim": "Either way the ceiling traces to the base model's data — and synthetic loops cannot lift it.", "paper_id": "2305.17493", "quote": "Model collapse causes the tails of the original content distribution to disappear, losing rare and unique elements."},
+      {"claim": "So new capability needs new data — the kind domain fine-tuning shows lifts a vertical to expert level.", "paper_id": "2305.09617", "quote": "Med-PaLM 2 scored up to 86.5% on MedQA, improving over Med-PaLM by over 19% and setting a new state-of-the-art."}
+    ],
+    "why_non_obvious": "The pass@k papers are read as a narrow methodological dispute about RL. Connecting that dispute to the data ceiling (collapse erases tails) and then to vertical data as the only source of genuinely new signal links the training debate, the data limit, and the vertical opportunity in one argument.",
+    "pl_implication": "Whether RL teaches or merely elicits, raising the capability ceiling requires data the base models never saw — and that data is disproportionately in proprietary verticals. The training-method debate, followed to its end, becomes an argument for vertical-data acquisition.",
+    "pdf_path": "/data/pdf/i17.pdf"
+  }
+]

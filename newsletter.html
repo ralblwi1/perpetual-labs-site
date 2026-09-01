@@ -1,0 +1,442 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta http-equiv="Cache-Control" content="no-store, must-revalidate"><meta http-equiv="Pragma" content="no-cache"><meta name="theme-color" content="#FFFFFF"><meta name="color-scheme" content="light"><title>Newsletter — Perpetual Labs</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet"><style>
+  :root{
+    --bg-0:#FFFFFF; --bg-1:#F7F8FB; --bg-2:#EEF1F8;
+    --panel:rgba(255,255,255,.92); --panel-solid:#FFFFFF;
+    --line:rgba(10,15,30,.14); --line-soft:rgba(10,15,30,.08);
+    --text-hi:#0C1430; --text:#0A0F1E; --text-dim:#4C5566;
+    --text-faint:rgba(10,15,30,.48);
+    --gold:#3D53C6; --gold-bright:#1B2A5E;
+    --blue:#2F6BD8; --violet:#6246C9; --arg:#4C5566;
+    --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
+    --serif:'EB Garamond',Georgia,'Times New Roman',serif;
+    --sans:'Hanken Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+    --maxw:1080px; --panelw:960px;
+    --ease:cubic-bezier(.16,1,.3,1);
+    --pad-x:clamp(20px,5vw,40px);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%;}
+  body{
+    background:var(--bg-0);
+    color:var(--text);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  ::selection{background:rgba(61,83,198,.28); color:var(--text-hi);}
+
+  a{color:inherit;}
+  img{display:block; max-width:100%;}
+  button,input{font-family:inherit;}
+
+  /* Accessible focus */
+  :focus-visible{outline:2px solid var(--gold-bright); outline-offset:3px; border-radius:4px;}
+  :focus:not(:focus-visible){outline:none;}
+
+  .skip-link{
+    position:absolute; left:50%; top:-100px; transform:translateX(-50%);
+    background:var(--gold-bright); color:#FFFFFF; padding:10px 18px; border-radius:8px;
+    font:600 13px/1 var(--mono); z-index:200; transition:top .25s var(--ease);
+  }
+  .skip-link:focus{top:14px;}
+
+  /* App field + vignette */
+  #app{
+    position:relative; width:100%; overflow:hidden;
+    background:radial-gradient(130% 90% at 50% 0%, var(--bg-2) 0%, var(--bg-1) 55%, var(--bg-0) 100%);
+  }
+  #app::before{ /* faint scanline grid + vignette */
+    content:''; position:fixed; inset:0; z-index:0; pointer-events:none; opacity:.5;
+    background:
+      radial-gradient(120% 80% at 50% 0%, transparent 55%, rgba(12,20,48,.05) 100%);
+  }
+
+  /* ============ NAV ============ */
+  header.nav{
+    position:fixed; inset:0 0 auto 0; z-index:50;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:16px; padding:16px var(--pad-x);
+    background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,0));
+    backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    transition:background .35s var(--ease), border-color .35s var(--ease), padding .35s var(--ease);
+    border-bottom:1px solid transparent;
+  }
+  header.nav.scrolled{
+    background:rgba(255,255,255,.9);
+    border-bottom:1px solid var(--line-soft);
+    padding-top:12px; padding-bottom:12px;
+  }
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none; white-space:nowrap;}
+  .brand img{width:30px; height:30px; border-radius:7px;}
+  .brand b{font:600 14px/1 var(--sans); letter-spacing:.16em; color:var(--text);}
+  .nav-right{display:flex; align-items:center; gap:clamp(18px,3vw,32px);}
+  .nav-links{display:flex; align-items:center; gap:clamp(18px,3vw,32px);}
+  .nav-link{
+    font:500 12px/1 var(--mono); letter-spacing:.08em; color:var(--text-dim);
+    text-decoration:none; position:relative; padding:6px 0; transition:color .25s var(--ease);
+  }
+  .nav-link::after{
+    content:''; position:absolute; left:0; bottom:-1px; height:1px; width:0;
+    background:var(--gold); transition:width .35s var(--ease);
+  }
+  .nav-link:hover{color:var(--text);} .nav-link:hover::after{width:100%;}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    font:600 13px/1 var(--mono); letter-spacing:.04em; text-decoration:none; cursor:pointer;
+    border-radius:9px; padding:11px 18px; transition:transform .2s var(--ease), background .25s var(--ease), box-shadow .25s var(--ease), border-color .25s var(--ease);
+    border:1px solid transparent;
+  }
+  .btn-ghost{color:var(--text); border-color:rgba(61,83,198,.5); background:rgba(61,83,198,.02);}
+  .btn-ghost:hover{background:rgba(61,83,198,.12); border-color:var(--gold-bright);}
+  .btn-solid{background:var(--gold-bright); color:#FFFFFF; box-shadow:0 6px 24px rgba(61,83,198,.12);}
+  .btn-solid:hover{background:#1B2A5E; transform:translateY(-1px); box-shadow:0 10px 30px rgba(61,83,198,.22);}
+  .btn-line{color:var(--text-dim); padding:11px 4px;}
+  .btn-line:hover{color:var(--text);}
+  .btn:active{transform:translateY(0) scale(.99);}
+
+  /* ============ HERO ============ */
+  main{position:relative; z-index:2;}
+  .hero{
+    position:relative; min-height:100dvh; display:flex; flex-direction:column;
+    align-items:center; justify-content:center; text-align:center;
+    padding:120px var(--pad-x) 64px; overflow:hidden;
+  }
+  #ribbon{
+    position:absolute; left:50%; top:46%; transform:translate(-50%,-50%);
+    width:min(1320px,100vw); height:min(760px,86vh); z-index:0; pointer-events:none;
+  }
+  .hero-scrim{
+    position:absolute; left:50%; top:48%; transform:translate(-50%,-50%);
+    width:min(820px,94vw); height:min(460px,60vh); z-index:0; pointer-events:none;
+    background:radial-gradient(closest-side, rgba(5,7,15,.82), rgba(5,7,15,.42) 52%, transparent 78%);
+  }
+  .hero-inner{position:relative; z-index:1; display:flex; flex-direction:column; align-items:center; max-width:760px;}
+  .eyebrow{
+    font:500 12px/1 var(--mono); letter-spacing:.34em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:26px;
+    display:inline-flex; align-items:center; gap:10px;
+  }
+  .eyebrow .dot{width:6px; height:6px; border-radius:50%; background:var(--gold); box-shadow:0 0 9px var(--gold); animation:pulse 2.2s ease-in-out infinite;}
+  h1{
+    font:500 clamp(34px,6.2vw,66px)/1.03 var(--serif); letter-spacing:-.015em;
+    color:var(--text-hi); margin:0; max-width:15ch;
+    text-shadow:0 4px 44px rgba(255,255,255,.95), 0 1px 14px rgba(255,255,255,.95);
+  }
+  h1 em{font-style:italic; color:var(--gold-bright);}
+  .hero-sub{
+    font-size:clamp(16px,2.1vw,18px); line-height:1.7; color:var(--text-dim);
+    margin:26px 0 0; max-width:50ch;
+    text-shadow:0 2px 18px rgba(255,255,255,.95);
+  }
+  .hero-cta{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:34px;}
+  .status{
+    display:flex; align-items:center; gap:18px; margin-top:30px; flex-wrap:wrap; justify-content:center;
+    font:500 12px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase; color:var(--text-faint);
+    background:rgba(5,7,15,.5); padding:10px 16px; border-radius:999px; border:1px solid var(--line-soft);
+    backdrop-filter:blur(2px);
+  }
+  .status .live{display:flex; align-items:center; gap:8px;}
+  .status .live i{width:7px; height:7px; border-radius:50%; background:var(--gold); box-shadow:0 0 9px var(--gold); animation:pulse 2.2s ease-in-out infinite;}
+  .status .sep{width:1px; height:12px; background:rgba(10,15,30,.2);}
+  .status b{color:var(--gold-bright); font-weight:500; font-variant-numeric:tabular-nums;}
+
+  /* ============ SECTORS STRIP ============ */
+  .sectors{
+    position:relative; z-index:2; padding:30px var(--pad-x);
+    border-top:1px solid var(--line-soft); border-bottom:1px solid var(--line-soft);
+    background:rgba(255,255,255,.6);
+  }
+  .sectors-inner{max-width:var(--maxw); margin:0 auto; display:flex; flex-direction:column; align-items:center; gap:16px; text-align:center;}
+  .sectors p{margin:0; font:500 11px/1.4 var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--text-faint);}
+  .sector-tags{display:flex; flex-wrap:wrap; justify-content:center; gap:10px 12px;}
+  .sector-tags span{
+    font:600 12px/1 var(--mono); letter-spacing:.12em; color:var(--text-dim);
+    padding:7px 14px; border:1px solid var(--line); border-radius:999px; background:rgba(255,255,255,.7);
+    transition:color .25s var(--ease), border-color .25s var(--ease);
+  }
+  .sector-tags span:hover{color:var(--gold-bright); border-color:rgba(61,83,198,.4);}
+
+  /* ============ SECTIONS ============ */
+  section.block{position:relative; z-index:2; padding:clamp(64px,9vw,100px) var(--pad-x); display:flex; flex-direction:column; align-items:center;}
+  .sec-head{width:100%; max-width:var(--panelw); display:flex; align-items:center; gap:18px; margin-bottom:30px;}
+  .sec-head .idx{font:700 13px/1 var(--mono); color:var(--gold); letter-spacing:.1em;}
+  .sec-head .name{font:600 16px/1 var(--mono); letter-spacing:.24em; color:var(--gold);}
+  .sec-head .rule{flex:1; height:1px; background:linear-gradient(90deg, rgba(12,20,48,.22), transparent);}
+
+  .panel{
+    width:100%; max-width:var(--panelw); border:1px solid var(--line); border-radius:14px;
+    overflow:hidden; background:var(--panel); box-shadow:0 18px 50px rgba(0,0,0,.3);
+    backdrop-filter:blur(3px);
+  }
+  .panel-body{padding:clamp(24px,4vw,40px); font:400 14px/1.9 var(--mono);}
+  .cmd{margin-bottom:20px; color:var(--blue);}
+  .cmd .typed{color:var(--gold-bright);}
+  .cur{display:inline-block; color:var(--gold-bright); animation:blink 1.1s step-end infinite;}
+  .lede{font:500 clamp(18px,2vw,24px)/1.45 var(--serif); color:var(--text-hi); margin:0 0 22px; max-width:30ch;}
+  .comment{color:var(--text-dim); max-width:64ch;}
+  .comment .c{color:var(--violet);}
+  .hr{margin:32px 0; height:1px; background:var(--line-soft); border:0;}
+
+  .thesis{display:flex; flex-direction:column; gap:18px;}
+  .thesis .row{display:grid; grid-template-columns:34px 1fr; gap:16px;}
+  .thesis .n{color:var(--gold); font-weight:700;}
+  .thesis .t{color:rgba(225,230,242,.82); font-size:14.5px; line-height:1.65;}
+  .thesis .t b{color:var(--text-hi); font-weight:600;}
+
+  /* APPROACH CARDS */
+  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; width:100%; max-width:var(--panelw);}
+  .card{
+    border:1px solid var(--line); border-radius:14px; background:var(--panel);
+    padding:26px 24px; display:flex; flex-direction:column; gap:14px;
+    transition:transform .3s var(--ease), border-color .3s var(--ease), box-shadow .3s var(--ease);
+  }
+  .card:hover{transform:translateY(-3px); border-color:rgba(61,83,198,.34); box-shadow:0 22px 50px rgba(0,0,0,.34);}
+  .card .ico{width:40px; height:40px; border-radius:10px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; background:rgba(61,83,198,.06);}
+  .card .ico svg{width:20px; height:20px; stroke:var(--gold-bright);}
+  .card h3{margin:0; font:600 16px/1.3 var(--mono); letter-spacing:.02em; color:var(--text-hi);}
+  .card p{margin:0; font-size:14px; line-height:1.65; color:var(--text-dim);}
+  .card .tag{font:600 11px/1 var(--mono); letter-spacing:.14em; color:var(--gold); text-transform:uppercase;}
+
+  /* FLYWHEEL */
+  #fly{display:flex; flex-direction:column; gap:8px;}
+  .fly-row{
+    display:grid; grid-template-columns:34px 160px 1fr; align-items:center; gap:18px;
+    padding:15px 18px; border-radius:10px; transition:background .4s var(--ease), color .4s var(--ease);
+  }
+  .fly-row .fly-i{color:rgba(57,64,84,.3); font-weight:700;}
+  .fly-row .fly-k{color:var(--text); font-weight:600;}
+  .fly-row .fly-v{color:#6D7280;}
+  .fly-foot{margin-top:22px; padding-top:18px; border-top:1px solid var(--line-soft); color:#6D7280; font-size:13px;}
+  .fly-foot .a{color:var(--blue);} .fly-foot b{color:var(--gold-bright); font-weight:500;}
+
+  /* OUTREACH */
+  .outreach-lede{font:500 clamp(20px,2.6vw,28px)/1.3 var(--serif); color:var(--text-hi); margin:0 0 14px; max-width:20ch;}
+  .outreach-note{font-family:var(--sans); font-size:14px; line-height:1.6; color:var(--text-dim); margin:0 0 24px; max-width:54ch;}
+  .form{
+    display:flex; flex-direction:column; gap:0; max-width:560px;
+    border:1px solid var(--line); border-radius:12px; padding:4px 16px 14px;
+    background:rgba(255,255,255,.02); transition:border-color .25s var(--ease);
+  }
+  .form:focus-within{border-color:rgba(61,83,198,.55);}
+  .form-line{display:flex; align-items:center; gap:10px;}
+  .form .gt{color:var(--gold-bright);}
+  .form input, .form textarea{
+    flex:1; width:100%; min-width:0; background:transparent; border:none; outline:none; color:var(--text);
+    font:400 14px/1.55 var(--mono);
+  }
+  .form input{padding:13px 0;}
+  .form textarea{resize:vertical; min-height:66px; padding:12px 0; border-top:1px solid var(--line-soft);}
+  .form input::placeholder, .form textarea::placeholder{color:var(--text-faint);}
+  .form-foot{display:flex; align-items:center; justify-content:space-between; gap:14px; margin-top:10px;}
+  .form-hint{font:500 11px/1 var(--mono); letter-spacing:.06em; color:var(--text-faint);}
+  .form button{border:none; cursor:pointer; padding:12px 22px; border-radius:8px; background:var(--gold-bright); color:#FFFFFF; font:600 13px/1 var(--mono); transition:background .25s var(--ease), transform .2s var(--ease), opacity .2s; white-space:nowrap;}
+  .form button:hover{background:#1B2A5E;} .form button:active{transform:scale(.98);}
+  .form button:disabled{opacity:.55; cursor:default;}
+  .form-msg{min-height:20px; margin:12px 2px 0; font:500 13px/1.4 var(--mono);}
+  .form-msg.err{color:#B3382C;} .form-msg.ok{color:var(--gold-bright);}
+  .socials{display:flex; gap:22px; margin-top:24px; font:500 12px/1 var(--mono); letter-spacing:.1em; text-transform:uppercase; color:var(--text-faint);}
+  .socials a{color:inherit; text-decoration:none; position:relative; padding:4px 0; transition:color .25s var(--ease);}
+  .socials a::after{content:''; position:absolute; left:0; bottom:-1px; height:1px; width:0; background:var(--gold); transition:width .3s var(--ease);}
+  .socials a:hover{color:var(--text);} .socials a:hover::after{width:100%;}
+
+  footer{
+    width:100%; max-width:var(--panelw); margin:44px auto 0; padding:0 0 8px;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;
+    font:400 12px/1 var(--mono); color:var(--text-faint);
+  }
+  footer .fbrand{display:flex; align-items:center; gap:11px;}
+  footer .fbrand img{width:24px; height:24px; border-radius:6px;}
+
+  /* Reveal animation */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .7s var(--ease), transform .7s var(--ease);}
+  .reveal.in{opacity:1; transform:none;}
+
+  @keyframes blink{0%,48%{opacity:1;} 49%,100%{opacity:0;}}
+  @keyframes pulse{0%,100%{opacity:1;} 50%{opacity:.35;}}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .cards{grid-template-columns:1fr;}
+  }
+  @media (max-width:720px){
+    .nav-links{display:none;}
+    .fly-row{grid-template-columns:30px 1fr; row-gap:4px; gap:8px 14px; padding:14px 14px;}
+    .fly-row .fly-v{grid-column:2; font-size:13px;}
+    #ribbon{top:43%; width:128vw; height:62vh; opacity:.6;}
+    .hero-scrim{width:min(900px,124vw); height:min(560px,66vh);
+      background:radial-gradient(closest-side, rgba(255,255,255,.92), rgba(5,7,15,.58) 50%, transparent 82%);}
+    .hero{padding-top:104px;}
+    h1{max-width:18ch;}
+  }
+  @media (max-width:480px){
+    /* wordmark text would collide with the CTA — keep the logo mark only */
+    .brand b{display:none;}
+    .btn-ghost{padding:10px 14px; font-size:12px;}
+  }
+  @media (max-width:420px){
+    .status{font-size:11px; gap:12px; padding:9px 12px;}
+    .socials{gap:18px;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    *,*::before,*::after{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important;}
+    .reveal{opacity:1; transform:none;}
+  }
+
+  @media print{
+    #ribbon,#app::before,.status,.hero-cta,.form,.socials{display:none !important;}
+    *{background:#fff !important; color:#111 !important; box-shadow:none !important; text-shadow:none !important;}
+    .reveal{opacity:1 !important; transform:none !important;}
+    a{text-decoration:underline;}
+  }
+
+/* ---------- newsletter additions ---------- */
+.mast{max-width:var(--maxw); margin:0 auto; width:100%; padding-top:42px;}
+.mast h1{max-width:16ch;}
+.mast .hero-sub{max-width:62ch; margin-top:22px; text-align:left;}
+.mast .stats{display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-top:26px;
+  font:500 13px/1 var(--mono); letter-spacing:.06em; color:var(--text-faint);}
+.mast .stats b{font-weight:600; font-variant-numeric:tabular-nums;}
+.mast .stats .sep{width:1px; height:12px; background:rgba(10,15,30,.2);}
+.eyebrow.left{align-self:flex-start;}
+.mast-cta{display:flex; flex-wrap:wrap; gap:12px; margin-top:30px;}
+@media(max-width:560px){.mast-cta{flex-direction:column; align-items:stretch;}}
+section.block.left{align-items:flex-start;}
+/* minimal premium index — headline-led teasers that drive the click */
+.ins-list{width:100%; max-width:var(--panelw); border-top:1px solid var(--line-soft);}
+.ins-row{display:grid; grid-template-columns:38px 1fr auto; align-items:baseline; gap:26px;
+  padding:32px 6px; border-bottom:1px solid var(--line-soft); text-decoration:none;
+  transition:background .35s var(--ease), padding .35s var(--ease);}
+.ins-row:hover{background:rgba(61,83,198,.035); padding-left:18px; padding-right:18px;}
+.ins-row .rnum{font:500 13px/1 var(--mono); color:var(--text-faint); letter-spacing:.1em;}
+.ins-row .rmain{display:flex; flex-direction:column; gap:11px; min-width:0;}
+.ins-row .rtype{font:600 10px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase;}
+.ins-row h3{margin:0; font:500 clamp(20px,2.5vw,28px)/1.2 var(--serif); letter-spacing:-.01em;
+  color:var(--text-hi); transition:color .35s var(--ease);}
+.ins-row:hover h3{color:var(--gold-bright);}
+.ins-row .rmeta{font:500 11px/1 var(--mono); color:var(--text-faint); letter-spacing:.04em;}
+.ins-row .rread{font:500 12px/1 var(--mono); color:var(--text-faint); white-space:nowrap;
+  display:inline-flex; align-items:center; gap:8px; transition:color .35s var(--ease);}
+.ins-row:hover .rread{color:var(--gold-bright);}
+.ins-row .rread .arr{transition:transform .35s var(--ease);}
+.ins-row:hover .rread .arr{transform:translateX(5px);}
+@media(max-width:720px){.ins-row{grid-template-columns:30px 1fr; gap:14px;} .ins-row .rread{display:none;}}
+.ttype{font:600 10px/1 var(--mono); letter-spacing:.13em; text-transform:uppercase; padding:4px 9px;
+  border-radius:999px; border:1px solid; white-space:nowrap;}
+/* detail */
+.dwrap{width:100%; max-width:var(--panelw); margin:0 auto;}
+.back{font:500 12px/1 var(--mono); color:var(--text-dim); text-decoration:none;}
+.back:hover{color:var(--text);}
+.d-meta{display:flex; align-items:center; gap:12px; margin:22px 0 0; font:500 12px/1 var(--mono); color:var(--text-faint);}
+.d-h1{font:500 clamp(26px,4vw,42px)/1.14 var(--serif); letter-spacing:-.015em; color:var(--text-hi); margin:14px 0 0; max-width:24ch;}
+.d-lede{font-family:var(--sans); font-size:16px; line-height:1.75; color:var(--text-dim); margin:22px 0 0; max-width:70ch;}
+.pdfbtn{margin-top:26px;}
+.dh{font:600 12px/1 var(--mono); letter-spacing:.18em; text-transform:uppercase; color:var(--gold);
+  margin:46px 0 16px; display:flex; align-items:center; gap:14px;}
+.dh .rule{flex:1; height:1px; background:linear-gradient(90deg, rgba(12,20,48,.22), transparent);}
+.ev{border:1px solid var(--line); border-radius:12px; padding:16px 18px; margin-bottom:12px; background:var(--panel);}
+.ev .claim{font:600 14.5px/1.45 var(--sans); color:var(--text-hi); display:flex; gap:10px;}
+.ev .claim .n{color:var(--gold); font:600 12px/1.4 var(--mono);}
+.ev blockquote{margin:10px 0 10px 24px; padding-left:14px; border-left:2px solid rgba(61,83,198,.5);
+  font:400 12.5px/1.62 var(--mono); color:var(--text-dim);}
+.ev .src{margin-left:24px; font:500 12px/1.4 var(--mono); color:var(--blue); text-decoration:none;}
+.ev .src:hover{color:var(--gold-bright);}
+.callouts{display:grid; grid-template-columns:1fr 1fr; gap:14px;}
+@media(max-width:720px){.callouts{grid-template-columns:1fr;}}
+.callout{border-left:2px solid; border-radius:10px; padding:15px 17px;}
+.callout h4{margin:0 0 9px; font:600 10.5px/1 var(--mono); letter-spacing:.14em; text-transform:uppercase;}
+.callout p{margin:0; font-family:var(--sans); font-size:13.5px; line-height:1.62; color:rgba(225,230,242,.78);}
+.srcpapers{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+@media(max-width:720px){.srcpapers{grid-template-columns:1fr;}}
+.srcpaper{border:1px solid var(--line); border-radius:10px; padding:13px 15px; text-decoration:none; display:block;
+  transition:border-color .25s var(--ease);}
+.srcpaper:hover{border-color:rgba(61,83,198,.34);}
+.srcpaper .t{font:600 13.5px/1.42 var(--sans); color:#0C1430;}
+.srcpaper .m{margin-top:5px; font:500 11.5px/1 var(--mono); color:var(--text-faint);}
+.related a{display:flex; align-items:center; justify-content:space-between; gap:14px; border:1px solid var(--line);
+  border-radius:10px; padding:15px 18px; margin-bottom:10px; text-decoration:none; transition:border-color .25s var(--ease);}
+.related a:hover{border-color:rgba(61,83,198,.3);}
+.related a .t{font:600 14.5px/1.4 var(--sans); color:#0C1430;}
+/* map */
+.mapbox{position:relative; width:100%; max-width:var(--panelw); border:1px solid var(--line); border-radius:14px;
+  background:rgba(255,255,255,.6); padding:14px; backdrop-filter:blur(3px);}
+.mappop{position:absolute; z-index:30; pointer-events:none; width:360px; max-width:360px; left:0; top:0;
+  background:rgba(255,255,255,.97); border:1px solid var(--line); border-radius:12px; padding:14px 16px;
+  box-shadow:0 18px 46px rgba(0,0,0,.6); backdrop-filter:blur(7px);
+  opacity:0; transform:translateY(5px); transition:opacity .14s var(--ease), transform .14s var(--ease);}
+.mappop.show{opacity:1; transform:none;}
+.mappop .pp-k{font:700 9px/1.4 var(--mono); letter-spacing:.14em; text-transform:uppercase; margin-bottom:7px;}
+.mappop .pp-t{font:500 15px/1.3 var(--serif); color:var(--text-hi); margin-bottom:5px;}
+.mappop .pp-m{font:500 10.5px/1.45 var(--mono); color:var(--text-faint); letter-spacing:.02em;}
+.mappop .pp-ab{margin-top:8px; font:400 12px/1.55 var(--sans); color:var(--text-dim);}
+.mappop .pp-find{margin:8px 0 0; padding-left:15px;}
+.mappop .pp-find li{font:400 11px/1.42 var(--sans); color:var(--text-faint); margin-bottom:3px;}
+.mappop .pp-conn{margin-top:9px; padding-top:8px; border-top:1px solid var(--line-soft);
+  font:400 11.5px/1.5 var(--sans); color:var(--text-dim);}
+.mappop .pp-conn span{display:block; font:700 9px/1 var(--mono); letter-spacing:.12em; text-transform:uppercase;
+  color:var(--gold); margin-bottom:4px;}
+.mappop .pp-go{margin-top:8px; font:600 11px/1 var(--mono); color:var(--gold-bright);}
+.mapbox svg{width:100%; height:auto; display:block;}
+.mapbox svg a{cursor:pointer;}
+.mapbox circle, .mapbox rect.node{transition:transform .15s var(--ease);}
+.mapbox a:hover circle{r:7;} .mapbox a:hover rect.node{filter:drop-shadow(0 0 6px currentColor);}
+.maplegend{display:flex; flex-wrap:wrap; gap:14px; justify-content:center; margin-top:14px;
+  font:500 11px/1 var(--mono); color:var(--text-faint);}
+.mapcap{max-width:var(--panelw); margin:16px auto 0; font:400 12.5px/1.62 var(--sans); color:var(--text-dim); text-align:left;}
+.mapcap b{color:var(--text); font-family:var(--mono); font-weight:600; font-size:11px; letter-spacing:.06em;}
+.mast .method{margin:18px 0 0; font:500 11.5px/1.65 var(--mono); color:var(--text-faint); letter-spacing:.02em; max-width:64ch;}
+.mast .method b{color:var(--arg); font-weight:600; font-variant-numeric:tabular-nums;}
+.ins-row .rdeep{color:var(--gold-bright);}
+.mapbox svg [data-node]{transition:opacity .2s var(--ease); cursor:pointer;}
+.mapbox svg .sedge{opacity:0;}
+.mapbox svg.dim line{opacity:.05;}
+.mapbox svg.dim .medge.on{opacity:1; stroke:#3D53C6; stroke-width:1.8;}
+.mapbox svg.dim .sedge.on{opacity:.9; stroke:#3D53C6; stroke-width:1.4;}
+.mapbox svg.dim [data-node]{opacity:.26;}
+.mapbox svg.dim [data-node].nb{opacity:1;}
+.exports{display:flex; flex-wrap:wrap; gap:10px;}
+.exports a{font:600 12px/1 var(--mono); letter-spacing:.04em; color:var(--text-dim); text-decoration:none;
+  padding:9px 14px; border:1px solid var(--line); border-radius:8px; background:rgba(255,255,255,.7);
+  transition:color .25s var(--ease), border-color .25s var(--ease);}
+.exports a:hover{color:var(--gold-bright); border-color:rgba(61,83,198,.4);}
+/* benchmarks desk */
+.bcaveat{max-width:var(--panelw); margin:0 0 18px; padding:9px 14px; border-left:2px solid rgba(61,83,198,.45);
+  background:rgba(61,83,198,.05); border-radius:0 7px 7px 0; font:400 12px/1.55 var(--mono); color:var(--text-dim);}
+.bdesk{display:grid; grid-template-columns:1fr 1fr; gap:14px; width:100%; max-width:var(--panelw); align-items:start;}
+@media(max-width:720px){.bdesk{grid-template-columns:1fr;}}
+.bcard{border:1px solid var(--line); border-radius:12px; padding:15px 17px 9px; background:var(--panel);}
+.bcard .bh{display:flex; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:7px;}
+.bcard .bname{font:500 15.5px/1.2 var(--serif); color:var(--text-hi);}
+.bcard .bdom{font:600 10px/1.4 var(--mono); letter-spacing:.07em; text-transform:uppercase; color:var(--text-faint); text-align:right; white-space:nowrap;}
+.brow{display:grid; grid-template-columns:1fr auto; gap:12px; align-items:baseline; padding:7px 0; border-top:1px solid var(--line-soft);}
+.brow .bm{font:500 12.5px/1.45 var(--sans); color:var(--text-dim); min-width:0;}
+.brow .bm a{color:inherit; text-decoration:none;} .brow .bm a:hover{color:var(--gold-bright);}
+.brow .bm .by{color:var(--text-faint); font:500 10px/1 var(--mono); margin-left:6px;}
+.brow .bm .bsp{color:var(--text-faint); font:500 10px/1 var(--mono); letter-spacing:.02em; margin-left:6px; opacity:.85;}
+.brow .bs{font:600 13px/1 var(--mono); color:var(--gold); font-variant-numeric:tabular-nums; white-space:nowrap;}
+.brow.top .bs{color:var(--gold-bright);}
+/* briefing */
+.bfgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; width:100%; max-width:var(--panelw);}
+@media(max-width:820px){.bfgrid{grid-template-columns:1fr;}}
+.bf-col{border:1px solid var(--line); border-radius:12px; padding:14px 17px 6px; background:var(--panel);}
+.bf-h{display:flex; align-items:baseline; justify-content:space-between; gap:8px; font:600 12.5px/1 var(--mono); letter-spacing:.03em; margin-bottom:4px;}
+.bf-h span{font:500 10px/1 var(--mono); color:var(--text-faint); letter-spacing:.06em;}
+.bf-item{padding:11px 0; border-top:1px solid var(--line-soft);}
+.bf-t{display:block; font:500 13px/1.4 var(--sans); color:#0C1430; text-decoration:none; transition:color .25s var(--ease);}
+.bf-t:hover{color:var(--gold-bright);}
+.bf-m{display:block; margin-top:4px; font:500 10.5px/1.4 var(--mono); color:var(--text-faint);}
+.bf-feed{display:inline-block; margin-top:7px; font:600 9px/1 var(--mono); letter-spacing:.08em; text-transform:uppercase;
+  color:var(--gold); border:1px solid var(--line); border-radius:5px; padding:3px 7px; text-decoration:none;}
+.bf-feed:hover{border-color:rgba(61,83,198,.4);}
+.fwrap{width:100%; max-width:var(--panelw); margin:48px auto 0; padding:26px 0 36px;
+  border-top:1px solid var(--line-soft); display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:14px; font:400 12px/1 var(--mono); color:var(--text-faint);}
+.fwrap .fbrand{display:flex; align-items:center; gap:11px;} .fwrap .fbrand img{width:24px;height:24px;border-radius:6px;}
+</style></head><body><a class="skip-link" href="#map">Skip to content</a><div id="app"><header class="nav" id="nav"><a class="brand" href="index.html#app" aria-label="Perpetual Labs home"><img src="assets/logo.png" alt="Perpetual Labs logo" width="30" height="30"><b>PERPETUAL LABS</b></a><div class="nav-right"><nav class="nav-links" aria-label="Primary"><a class="nav-link" href="index.html#mission">mission</a><a class="nav-link" href="index.html#approach">approach</a><a class="nav-link" href="index.html#flywheel">flywheel</a><a class="nav-link" href="newsletter.html" style="color:var(--gold)">newsletter</a></nav><a class="btn btn-ghost" href="index.html#outreach">partner_with_us</a></div></header><main><section class="block left" style="padding-top:92px;padding-bottom:4px;"><div class="mast"><span class="eyebrow left"><span class="dot" aria-hidden="true"></span>Issue 01 · June 2026</span><h1>The research <em>newsletter.</em></h1><p class="hero-sub">The AI-research firehose across <span style="color:var(--blue)">model training</span>, <span style="color:var(--gold-bright)">data</span>, and <span style="color:var(--violet)">verticals</span> — distilled into 17 non-obvious, evidence-backed insights that connect all three. <span style="color:var(--text)">Start with the map.</span></p><div class="stats"><span><b style="color:var(--gold-bright)">225</b> papers</span><span class="sep"></span><span><b style="color:var(--gold-bright)">108</b> from 2025-26</span><span class="sep"></span><span><b style="color:var(--gold-bright)">17</b> insights</span></div><p class="method">Refreshed from <b>225</b> papers across the three themes · every claim quoted and cited to its source · <b>17</b> extended papers with figures &amp; benchmarks.</p><div class="mast-cta"><a class="btn btn-solid" href="#insights">Read the 17 insights ↓</a><a class="btn btn-ghost" href="#map">Explore the brain map</a></div></div></section><section class="block" id="map" style="padding-top:14px;"><div class="sec-head reveal"><span class="idx">~</span><span class="name">THE KNOWLEDGE BRAIN</span><span class="rule"></span></div><div class="reveal" style="width:100%;max-width:var(--panelw);margin-top:6px"><iframe src="newsletter/brain.html" title="Perpetual Labs — Research Brain Map" loading="lazy" style="width:100%;aspect-ratio:16/10;min-height:460px;border:1px solid var(--line);border-radius:14px;background:#FFFFFF;display:block" allow="fullscreen"></iframe></div><p class="mapcap"><b>FIG.&nbsp;1</b>&nbsp;&nbsp;The knowledge brain — 225 papers and 17 insights as an interactive 3D graph clustered into <span style="color:#2F6BD8">model training</span>, <span style="color:#3D53C6">data</span>, and <span style="color:#6246C9">verticals</span>. Edges mark agreement, contradiction, and extension. Drag to orbit; <span style="color:#96702E">click an insight to read its analysis</span> — papers are the small context dots behind them.</p></section><section class="block" id="insights"><div class="sec-head reveal"><span class="idx">~</span><span class="name">IN THIS ISSUE — THE 17 INSIGHTS</span><span class="rule"></span></div><div class="ins-list"><a class="ins-row reveal" href="newsletter/i01.html"><span class="rnum">01</span><span class="rmain"><span class="rtype" style="color:#3D53C6">▸ opportunity</span><h3>The data wall makes verifiable-reward environments the next training-data asset class</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i02.html"><span class="rnum">02</span><span class="rmain"><span class="rtype" style="color:#2F6BD8">↗ trend</span><h3>Capability leverage has shifted from compute to data engineering</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i03.html"><span class="rnum">03</span><span class="rmain"><span class="rtype" style="color:#6246C9">⊗ contradiction</span><h3>More data is not monotonically good — its marginal value can go negative</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i04.html"><span class="rnum">04</span><span class="rmain"><span class="rtype" style="color:#4C5566">⌗ vertical</span><h3>Proprietary real data is the collapse-proof anchor — verticals that own it are defensible</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i05.html"><span class="rnum">05</span><span class="rmain"><span class="rtype" style="color:#3D53C6">▸ opportunity</span><h3>Data curation is compute-relative — it&#x27;s a recurring service, not a one-time dataset</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i06.html"><span class="rnum">06</span><span class="rmain"><span class="rtype" style="color:#4C5566">⌗ vertical</span><h3>Verifiable-outcome verticals are the selection criterion for what data to build</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i07.html"><span class="rnum">07</span><span class="rmain"><span class="rtype" style="color:#6246C9">⊗ contradiction</span><h3>RLVR often elicits latent skill rather than teaching it — so data matters most where skill is absent</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i08.html"><span class="rnum">08</span><span class="rmain"><span class="rtype" style="color:#3D53C6">◇ gap</span><h3>Aggregate benchmarks mislead about where data is needed — distribution-matched eval is required</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i09.html"><span class="rnum">09</span><span class="rmain"><span class="rtype" style="color:#3D53C6">▸ opportunity</span><h3>Static benchmarks decay — evaluation is a recurring, contamination-free data product</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i10.html"><span class="rnum">10</span><span class="rmain"><span class="rtype" style="color:#3D53C6">◇ gap</span><h3>The scarce good is rare-tail coverage — and verticals are the web&#x27;s underrepresented tails</h3><span class="rmeta">◆ 5 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i11.html"><span class="rnum">11</span><span class="rmain"><span class="rtype" style="color:#2F6BD8">↗ trend</span><h3>In a vertical, the corpus is the durable moat — methods commoditize</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i12.html"><span class="rnum">12</span><span class="rmain"><span class="rtype" style="color:#2F6BD8">↗ trend</span><h3>Deployment economics are fragmenting models into many small specialists — multiplying vertical data demand</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i13.html"><span class="rnum">13</span><span class="rmain"><span class="rtype" style="color:#3D53C6">▸ opportunity</span><h3>Self-improvement has a ceiling without external verification — human-anchored data stays scarce</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i14.html"><span class="rnum">14</span><span class="rmain"><span class="rtype" style="color:#4C5566">⌗ vertical</span><h3>AI&#x27;s biggest vertical wins share one pattern: proprietary data plus checkable outcomes</h3><span class="rmeta">◆ 5 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i15.html"><span class="rnum">15</span><span class="rmain"><span class="rtype" style="color:#4C5566">⌗ vertical</span><h3>A vertical scorecard: where proprietary data × verifiable outcomes actually point</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i16.html"><span class="rnum">16</span><span class="rmain"><span class="rtype" style="color:#3D53C6">▸ opportunity</span><h3>The reasoning-RL boom makes verifiable vertical data the scarce input — connecting training, data, and verticals</h3><span class="rmeta">◆ 6 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a><a class="ins-row reveal" href="newsletter/i17.html"><span class="rnum">17</span><span class="rmain"><span class="rtype" style="color:#6246C9">⊗ contradiction</span><h3>Does RL teach or just elicit? The answer decides whether new capability needs new vertical data</h3><span class="rmeta">◆ 4 papers synthesized · <span class="rdeep">extended paper · figures + benchmarks</span></span></span><span class="rread">read the full paper <span class="arr">→</span></span></a></div></section><section class="block" id="benchmarks"><div class="sec-head reveal"><span class="idx">~</span><span class="name">FRONTIER BENCHMARKS</span><span class="rule"></span></div><p class="reveal" style="max-width:var(--panelw);margin:0 0 12px;font:400 13.5px/1.62 var(--sans);color:var(--text-dim)">Current frontier-model results — <b style="color:var(--text)">4</b> benchmarks, each score re-fetched from its source and linked to it (hover a model for the exact quote).</p><p class="reveal bcaveat">⚠ Every score was re-fetched from its source and links to it; vendors that publish benchmarks only as images (Anthropic) or block fetching (OpenAI) are absent. Numbers use each source&#x27;s own harness — indicative across rows, not a controlled comparison.</p><div class="bdesk"><div class="bcard reveal"><div class="bh"><span class="bname">GPQA Diamond</span><span class="bdom">PhD-level reasoning</span></div><div class="brow top"><span class="bm"><a href="https://deepmind.google/models/gemini/pro/" target="_blank" rel="noopener" title="GPQA Diamond — Gemini 3.1 Pro Thinking (No tools)">Gemini 3.1 Pro</a><span class="bsp">No tools</span></span><span class="bs">94.3%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="GPQA Diamond (93.8%)">Gemini 3 Deep Think</a><span class="bsp">No tools</span></span><span class="bs">93.8%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="GPQA Diamond (91.9%)">Gemini 3 Pro</a><span class="bsp">No tools</span></span><span class="bs">91.9%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3-flash/" target="_blank" rel="noopener" title="GPQA Diamond (90.4%)">Gemini 3 Flash</a><span class="bsp">No tools</span></span><span class="bs">90.4%</span></div></div><div class="bcard reveal"><div class="bh"><span class="bname">SWE-bench Verified</span><span class="bdom">agentic coding</span></div><div class="brow top"><span class="bm"><a href="https://deepmind.google/models/gemini/pro/" target="_blank" rel="noopener" title="SWE-Bench Verified — Gemini 3.1 Pro (Single attempt)">Gemini 3.1 Pro</a><span class="bsp">single attempt</span></span><span class="bs">80.6%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3-flash/" target="_blank" rel="noopener" title="On SWE-bench Verified ... Gemini 3 Flash achieves a score of 78%">Gemini 3 Flash</a><span class="bsp">single attempt</span></span><span class="bs">78%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="outperforms 2.5 Pro on SWE-bench Verified (76.2%)">Gemini 3 Pro</a><span class="bsp">single attempt</span></span><span class="bs">76.2%</span></div><div class="brow"><span class="bm"><a href="https://arxiv.org/abs/2507.20534" target="_blank" rel="noopener" title="Kimi K2 ... SWE-bench Verified 65.8">Kimi K2</a><span class="bsp">agentic</span></span><span class="bs">65.8</span></div><div class="brow"><span class="bm"><a href="https://arxiv.org/abs/2508.06471" target="_blank" rel="noopener" title="GLM-4.5 ... 64.2% SWE-bench Verified">GLM-4.5</a><span class="bsp">agentic</span></span><span class="bs">64.2%</span></div></div><div class="bcard reveal"><div class="bh"><span class="bname">Humanity&#x27;s Last Exam</span><span class="bdom">frontier knowledge</span></div><div class="brow top"><span class="bm"><a href="https://deepmind.google/models/gemini/pro/" target="_blank" rel="noopener" title="Humanity&#x27;s Last Exam — Gemini 3.1 Pro (No tools)">Gemini 3.1 Pro</a><span class="bsp">No tools</span></span><span class="bs">44.4%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="Humanity&#x27;s Last Exam (41.0% without the use of tools)">Gemini 3 Deep Think</a><span class="bsp">No tools</span></span><span class="bs">41.0%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="Humanity&#x27;s Last Exam (37.5% without the usage of any tools)">Gemini 3 Pro</a><span class="bsp">No tools</span></span><span class="bs">37.5%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3-flash/" target="_blank" rel="noopener" title="Humanity&#x27;s Last Exam (33.7% without tools)">Gemini 3 Flash</a><span class="bsp">No tools</span></span><span class="bs">33.7%</span></div></div><div class="bcard reveal"><div class="bh"><span class="bname">Terminal-Bench 2.0</span><span class="bdom">terminal agents</span></div><div class="brow top"><span class="bm"><a href="https://deepmind.google/models/gemini/pro/" target="_blank" rel="noopener" title="Terminal-Bench 2.0 — Gemini 3.1 Pro (Terminus-2 harness)">Gemini 3.1 Pro</a><span class="bsp">Terminus-2 harness</span></span><span class="bs">68.5%</span></div><div class="brow"><span class="bm"><a href="https://blog.google/products/gemini/gemini-3/" target="_blank" rel="noopener" title="54.2% on Terminal-Bench 2.0">Gemini 3 Pro</a><span class="bsp">default harness</span></span><span class="bs">54.2%</span></div></div></div></section><section class="block" id="exports"><div class="sec-head reveal"><span class="idx">~</span><span class="name">FOR MODELS</span><span class="rule"></span></div><div class="reveal" style="width:100%;max-width:var(--panelw)"><p style="font:400 13.5px/1.65 var(--sans);color:var(--text-dim);margin:0 0 14px;max-width:66ch">The whole interconnected knowledge base, machine-readable — so an LLM can scan every insight, its quoted evidence, and the cross-paper connections in a single pass. New papers link into the graph incrementally.</p><div class="exports"><a href="newsletter/llms.txt">llms.txt</a><a href="newsletter/knowledge.json">knowledge.json</a><a href="newsletter/papers.json">papers.json</a><a href="newsletter/insights.json">insights.json</a><a href="newsletter/reasoning_map.json">reasoning_map.json</a></div></div></section><div class="block" style="padding-top:0"><div class="fwrap"><div class="fbrand"><img src="assets/logo.png" width="24" height="24" alt=""><span>Perpetual Labs · the newsletter</span></div><span>© 2026 · est. ∞</span></div></div></main></div><script>(function(){var nav=document.getElementById('nav');var f=function(){nav.classList.toggle('scrolled',window.scrollY>24);};f();addEventListener('scroll',f,{passive:true});var r=document.querySelectorAll('.reveal');if(!('IntersectionObserver'in window)){r.forEach(function(e){e.classList.add('in');});}else{var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});r.forEach(function(e){io.observe(e);});}var svg=document.querySelector('.mapbox svg');var box=document.querySelector('.mapbox');var pop=document.querySelector('.mappop');if(svg&&pop){var eg=svg.querySelectorAll('.medge');function hi(id){svg.classList.add('dim');var nb={};nb[id]=1;eg.forEach(function(e){var on=e.getAttribute('data-a')===id||e.getAttribute('data-b')===id;e.classList.toggle('on',on);if(on){nb[e.getAttribute('data-a')]=1;nb[e.getAttribute('data-b')]=1;}});svg.querySelectorAll('[data-node]').forEach(function(g){g.classList.toggle('nb',!!nb[g.getAttribute('data-node')]);});}function clr(){svg.classList.remove('dim');eg.forEach(function(e){e.classList.remove('on');});svg.querySelectorAll('[data-node]').forEach(function(g){g.classList.remove('nb');});pop.classList.remove('show');}function sp(g){var h=g.getAttribute('data-pop');if(!h)return;pop.innerHTML=h;pop.classList.add('show');var br=box.getBoundingClientRect(),nr=g.getBoundingClientRect();var x=nr.left-br.left+nr.width/2,y=nr.top-br.top;pop.style.left=Math.max(8,Math.min(x-pop.offsetWidth/2,br.width-pop.offsetWidth-8))+'px';pop.style.top=((y-pop.offsetHeight-12)<8?(nr.bottom-br.top+12):(y-pop.offsetHeight-12))+'px';}svg.querySelectorAll('[data-node]').forEach(function(g){var id=g.getAttribute('data-node');g.addEventListener('pointerenter',function(){hi(id);sp(g);});});box.addEventListener('pointerleave',clr);}})();</script><style>#pl-lock{position:fixed;bottom:16px;right:16px;z-index:2147483000;font:600 10px/1 "JetBrains Mono",ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase;color:rgba(57,64,84,.55);background:rgba(255,255,255,.85);border:1px solid rgba(12,20,48,.2);border-radius:8px;padding:8px 11px;text-decoration:none;backdrop-filter:blur(4px);transition:color .2s,border-color .2s}#pl-lock:hover{color:#3D53C6;border-color:rgba(61,83,198,.45)}</style><a href="/api/lock" id="pl-lock" title="Lock — sign out of the newsletter" aria-label="Lock the newsletter">↶ lock</a></body></html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#FFFFFF">
+  <title>QuantBench — Perpetual Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--ink:#0C1430;--muted:#667085;--line:rgba(10,15,30,.12);--soft:#F6F8FB;--accent:#3D53C6}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#fff;color:var(--ink);font-family:"JetBrains Mono",ui-monospace,monospace}
+    a{color:inherit}
+    header{position:sticky;top:0;z-index:3;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+    .nav{max-width:1160px;margin:0 auto;padding:16px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:.08em}
+    .brand img{width:28px;height:28px}
+    .navlinks{display:flex;align-items:center;gap:18px;font-size:10px;letter-spacing:.12em;text-transform:uppercase}
+    .navlinks a{text-decoration:none;color:var(--muted)}
+    .navlinks a:hover{color:var(--accent)}
+    main{max-width:1160px;margin:0 auto;padding:clamp(64px,9vw,112px) clamp(20px,5vw,48px) 96px}
+    .eyebrow{font-size:11px;font-weight:600;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+    h1{font:500 clamp(44px,7vw,78px)/.98 "EB Garamond",Georgia,serif;letter-spacing:-.025em;margin:0;max-width:12ch}
+    .lede{max-width:680px;color:var(--muted);font:400 14px/1.8 "JetBrains Mono",monospace;margin:28px 0 0}
+    .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:4px;text-decoration:none;font-size:11px;font-weight:600;letter-spacing:.04em;border:1px solid var(--ink)}
+    .btn.primary{background:var(--ink);color:#fff}
+    .btn.secondary{background:#fff;color:var(--ink);border-color:rgba(12,20,48,.24)}
+    .stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:clamp(52px,8vw,88px) 0 0;border:1px solid var(--line)}
+    .stat{padding:22px;border-right:1px solid var(--line)}
+    .stat:last-child{border-right:0}
+    .stat b{display:block;font:500 30px/1 "EB Garamond",Georgia,serif;margin-bottom:8px}
+    .stat span{color:var(--muted);font-size:9px;letter-spacing:.16em;text-transform:uppercase}
+    .section-head{display:flex;align-items:center;gap:18px;margin:clamp(56px,8vw,88px) 0 24px}
+    .section-head h2{font:500 30px/1.1 "EB Garamond",Georgia,serif;margin:0}
+    .rule{height:1px;background:var(--line);flex:1}
+    .families{display:grid;gap:14px}
+    .family{border:1px solid var(--line);background:#fff;padding:clamp(22px,3vw,32px)}
+    .family-top{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:20px;align-items:start}
+    .family h3{font:500 clamp(23px,3vw,30px)/1.15 "EB Garamond",Georgia,serif;margin:0 0 10px}
+    .family p{color:var(--muted);font-size:12px;line-height:1.7;margin:0;max-width:780px}
+    .tag{white-space:nowrap;background:var(--soft);color:var(--accent);padding:7px 9px;border-radius:3px;font-size:9px;letter-spacing:.1em;text-transform:uppercase}
+    .instances{display:grid;gap:10px;margin-top:24px}
+    details{border-top:1px solid var(--line);padding-top:10px}
+    summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:7px 0;font-size:11px;font-weight:600}
+    summary::-webkit-details-marker{display:none}
+    summary::after{content:"+";color:var(--accent);font-size:16px}
+    details[open] summary::after{content:"−"}
+    .files{display:flex;flex-wrap:wrap;gap:8px;padding:8px 0 4px}
+    .file{display:inline-flex;padding:8px 10px;background:var(--soft);border:1px solid rgba(10,15,30,.07);border-radius:3px;text-decoration:none;color:var(--muted);font-size:9px;line-height:1.2}
+    .file:hover{color:var(--accent);border-color:rgba(61,83,198,.28)}
+    .notice{margin-top:38px;border-left:2px solid var(--accent);padding:4px 0 4px 18px;color:var(--muted);font-size:11px;line-height:1.7;max-width:800px}
+    .status{padding:28px;border:1px solid var(--line);background:var(--soft);color:var(--muted);font-size:12px}
+    footer{border-top:1px solid var(--line);padding:24px clamp(20px,5vw,48px);color:var(--muted);font-size:9px;letter-spacing:.12em;text-transform:uppercase;text-align:center}
+    :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    @media(max-width:620px){.navlinks a:first-child{display:none}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.stat:last-child{border-bottom:0}.family-top{grid-template-columns:1fr}.tag{justify-self:start}}
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="/"><img src="/assets/logo.png" alt=""><span>PERPETUAL LABS</span></a>
+      <div class="navlinks"><a href="/">Return home</a><a href="/api/lock?next=/quantbench.html">Lock research</a></div>
+    </nav>
+  </header>
+  <main>
+    <div class="eyebrow">Protected research</div>
+    <h1>QuantBench evaluation &amp; samples</h1>
+    <p class="lede" id="summary">Loading the private evaluation catalog…</p>
+    <div class="actions" id="actions" hidden></div>
+    <div class="stats" id="stats" hidden></div>
+    <div class="section-head"><h2>Evaluation families</h2><div class="rule"></div></div>
+    <div class="families" id="families"><div class="status">Loading authorized content…</div></div>
+    <p class="notice" id="notice" hidden></p>
+  </main>
+  <footer>Intelligence that compounds forever</footer>
+  <script>
+    function fileUrl(path){return '/api/quantbench?'+new URLSearchParams({path:path}).toString();}
+    function el(tag, className, text){var node=document.createElement(tag);if(className)node.className=className;if(text!==undefined)node.textContent=text;return node;}
+    function action(label,path,kind){var link=el('a','btn '+kind,label);link.href=fileUrl(path);if(path.endsWith('.pdf')){link.target='_blank';link.rel='noopener';}return link;}
+    function renderFile(file){var link=el('a','file',file.label);link.href=fileUrl(file.path);if(file.inline){link.target='_blank';link.rel='noopener';}return link;}
+    function renderFamily(family){
+      var card=el('article','family');
+      var top=el('div','family-top'),copy=el('div');
+      copy.append(el('h3','',family.name),el('p','',family.summary));
+      top.append(copy,el('span','tag',family.tier+' · '+family.difficulty));
+      card.append(top);
+      var instances=el('div','instances');
+      family.instances.forEach(function(instance,index){
+        var detail=document.createElement('details');if(index===0)detail.open=true;
+        var summary=el('summary','',instance.name);detail.append(summary);
+        var files=el('div','files');instance.files.forEach(function(file){files.append(renderFile(file));});
+        detail.append(files);instances.append(detail);
+      });
+      card.append(instances);return card;
+    }
+    async function load(){
+      try{
+        var response=await fetch(fileUrl('quantbench/catalog.json'),{credentials:'same-origin',cache:'no-store'});
+        if(!response.ok)throw new Error('Catalog unavailable');
+        var catalog=await response.json();
+        document.getElementById('summary').textContent=catalog.summary;
+        var actions=document.getElementById('actions');
+        actions.append(action('Read Paper',catalog.paper.path,'primary'),action('Download sample bundle',catalog.bundle.path,'secondary'));actions.hidden=false;
+        var stats=document.getElementById('stats');
+        [['families',catalog.counts.families],['tasks',catalog.counts.tasks],['files',catalog.counts.files]].forEach(function(item){var box=el('div','stat');box.append(el('b','',String(item[1])),el('span','',item[0]));stats.append(box);});stats.hidden=false;
+        var families=document.getElementById('families');families.replaceChildren();catalog.families.forEach(function(family){families.append(renderFamily(family));});
+        var notice=document.getElementById('notice');notice.textContent=catalog.notice;notice.hidden=false;
+      }catch(error){document.getElementById('families').innerHTML='<div class="status">The private catalog could not be loaded. Lock the page, then enter the Research password again.</div>';}
+    }
+    load();
+  </script>
+</body>
+</html>

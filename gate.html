@@ -1,0 +1,53 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#FFFFFF">
+<title>Perpetual Labs — Research</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--bg:#FFFFFF;--gold:#3D53C6;--ink:#0C1430;--dim:#6D7280;--line:rgba(10,15,30,.16);--err:#B3382C;}
+  *{box-sizing:border-box} html,body{margin:0;height:100%}
+  body{background:radial-gradient(130% 90% at 50% 30%,#EEF1F8,#FFFFFF 55%,#FFFFFF 85%);color:var(--ink);
+    font-family:"JetBrains Mono",ui-monospace,monospace;min-height:100dvh;display:grid;place-items:center;padding:32px;}
+  main{width:100%;max-width:380px;text-align:center}
+  h1{font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:clamp(28px,6vw,40px);line-height:1.05;
+    letter-spacing:-.015em;margin:0}
+  p.sub{color:var(--dim);font-size:12px;letter-spacing:.04em;line-height:1.6;margin:18px 0 0}
+  form{margin:0}
+  .field{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);transition:border-color .2s}
+  .field:focus-within{border-color:var(--gold)}
+  input{flex:1;background:none;border:0;color:var(--ink);font-family:inherit;font-size:15px;padding:12px 2px;outline:none}
+  input::placeholder{color:var(--dim)}
+  .go{background:none;border:0;color:var(--gold);font-size:20px;line-height:1;cursor:pointer;padding:6px 4px;transition:transform .2s}
+  .go:hover{transform:translateX(3px)}
+  .meta{display:flex;justify-content:space-between;align-items:center;margin-top:10px;min-height:16px}
+  .msg{color:var(--err);font-size:11px;letter-spacing:.02em;margin:0}
+  .tog{background:none;border:0;color:var(--dim);font:500 10px/1 "JetBrains Mono",monospace;letter-spacing:.12em;
+    text-transform:uppercase;cursor:pointer;padding:2px}
+  .tog:hover{color:var(--gold)}
+  :focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+  input:focus-visible{outline:none}  /* the field's gold underline is the focus indicator */
+</style></head>
+<body>
+<main>
+  <form method="POST" action="/api/unlock">
+    <input id="next" name="next" type="hidden" value="/newsletter.html">
+    <div class="field">
+      <input id="pw" name="password" type="password" placeholder="password" aria-label="Access password"
+        autocomplete="current-password" spellcheck="false" autofocus>
+      <button class="go" type="submit" aria-label="Unlock">→</button>
+    </div>
+    <div class="meta">
+      <p class="msg" id="msg" role="status" aria-live="polite"></p>
+      <button class="tog" id="tog" type="button" aria-label="Show password">show</button>
+    </div>
+  </form>
+</main>
+<script>
+  var t=document.getElementById('tog'),p=document.getElementById('pw');
+  t.addEventListener('click',function(){var s=p.type==='password';p.type=s?'text':'password';t.textContent=s?'hide':'show';p.focus();});
+  var params=new URLSearchParams(location.search),next=params.get('next');
+  if(next&&next.charAt(0)==='/'&&next.slice(0,2)!=='//')document.getElementById('next').value=next;
+  if(params.get('e'))document.getElementById('msg').textContent='Incorrect password.';
+</script>
+</body></html>

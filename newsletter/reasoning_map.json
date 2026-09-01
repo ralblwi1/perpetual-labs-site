@@ -1,0 +1,5396 @@
+{
+  "nodes": [
+    {
+      "id": "theme:Model training",
+      "type": "theme",
+      "label": "Model training"
+    },
+    {
+      "id": "theme:Data",
+      "type": "theme",
+      "label": "Data"
+    },
+    {
+      "id": "theme:Verticals",
+      "type": "theme",
+      "label": "Verticals"
+    },
+    {
+      "id": "1706.03741",
+      "type": "paper",
+      "label": "Deep Reinforcement Learning from Human Preferences",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2017,
+      "authors": "Paul F. Christiano et al.",
+      "url": "https://arxiv.org/abs/1706.03741",
+      "cited_by": []
+    },
+    {
+      "id": "1707.06347",
+      "type": "paper",
+      "label": "Proximal Policy Optimization Algorithms",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2017,
+      "authors": "John Schulman et al.",
+      "url": "https://arxiv.org/abs/1707.06347",
+      "cited_by": []
+    },
+    {
+      "id": "1901.08746",
+      "type": "paper",
+      "label": "BioBERT: a pre-trained biomedical language representation model for biomedical text mining",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2019,
+      "authors": "Jinhyuk Lee et al.",
+      "url": "https://arxiv.org/abs/1901.08746",
+      "cited_by": []
+    },
+    {
+      "id": "1910.10683",
+      "type": "paper",
+      "label": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2020,
+      "authors": "Colin Raffel, Noam Shazeer, Adam Roberts, et al.",
+      "url": "https://arxiv.org/abs/1910.10683",
+      "cited_by": []
+    },
+    {
+      "id": "2001.08361",
+      "type": "paper",
+      "label": "Scaling Laws for Neural Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2020,
+      "authors": "Jared Kaplan et al.",
+      "url": "https://arxiv.org/abs/2001.08361",
+      "cited_by": []
+    },
+    {
+      "id": "2007.15779",
+      "type": "paper",
+      "label": "Domain-Specific Language Model Pretraining for Biomedical Natural Language Processing",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2020,
+      "authors": "Yu Gu et al.",
+      "url": "https://arxiv.org/abs/2007.15779",
+      "cited_by": [
+        "i11"
+      ]
+    },
+    {
+      "id": "2009.13081",
+      "type": "paper",
+      "label": "What Disease does this Patient Have? A Large-scale Open Domain Question Answering Dataset from Medical Exams",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2020,
+      "authors": "Di Jin et al.",
+      "url": "https://arxiv.org/abs/2009.13081",
+      "cited_by": []
+    },
+    {
+      "id": "2010.14701",
+      "type": "paper",
+      "label": "Scaling Laws for Autoregressive Generative Modeling",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2020,
+      "authors": "Tom Henighan et al.",
+      "url": "https://arxiv.org/abs/2010.14701",
+      "cited_by": []
+    },
+    {
+      "id": "2101.00027",
+      "type": "paper",
+      "label": "The Pile: An 800GB Dataset of Diverse Text for Language Modeling",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2020,
+      "authors": "Leo Gao, Stella Biderman, Sid Black, et al.",
+      "url": "https://arxiv.org/abs/2101.00027",
+      "cited_by": []
+    },
+    {
+      "id": "2009.03300",
+      "type": "paper",
+      "label": "Measuring Massive Multitask Language Understanding",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Dan Hendrycks et al.",
+      "url": "https://arxiv.org/abs/2009.03300",
+      "cited_by": []
+    },
+    {
+      "id": "2102.01293",
+      "type": "paper",
+      "label": "Scaling Laws for Transfer",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Danny Hernandez et al.",
+      "url": "https://arxiv.org/abs/2102.01293",
+      "cited_by": []
+    },
+    {
+      "id": "2102.06701",
+      "type": "paper",
+      "label": "Explaining Neural Scaling Laws",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Yasaman Bahri et al.",
+      "url": "https://arxiv.org/abs/2102.06701",
+      "cited_by": []
+    },
+    {
+      "id": "2103.03874",
+      "type": "paper",
+      "label": "Measuring Mathematical Problem Solving With the MATH Dataset",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Dan Hendrycks et al.",
+      "url": "https://arxiv.org/abs/2103.03874",
+      "cited_by": []
+    },
+    {
+      "id": "2107.03374",
+      "type": "paper",
+      "label": "Evaluating Large Language Models Trained on Code",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Mark Chen et al.",
+      "url": "https://arxiv.org/abs/2107.03374",
+      "cited_by": []
+    },
+    {
+      "id": "2110.14168",
+      "type": "paper",
+      "label": "Training Verifiers to Solve Math Word Problems",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2021,
+      "authors": "Karl Cobbe et al.",
+      "url": "https://arxiv.org/abs/2110.14168",
+      "cited_by": []
+    },
+    {
+      "id": "alphafold-2021",
+      "type": "paper",
+      "label": "Highly accurate protein structure prediction with AlphaFold",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2021,
+      "authors": "John Jumper et al.",
+      "url": "https://www.nature.com/articles/s41586-021-03819-2",
+      "cited_by": [
+        "i04",
+        "i14",
+        "i15"
+      ]
+    },
+    {
+      "id": "2107.06499",
+      "type": "paper",
+      "label": "Deduplicating Training Data Makes Language Models Better",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2022,
+      "authors": "Katherine Lee, Daphne Ippolito, Andrew Nystrom, et al. (incl. Nicholas Carlini)",
+      "url": "https://arxiv.org/abs/2107.06499",
+      "cited_by": [
+        "i10"
+      ]
+    },
+    {
+      "id": "2203.02155",
+      "type": "paper",
+      "label": "Training language models to follow instructions with human feedback",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Long Ouyang et al.",
+      "url": "https://arxiv.org/abs/2203.02155",
+      "cited_by": []
+    },
+    {
+      "id": "2203.14465",
+      "type": "paper",
+      "label": "STaR: Bootstrapping Reasoning With Reasoning",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2022,
+      "authors": "Eric Zelikman et al.",
+      "url": "https://arxiv.org/abs/2203.14465",
+      "cited_by": []
+    },
+    {
+      "id": "2203.15556",
+      "type": "paper",
+      "label": "Training Compute-Optimal Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Jordan Hoffmann et al.",
+      "url": "https://arxiv.org/abs/2203.15556",
+      "cited_by": [
+        "i02"
+      ]
+    },
+    {
+      "id": "2204.05862",
+      "type": "paper",
+      "label": "Training a Helpful and Harmless Assistant with Reinforcement Learning from Human Feedback",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Yuntao Bai et al.",
+      "url": "https://arxiv.org/abs/2204.05862",
+      "cited_by": []
+    },
+    {
+      "id": "2205.10487",
+      "type": "paper",
+      "label": "Scaling Laws and Interpretability of Learning from Repeated Data",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Danny Hernandez et al.",
+      "url": "https://arxiv.org/abs/2205.10487",
+      "cited_by": [
+        "i01",
+        "i03"
+      ]
+    },
+    {
+      "id": "2206.04615",
+      "type": "paper",
+      "label": "Beyond the Imitation Game: Quantifying and extrapolating the capabilities of language models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Aarohi Srivastava et al.",
+      "url": "https://arxiv.org/abs/2206.04615",
+      "cited_by": []
+    },
+    {
+      "id": "2206.07682",
+      "type": "paper",
+      "label": "Emergent Abilities of Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Jason Wei et al.",
+      "url": "https://arxiv.org/abs/2206.07682",
+      "cited_by": [
+        "i08"
+      ]
+    },
+    {
+      "id": "2206.14486",
+      "type": "paper",
+      "label": "Beyond neural scaling laws: beating power law scaling via data pruning",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Ben Sorscher et al.",
+      "url": "https://arxiv.org/abs/2206.14486",
+      "cited_by": [
+        "i03",
+        "i10"
+      ]
+    },
+    {
+      "id": "2206.14858",
+      "type": "paper",
+      "label": "Solving Quantitative Reasoning Problems with Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2022,
+      "authors": "Aitor Lewkowycz et al.",
+      "url": "https://arxiv.org/abs/2206.14858",
+      "cited_by": []
+    },
+    {
+      "id": "2210.09261",
+      "type": "paper",
+      "label": "Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can Solve Them",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Mirac Suzgun et al.",
+      "url": "https://arxiv.org/abs/2210.09261",
+      "cited_by": []
+    },
+    {
+      "id": "2210.10341",
+      "type": "paper",
+      "label": "BioGPT: Generative Pre-trained Transformer for Biomedical Text Generation and Mining",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2022,
+      "authors": "Renqian Luo et al.",
+      "url": "https://arxiv.org/abs/2210.10341",
+      "cited_by": []
+    },
+    {
+      "id": "2210.10760",
+      "type": "paper",
+      "label": "Scaling Laws for Reward Model Overoptimization",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Leo Gao, John Schulman, Jacob Hilton",
+      "url": "https://arxiv.org/abs/2210.10760",
+      "cited_by": []
+    },
+    {
+      "id": "2210.11610",
+      "type": "paper",
+      "label": "Large Language Models Can Self-Improve",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2022,
+      "authors": "Jiaxin Huang et al.",
+      "url": "https://arxiv.org/abs/2210.11610",
+      "cited_by": []
+    },
+    {
+      "id": "2210.14891",
+      "type": "paper",
+      "label": "Broken Neural Scaling Laws",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Ethan Caballero et al.",
+      "url": "https://arxiv.org/abs/2210.14891",
+      "cited_by": []
+    },
+    {
+      "id": "2211.04325",
+      "type": "paper",
+      "label": "Will we run out of data? Limits of LLM scaling based on human-generated data",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Pablo Villalobos et al.",
+      "url": "https://arxiv.org/abs/2211.04325",
+      "cited_by": [
+        "i01"
+      ]
+    },
+    {
+      "id": "2211.09110",
+      "type": "paper",
+      "label": "Holistic Evaluation of Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Percy Liang et al.",
+      "url": "https://arxiv.org/abs/2211.09110",
+      "cited_by": []
+    },
+    {
+      "id": "2211.14275",
+      "type": "paper",
+      "label": "Solving math word problems with process- and outcome-based feedback",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Jonathan Uesato et al.",
+      "url": "https://arxiv.org/abs/2211.14275",
+      "cited_by": [
+        "i06"
+      ]
+    },
+    {
+      "id": "2212.08073",
+      "type": "paper",
+      "label": "Constitutional AI: Harmlessness from AI Feedback",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2022,
+      "authors": "Yuntao Bai et al.",
+      "url": "https://arxiv.org/abs/2212.08073",
+      "cited_by": []
+    },
+    {
+      "id": "2212.09689",
+      "type": "paper",
+      "label": "Unnatural Instructions: Tuning Language Models with (Almost) No Human Labor",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2022,
+      "authors": "Or Honovich et al.",
+      "url": "https://arxiv.org/abs/2212.09689",
+      "cited_by": []
+    },
+    {
+      "id": "2212.10560",
+      "type": "paper",
+      "label": "Self-Instruct: Aligning Language Models with Self-Generated Instructions",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2022,
+      "authors": "Yizhong Wang et al.",
+      "url": "https://arxiv.org/abs/2212.10560",
+      "cited_by": []
+    },
+    {
+      "id": "2212.13138",
+      "type": "paper",
+      "label": "Large Language Models Encode Clinical Knowledge",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2022,
+      "authors": "Karan Singhal et al.",
+      "url": "https://arxiv.org/abs/2212.13138",
+      "cited_by": []
+    },
+    {
+      "id": "2302.03169",
+      "type": "paper",
+      "label": "Data Selection for Language Models via Importance Resampling",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Sang Michael Xie, Shibani Santurkar, Tengyu Ma, Percy Liang",
+      "url": "https://arxiv.org/abs/2302.03169",
+      "cited_by": []
+    },
+    {
+      "id": "2303.09540",
+      "type": "paper",
+      "label": "SemDeDup: Data-efficient learning at web-scale through semantic deduplication",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Amro Abbas, Kushal Tirumala, Dániel Simig, Surya Ganguli, Ari S. Morcos",
+      "url": "https://arxiv.org/abs/2303.09540",
+      "cited_by": [
+        "i10"
+      ]
+    },
+    {
+      "id": "2303.17564",
+      "type": "paper",
+      "label": "BloombergGPT: A Large Language Model for Finance",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Shijie Wu et al.",
+      "url": "https://arxiv.org/abs/2303.17564",
+      "cited_by": [
+        "i04",
+        "i14",
+        "i16"
+      ]
+    },
+    {
+      "id": "2304.12244",
+      "type": "paper",
+      "label": "WizardLM: Empowering Large Language Models to Follow Complex Instructions",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Can Xu et al.",
+      "url": "https://arxiv.org/abs/2304.12244",
+      "cited_by": []
+    },
+    {
+      "id": "2304.15004",
+      "type": "paper",
+      "label": "Are Emergent Abilities of Large Language Models a Mirage?",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Rylan Schaeffer et al.",
+      "url": "https://arxiv.org/abs/2304.15004",
+      "cited_by": [
+        "i08"
+      ]
+    },
+    {
+      "id": "2305.02301",
+      "type": "paper",
+      "label": "Distilling Step-by-Step! Outperforming Larger Language Models with Less Training Data and Smaller Model Sizes",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Cheng-Yu Hsieh et al.",
+      "url": "https://arxiv.org/abs/2305.02301",
+      "cited_by": [
+        "i02"
+      ]
+    },
+    {
+      "id": "2305.06161",
+      "type": "paper",
+      "label": "StarCoder: may the source be with you!",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Raymond Li et al.",
+      "url": "https://arxiv.org/abs/2305.06161",
+      "cited_by": []
+    },
+    {
+      "id": "2305.09617",
+      "type": "paper",
+      "label": "Towards Expert-Level Medical Question Answering with Large Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Karan Singhal et al.",
+      "url": "https://arxiv.org/abs/2305.09617",
+      "cited_by": [
+        "i11",
+        "i15",
+        "i16",
+        "i17"
+      ]
+    },
+    {
+      "id": "2305.10429",
+      "type": "paper",
+      "label": "DoReMi: Optimizing Data Mixtures Speeds Up Language Model Pretraining",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Sang Michael Xie, Hieu Pham, Xuanyi Dong, et al.",
+      "url": "https://arxiv.org/abs/2305.10429",
+      "cited_by": [
+        "i02"
+      ]
+    },
+    {
+      "id": "2305.13230",
+      "type": "paper",
+      "label": "To Repeat or Not To Repeat: Insights from Scaling LLM under Token-Crisis",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Fuzhao Xue, Yao Fu, Wangchunshu Zhou, Zangwei Zheng, Yang You",
+      "url": "https://arxiv.org/abs/2305.13230",
+      "cited_by": [
+        "i03"
+      ]
+    },
+    {
+      "id": "2305.15717",
+      "type": "paper",
+      "label": "The False Promise of Imitating Proprietary LLMs",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Arnav Gudibande et al.",
+      "url": "https://arxiv.org/abs/2305.15717",
+      "cited_by": [
+        "i13"
+      ]
+    },
+    {
+      "id": "2305.16264",
+      "type": "paper",
+      "label": "Scaling Data-Constrained Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Niklas Muennighoff, Alexander M. Rush, et al.",
+      "url": "https://arxiv.org/abs/2305.16264",
+      "cited_by": [
+        "i01"
+      ]
+    },
+    {
+      "id": "2305.17493",
+      "type": "paper",
+      "label": "The Curse of Recursion: Training on Generated Data Makes Models Forget",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Ilia Shumailov et al.",
+      "url": "https://arxiv.org/abs/2305.17493",
+      "cited_by": [
+        "i04",
+        "i10",
+        "i13",
+        "i17"
+      ]
+    },
+    {
+      "id": "2305.18290",
+      "type": "paper",
+      "label": "Direct Preference Optimization: Your Language Model is Secretly a Reward Model",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Rafael Rafailov et al.",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "cited_by": []
+    },
+    {
+      "id": "2305.20050",
+      "type": "paper",
+      "label": "Let's Verify Step by Step",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Hunter Lightman et al.",
+      "url": "https://arxiv.org/abs/2305.20050",
+      "cited_by": [
+        "i01",
+        "i06",
+        "i07"
+      ]
+    },
+    {
+      "id": "2306.01116",
+      "type": "paper",
+      "label": "The RefinedWeb Dataset for Falcon LLM: Outperforming Curated Corpora with Web Data, and Web Data Only",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Guilherme Penedo et al.",
+      "url": "https://arxiv.org/abs/2306.01116",
+      "cited_by": []
+    },
+    {
+      "id": "2306.02707",
+      "type": "paper",
+      "label": "Orca: Progressive Learning from Complex Explanation Traces of GPT-4",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Subhabrata Mukherjee et al.",
+      "url": "https://arxiv.org/abs/2306.02707",
+      "cited_by": []
+    },
+    {
+      "id": "2306.05443",
+      "type": "paper",
+      "label": "PIXIU: A Large Language Model, Instruction Data and Evaluation Benchmark for Finance",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Qianqian Xie et al.",
+      "url": "https://arxiv.org/abs/2306.05443",
+      "cited_by": []
+    },
+    {
+      "id": "2306.05685",
+      "type": "paper",
+      "label": "Judging LLM-as-a-Judge with MT-Bench and Chatbot Arena",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Lianmin Zheng et al.",
+      "url": "https://arxiv.org/abs/2306.05685",
+      "cited_by": []
+    },
+    {
+      "id": "2306.06031",
+      "type": "paper",
+      "label": "FinGPT: Open-Source Financial Large Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Hongyang Yang et al.",
+      "url": "https://arxiv.org/abs/2306.06031",
+      "cited_by": []
+    },
+    {
+      "id": "2306.08568",
+      "type": "paper",
+      "label": "WizardCoder: Empowering Code Large Language Models with Evol-Instruct",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Ziyang Luo et al.",
+      "url": "https://arxiv.org/abs/2306.08568",
+      "cited_by": []
+    },
+    {
+      "id": "2306.11644",
+      "type": "paper",
+      "label": "Textbooks Are All You Need",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Suriya Gunasekar, Yi Zhang, Jyoti Aneja, et al.",
+      "url": "https://arxiv.org/abs/2306.11644",
+      "cited_by": [
+        "i02"
+      ]
+    },
+    {
+      "id": "2307.01850",
+      "type": "paper",
+      "label": "Self-Consuming Generative Models Go MAD",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Sina Alemohammad et al.",
+      "url": "https://arxiv.org/abs/2307.01850",
+      "cited_by": [
+        "i04"
+      ]
+    },
+    {
+      "id": "2308.01825",
+      "type": "paper",
+      "label": "Scaling Relationship on Learning Mathematical Reasoning with Large Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Zheng Yuan et al.",
+      "url": "https://arxiv.org/abs/2308.01825",
+      "cited_by": []
+    },
+    {
+      "id": "2308.03688",
+      "type": "paper",
+      "label": "AgentBench: Evaluating LLMs as Agents",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Xiao Liu et al.",
+      "url": "https://arxiv.org/abs/2308.03688",
+      "cited_by": []
+    },
+    {
+      "id": "2308.06259",
+      "type": "paper",
+      "label": "Self-Alignment with Instruction Backtranslation",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Xian Li et al.",
+      "url": "https://arxiv.org/abs/2308.06259",
+      "cited_by": []
+    },
+    {
+      "id": "2308.08998",
+      "type": "paper",
+      "label": "Reinforced Self-Training (ReST) for Language Modeling",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Caglar Gulcehre et al.",
+      "url": "https://arxiv.org/abs/2308.08998",
+      "cited_by": []
+    },
+    {
+      "id": "2308.11462",
+      "type": "paper",
+      "label": "LegalBench: A Collaboratively Built Benchmark for Measuring Legal Reasoning in Large Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Neel Guha et al.",
+      "url": "https://arxiv.org/abs/2308.11462",
+      "cited_by": [
+        "i15"
+      ]
+    },
+    {
+      "id": "2308.12284",
+      "type": "paper",
+      "label": "D4: Improving LLM Pretraining via Document De-Duplication and Diversification",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Kushal Tirumala, Daniel Simig, Armen Aghajanyan, Ari S. Morcos",
+      "url": "https://arxiv.org/abs/2308.12284",
+      "cited_by": [
+        "i10"
+      ]
+    },
+    {
+      "id": "2308.12950",
+      "type": "paper",
+      "label": "Code Llama: Open Foundation Models for Code",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Baptiste Rozière et al.",
+      "url": "https://arxiv.org/abs/2308.12950",
+      "cited_by": [
+        "i12"
+      ]
+    },
+    {
+      "id": "2309.00267",
+      "type": "paper",
+      "label": "RLAIF vs. RLHF: Scaling Reinforcement Learning from Human Feedback with AI Feedback",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Harrison Lee et al.",
+      "url": "https://arxiv.org/abs/2309.00267",
+      "cited_by": []
+    },
+    {
+      "id": "2309.04564",
+      "type": "paper",
+      "label": "When Less is More: Investigating Data Pruning for Pretraining LLMs at Scale",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Max Marion, Ahmet Üstün, Luiza Pozzobon, et al. (incl. Sara Hooker)",
+      "url": "https://arxiv.org/abs/2309.04564",
+      "cited_by": []
+    },
+    {
+      "id": "2309.05463",
+      "type": "paper",
+      "label": "Textbooks Are All You Need II: phi-1.5 technical report",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Yuanzhi Li et al.",
+      "url": "https://arxiv.org/abs/2309.05463",
+      "cited_by": []
+    },
+    {
+      "id": "2309.12284",
+      "type": "paper",
+      "label": "MetaMath: Bootstrap Your Own Mathematical Questions for Large Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Longhui Yu et al.",
+      "url": "https://arxiv.org/abs/2309.12284",
+      "cited_by": []
+    },
+    {
+      "id": "2310.06786",
+      "type": "paper",
+      "label": "OpenWebMath: An Open Dataset of High-Quality Mathematical Web Text",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Keiran Paster et al.",
+      "url": "https://arxiv.org/abs/2310.06786",
+      "cited_by": []
+    },
+    {
+      "id": "2310.10631",
+      "type": "paper",
+      "label": "Llemma: An Open Language Model For Mathematics",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Zhangir Azerbayev et al.",
+      "url": "https://arxiv.org/abs/2310.10631",
+      "cited_by": [
+        "i11"
+      ]
+    },
+    {
+      "id": "2311.12022",
+      "type": "paper",
+      "label": "GPQA: A Graduate-Level Google-Proof Q&A Benchmark",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "David Rein et al.",
+      "url": "https://arxiv.org/abs/2311.12022",
+      "cited_by": []
+    },
+    {
+      "id": "2311.12983",
+      "type": "paper",
+      "label": "GAIA: a benchmark for General AI Assistants",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Grégoire Mialon et al.",
+      "url": "https://arxiv.org/abs/2311.12983",
+      "cited_by": []
+    },
+    {
+      "id": "2311.16079",
+      "type": "paper",
+      "label": "MEDITRON-70B: Scaling Medical Pretraining for Large Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Zeming Chen et al.",
+      "url": "https://arxiv.org/abs/2311.16079",
+      "cited_by": [
+        "i04",
+        "i15"
+      ]
+    },
+    {
+      "id": "2312.06585",
+      "type": "paper",
+      "label": "Beyond Human Data: Scaling Self-Training for Problem-Solving with Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2023,
+      "authors": "Avi Singh et al.",
+      "url": "https://arxiv.org/abs/2312.06585",
+      "cited_by": [
+        "i13"
+      ]
+    },
+    {
+      "id": "2312.08935",
+      "type": "paper",
+      "label": "Math-Shepherd: Verify and Reinforce LLMs Step-by-step without Human Annotations",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2023,
+      "authors": "Peiyi Wang et al.",
+      "url": "https://arxiv.org/abs/2312.08935",
+      "cited_by": [
+        "i06"
+      ]
+    },
+    {
+      "id": "esm2-science-2023",
+      "type": "paper",
+      "label": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2023,
+      "authors": "Zeming Lin et al.",
+      "url": "https://www.science.org/doi/10.1126/science.ade2574",
+      "cited_by": [
+        "i14"
+      ]
+    },
+    {
+      "id": "2308.08493",
+      "type": "paper",
+      "label": "Time Travel in LLMs: Tracing Data Contamination in Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Shahriar Golchin et al.",
+      "url": "https://arxiv.org/abs/2308.08493",
+      "cited_by": []
+    },
+    {
+      "id": "2310.06770",
+      "type": "paper",
+      "label": "SWE-bench: Can Language Models Resolve Real-World GitHub Issues?",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Carlos E. Jimenez et al.",
+      "url": "https://arxiv.org/abs/2310.06770",
+      "cited_by": [
+        "i06",
+        "i14",
+        "i15"
+      ]
+    },
+    {
+      "id": "2401.00448",
+      "type": "paper",
+      "label": "Beyond Chinchilla-Optimal: Accounting for Inference in Language Model Scaling Laws",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Nikhil Sardana et al.",
+      "url": "https://arxiv.org/abs/2401.00448",
+      "cited_by": [
+        "i05",
+        "i12"
+      ]
+    },
+    {
+      "id": "2401.10020",
+      "type": "paper",
+      "label": "Self-Rewarding Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Weizhe Yuan et al.",
+      "url": "https://arxiv.org/abs/2401.10020",
+      "cited_by": [
+        "i07",
+        "i13"
+      ]
+    },
+    {
+      "id": "2401.14196",
+      "type": "paper",
+      "label": "DeepSeek-Coder: When the Large Language Model Meets Programming -- The Rise of Code Intelligence",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2024,
+      "authors": "Daya Guo et al.",
+      "url": "https://arxiv.org/abs/2401.14196",
+      "cited_by": []
+    },
+    {
+      "id": "2401.16380",
+      "type": "paper",
+      "label": "Rephrasing the Web: A Recipe for Compute and Data-Efficient Language Modeling",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Pratyush Maini et al.",
+      "url": "https://arxiv.org/abs/2401.16380",
+      "cited_by": []
+    },
+    {
+      "id": "2402.00159",
+      "type": "paper",
+      "label": "Dolma: an Open Corpus of Three Trillion Tokens for Language Model Pretraining Research",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Luca Soldaini et al.",
+      "url": "https://arxiv.org/abs/2402.00159",
+      "cited_by": []
+    },
+    {
+      "id": "2402.01306",
+      "type": "paper",
+      "label": "KTO: Model Alignment as Prospect Theoretic Optimization",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Kawin Ethayarajh et al.",
+      "url": "https://arxiv.org/abs/2402.01306",
+      "cited_by": []
+    },
+    {
+      "id": "2402.03300",
+      "type": "paper",
+      "label": "DeepSeekMath: Pushing the Limits of Mathematical Reasoning in Open Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2024,
+      "authors": "Zhihong Shao et al.",
+      "url": "https://arxiv.org/abs/2402.03300",
+      "cited_by": [
+        "i11"
+      ]
+    },
+    {
+      "id": "2402.04177",
+      "type": "paper",
+      "label": "Scaling Laws for Downstream Task Performance of Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Berivan Isik et al.",
+      "url": "https://arxiv.org/abs/2402.04177",
+      "cited_by": [
+        "i08"
+      ]
+    },
+    {
+      "id": "2402.09739",
+      "type": "paper",
+      "label": "QuRating: Selecting High-Quality Data for Training Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Alexander Wettig, Aatmik Gupta, Saumya Malik, Danqi Chen",
+      "url": "https://arxiv.org/abs/2402.09739",
+      "cited_by": [
+        "i05"
+      ]
+    },
+    {
+      "id": "2402.16827",
+      "type": "paper",
+      "label": "A Survey on Data Selection for Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Alon Albalak, Yanai Elazar, Sang Michael Xie, et al.",
+      "url": "https://arxiv.org/abs/2402.16827",
+      "cited_by": []
+    },
+    {
+      "id": "2403.03883",
+      "type": "paper",
+      "label": "SaulLM-7B: A pioneering Large Language Model for Law",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2024,
+      "authors": "Pierre Colombo et al.",
+      "url": "https://arxiv.org/abs/2403.03883",
+      "cited_by": []
+    },
+    {
+      "id": "2403.04132",
+      "type": "paper",
+      "label": "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Wei-Lin Chiang et al.",
+      "url": "https://arxiv.org/abs/2403.04132",
+      "cited_by": []
+    },
+    {
+      "id": "2403.06563",
+      "type": "paper",
+      "label": "Unraveling the Mystery of Scaling Laws: Part I",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Hui Su et al.",
+      "url": "https://arxiv.org/abs/2403.06563",
+      "cited_by": []
+    },
+    {
+      "id": "2403.07974",
+      "type": "paper",
+      "label": "LiveCodeBench: Holistic and Contamination Free Evaluation of Large Language Models for Code",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Naman Jain et al.",
+      "url": "https://arxiv.org/abs/2403.07974",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2403.13787",
+      "type": "paper",
+      "label": "RewardBench: Evaluating Reward Models for Language Modeling",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Nathan Lambert et al.",
+      "url": "https://arxiv.org/abs/2403.13787",
+      "cited_by": []
+    },
+    {
+      "id": "2403.16952",
+      "type": "paper",
+      "label": "Data Mixing Laws: Optimizing Data Mixtures by Predicting Language Modeling Performance",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Jiasheng Ye, Peiju Liu, Tianxiang Sun, et al.",
+      "url": "https://arxiv.org/abs/2403.16952",
+      "cited_by": []
+    },
+    {
+      "id": "2404.01413",
+      "type": "paper",
+      "label": "Is Model Collapse Inevitable? Breaking the Curse of Recursion by Accumulating Real and Synthetic Data",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Matthias Gerstgrasser et al.",
+      "url": "https://arxiv.org/abs/2404.01413",
+      "cited_by": [
+        "i04"
+      ]
+    },
+    {
+      "id": "2404.07177",
+      "type": "paper",
+      "label": "Scaling Laws for Data Filtering -- Data Curation cannot be Compute Agnostic",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Sachin Goyal et al.",
+      "url": "https://arxiv.org/abs/2404.07177",
+      "cited_by": [
+        "i05"
+      ]
+    },
+    {
+      "id": "2404.07503",
+      "type": "paper",
+      "label": "Best Practices and Lessons Learned on Synthetic Data for Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Ruibo Liu et al.",
+      "url": "https://arxiv.org/abs/2404.07503",
+      "cited_by": []
+    },
+    {
+      "id": "2404.14219",
+      "type": "paper",
+      "label": "Phi-3 Technical Report: A Highly Capable Language Model Locally on Your Phone",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Marah Abdin et al.",
+      "url": "https://arxiv.org/abs/2404.14219",
+      "cited_by": [
+        "i12"
+      ]
+    },
+    {
+      "id": "2405.10938",
+      "type": "paper",
+      "label": "Observational Scaling Laws and the Predictability of Language Model Performance",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Yangjun Ruan et al.",
+      "url": "https://arxiv.org/abs/2405.10938",
+      "cited_by": [
+        "i08"
+      ]
+    },
+    {
+      "id": "2405.14734",
+      "type": "paper",
+      "label": "SimPO: Simple Preference Optimization with a Reference-Free Reward",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Yu Meng, Mengzhou Xia, Danqi Chen",
+      "url": "https://arxiv.org/abs/2405.14734",
+      "cited_by": []
+    },
+    {
+      "id": "2406.01574",
+      "type": "paper",
+      "label": "MMLU-Pro: A More Robust and Challenging Multi-Task Language Understanding Benchmark",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Yubo Wang et al.",
+      "url": "https://arxiv.org/abs/2406.01574",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2406.04244",
+      "type": "paper",
+      "label": "Benchmark Data Contamination of Large Language Models: A Survey",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Cheng Xu et al.",
+      "url": "https://arxiv.org/abs/2406.04244",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2406.08464",
+      "type": "paper",
+      "label": "Magpie: Alignment Data Synthesis from Scratch by Prompting Aligned LLMs with Nothing",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Zhangchen Xu et al.",
+      "url": "https://arxiv.org/abs/2406.08464",
+      "cited_by": []
+    },
+    {
+      "id": "2406.11794",
+      "type": "paper",
+      "label": "DataComp-LM: In search of the next generation of training sets for language models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Jeffrey Li, Alex Fang, Vaishaal Shankar, et al.",
+      "url": "https://arxiv.org/abs/2406.11794",
+      "cited_by": [
+        "i02",
+        "i16"
+      ]
+    },
+    {
+      "id": "2406.17557",
+      "type": "paper",
+      "label": "The FineWeb Datasets: Decanting the Web for the Finest Text Data at Scale",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Guilherme Penedo et al.",
+      "url": "https://arxiv.org/abs/2406.17557",
+      "cited_by": []
+    },
+    {
+      "id": "2406.19314",
+      "type": "paper",
+      "label": "LiveBench: A Challenging, Contamination-Free LLM Benchmark",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Colin White et al.",
+      "url": "https://arxiv.org/abs/2406.19314",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2407.01492",
+      "type": "paper",
+      "label": "RegMix: Data Mixture as Regression for Language Model Pre-training",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Qian Liu, Xiaosen Zheng, Niklas Muennighoff, et al.",
+      "url": "https://arxiv.org/abs/2407.01492",
+      "cited_by": [
+        "i02"
+      ]
+    },
+    {
+      "id": "2410.03083",
+      "type": "paper",
+      "label": "Scaling Parameter-Constrained Language Models with Quality Data",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Ernie Chang et al.",
+      "url": "https://arxiv.org/abs/2410.03083",
+      "cited_by": []
+    },
+    {
+      "id": "2411.04330",
+      "type": "paper",
+      "label": "Scaling Laws for Precision",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Tanishq Kumar et al.",
+      "url": "https://arxiv.org/abs/2411.04330",
+      "cited_by": [
+        "i03",
+        "i05",
+        "i12"
+      ]
+    },
+    {
+      "id": "2411.04872",
+      "type": "paper",
+      "label": "FrontierMath: A Benchmark for Evaluating Advanced Mathematical Reasoning in AI",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Elliot Glazer et al.",
+      "url": "https://arxiv.org/abs/2411.04872",
+      "cited_by": [
+        "i06",
+        "i14",
+        "i15"
+      ]
+    },
+    {
+      "id": "2411.15124",
+      "type": "paper",
+      "label": "Tulu 3: Pushing Frontiers in Open Language Model Post-Training",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "Nathan Lambert et al.",
+      "url": "https://arxiv.org/abs/2411.15124",
+      "cited_by": [
+        "i01",
+        "i06"
+      ]
+    },
+    {
+      "id": "2412.02595",
+      "type": "paper",
+      "label": "Nemotron-CC: Transforming Common Crawl into a Refined Long-Horizon Pretraining Dataset",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2024,
+      "authors": "Dan Su et al.",
+      "url": "https://arxiv.org/abs/2412.02595",
+      "cited_by": []
+    },
+    {
+      "id": "2412.19437",
+      "type": "paper",
+      "label": "DeepSeek-V3 Technical Report",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2024,
+      "authors": "DeepSeek-AI et al.",
+      "url": "https://arxiv.org/abs/2412.19437",
+      "cited_by": []
+    },
+    {
+      "id": "2407.20177",
+      "type": "paper",
+      "label": "AutoScale: Scale-Aware Data Mixing for Pre-Training LLMs",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Feiyang Kang et al.",
+      "url": "https://arxiv.org/abs/2407.20177",
+      "cited_by": []
+    },
+    {
+      "id": "2501.12599",
+      "type": "paper",
+      "label": "Kimi k1.5: Scaling Reinforcement Learning with LLMs",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Kimi Team et al.",
+      "url": "https://arxiv.org/abs/2501.12599",
+      "cited_by": []
+    },
+    {
+      "id": "2501.12948",
+      "type": "paper",
+      "label": "DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Reinforcement Learning",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "DeepSeek-AI et al.",
+      "url": "https://arxiv.org/abs/2501.12948",
+      "cited_by": [
+        "i01",
+        "i07",
+        "i16"
+      ]
+    },
+    {
+      "id": "2501.14249",
+      "type": "paper",
+      "label": "Humanity's Last Exam",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Long Phan et al.",
+      "url": "https://arxiv.org/abs/2501.14249",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2501.18362",
+      "type": "paper",
+      "label": "MedXpertQA: Benchmarking Expert-Level Medical Reasoning and Understanding",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Yuxin Zuo et al.",
+      "url": "https://arxiv.org/abs/2501.18362",
+      "cited_by": []
+    },
+    {
+      "id": "2501.19393",
+      "type": "paper",
+      "label": "s1: Simple Test-Time Scaling",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Niklas Muennighoff et al.",
+      "url": "https://arxiv.org/abs/2501.19393",
+      "cited_by": []
+    },
+    {
+      "id": "2502.02737",
+      "type": "paper",
+      "label": "SmolLM2: When Smol Goes Big -- Data-Centric Training of a Small Language Model",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Loubna Ben Allal et al.",
+      "url": "https://arxiv.org/abs/2502.02737",
+      "cited_by": []
+    },
+    {
+      "id": "2502.03387",
+      "type": "paper",
+      "label": "LIMO: Less is More for Reasoning",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Yixin Ye et al.",
+      "url": "https://arxiv.org/abs/2502.03387",
+      "cited_by": []
+    },
+    {
+      "id": "2502.10341",
+      "type": "paper",
+      "label": "Organize the Web: Constructing Domains Enhances Pre-Training Data Curation",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Alexander Wettig, Kyle Lo, et al.",
+      "url": "https://arxiv.org/abs/2502.10341",
+      "cited_by": []
+    },
+    {
+      "id": "2502.12118",
+      "type": "paper",
+      "label": "Scaling Test-Time Compute Without Verification or RL is Suboptimal",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Amrith Setlur et al.",
+      "url": "https://arxiv.org/abs/2502.12118",
+      "cited_by": []
+    },
+    {
+      "id": "2502.14709",
+      "type": "paper",
+      "label": "Data-Efficient Pretraining with Group-Level Data Influence Modeling (Group-MATES)",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Zichun Yu et al.",
+      "url": "https://arxiv.org/abs/2502.14709",
+      "cited_by": []
+    },
+    {
+      "id": "2503.14476",
+      "type": "paper",
+      "label": "DAPO: An Open-Source LLM Reinforcement Learning System at Scale",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Qiying Yu et al. (ByteDance Seed)",
+      "url": "https://arxiv.org/abs/2503.14476",
+      "cited_by": [
+        "i16"
+      ]
+    },
+    {
+      "id": "2504.06214",
+      "type": "paper",
+      "label": "From 128K to 4M: Efficient Training of Ultra-Long Context Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Chejian Xu et al.",
+      "url": "https://arxiv.org/abs/2504.06214",
+      "cited_by": []
+    },
+    {
+      "id": "2504.13837",
+      "type": "paper",
+      "label": "Does Reinforcement Learning Really Incentivize Reasoning Capacity in LLMs Beyond the Base Model?",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Yang Yue et al.",
+      "url": "https://arxiv.org/abs/2504.13837",
+      "cited_by": [
+        "i17"
+      ]
+    },
+    {
+      "id": "2504.20879",
+      "type": "paper",
+      "label": "The Leaderboard Illusion",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Shivalika Singh et al.",
+      "url": "https://arxiv.org/abs/2504.20879",
+      "cited_by": [
+        "i09"
+      ]
+    },
+    {
+      "id": "2505.05427",
+      "type": "paper",
+      "label": "Ultra-FineWeb: Efficient Data Filtering and Verification for High-Quality LLM Training Data",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Yudong Wang et al.",
+      "url": "https://arxiv.org/abs/2505.05427",
+      "cited_by": []
+    },
+    {
+      "id": "2505.07293",
+      "type": "paper",
+      "label": "AttentionInfluence: Adopting Attention Head Influence for Weak-to-Strong Pretraining Data Selection",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Kai Hua et al.",
+      "url": "https://arxiv.org/abs/2505.07293",
+      "cited_by": []
+    },
+    {
+      "id": "2505.09388",
+      "type": "paper",
+      "label": "Qwen3 Technical Report",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Qwen Team (An Yang et al.)",
+      "url": "https://arxiv.org/abs/2505.09388",
+      "cited_by": []
+    },
+    {
+      "id": "2505.12864",
+      "type": "paper",
+      "label": "LEXam: Benchmarking Legal Reasoning on 340 Law Exams",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Yu Fan et al.",
+      "url": "https://arxiv.org/abs/2505.12864",
+      "cited_by": []
+    },
+    {
+      "id": "2505.19457",
+      "type": "paper",
+      "label": "BizFinBench: A Business-Driven Real-World Financial Benchmark for Evaluating LLMs",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Guilong Lu et al.",
+      "url": "https://arxiv.org/abs/2505.19457",
+      "cited_by": []
+    },
+    {
+      "id": "2505.19501",
+      "type": "paper",
+      "label": "Toward Scientific Reasoning in LLMs: Training from Expert Discussions via Reinforcement Learning (Genome-Bench)",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Ming Yin et al.",
+      "url": "https://arxiv.org/abs/2505.19501",
+      "cited_by": []
+    },
+    {
+      "id": "2505.20411",
+      "type": "paper",
+      "label": "SWE-rebench: An Automated Pipeline for Task Collection and Decontaminated Evaluation of Software Engineering Agents",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Ibragim Badertdinov et al.",
+      "url": "https://arxiv.org/abs/2505.20411",
+      "cited_by": []
+    },
+    {
+      "id": "2505.22617",
+      "type": "paper",
+      "label": "The Entropy Mechanism of Reinforcement Learning for Reasoning Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Ganqu Cui et al.",
+      "url": "https://arxiv.org/abs/2505.22617",
+      "cited_by": []
+    },
+    {
+      "id": "2505.24864",
+      "type": "paper",
+      "label": "ProRL: Prolonged Reinforcement Learning Expands Reasoning Boundaries in Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Mingjie Liu et al. (NVIDIA)",
+      "url": "https://arxiv.org/abs/2505.24864",
+      "cited_by": [
+        "i17"
+      ]
+    },
+    {
+      "id": "2506.04178",
+      "type": "paper",
+      "label": "OpenThoughts: Data Recipes for Reasoning Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Etash Guha et al.",
+      "url": "https://arxiv.org/abs/2506.04178",
+      "cited_by": []
+    },
+    {
+      "id": "2506.05209",
+      "type": "paper",
+      "label": "The Common Pile v0.1: An 8TB Dataset of Public Domain and Openly Licensed Text",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Nikhil Kandpal et al.",
+      "url": "https://arxiv.org/abs/2506.05209",
+      "cited_by": []
+    },
+    {
+      "id": "2506.07982",
+      "type": "paper",
+      "label": "tau2-Bench: Evaluating Conversational Agents in a Dual-Control Environment",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Victor Barres et al.",
+      "url": "https://arxiv.org/abs/2506.07982",
+      "cited_by": []
+    },
+    {
+      "id": "2506.10910",
+      "type": "paper",
+      "label": "Magistral",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Mistral AI (Abhinav Rastogi et al.)",
+      "url": "https://arxiv.org/abs/2506.10910",
+      "cited_by": []
+    },
+    {
+      "id": "2506.10947",
+      "type": "paper",
+      "label": "Spurious Rewards: Rethinking Training Signals in RLVR",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Rulin Shao et al.",
+      "url": "https://arxiv.org/abs/2506.10947",
+      "cited_by": [
+        "i07",
+        "i16"
+      ]
+    },
+    {
+      "id": "2506.11425",
+      "type": "paper",
+      "label": "Agent-RLVR: Training Software Engineering Agents via Guidance and Environment Rewards",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Jeff Da et al.",
+      "url": "https://arxiv.org/abs/2506.11425",
+      "cited_by": []
+    },
+    {
+      "id": "2506.18123",
+      "type": "paper",
+      "label": "RoboArena: Distributed Real-World Evaluation of Generalist Robot Policies",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Pranav Atreya et al.",
+      "url": "https://arxiv.org/abs/2506.18123",
+      "cited_by": []
+    },
+    {
+      "id": "2507.03253",
+      "type": "paper",
+      "label": "RefineX: Learning to Refine Pre-training Data at Scale from Expert-Guided Programs",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Baolong Bi et al.",
+      "url": "https://arxiv.org/abs/2507.03253",
+      "cited_by": []
+    },
+    {
+      "id": "2508.03501",
+      "type": "paper",
+      "label": "Training Long-Context, Multi-Turn Software Engineering Agents with Reinforcement Learning",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Alexander Golubev et al.",
+      "url": "https://arxiv.org/abs/2508.03501",
+      "cited_by": []
+    },
+    {
+      "id": "2508.10975",
+      "type": "paper",
+      "label": "BeyondWeb: Lessons from Scaling Synthetic Data for Trillion-scale Pretraining",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Pratyush Maini et al.",
+      "url": "https://arxiv.org/abs/2508.10975",
+      "cited_by": []
+    },
+    {
+      "id": "2508.15096",
+      "type": "paper",
+      "label": "Nemotron-CC-Math: A 133 Billion-Token-Scale High Quality Math Pretraining Dataset",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Rabeeh Karimi Mahabadi et al.",
+      "url": "https://arxiv.org/abs/2508.15096",
+      "cited_by": []
+    },
+    {
+      "id": "2509.04796",
+      "type": "paper",
+      "label": "Knowledge Collapse in LLMs: When Fluency Survives but Facts Fail under Recursive Synthetic Training",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Figarri Keisha et al.",
+      "url": "https://arxiv.org/abs/2509.04796",
+      "cited_by": []
+    },
+    {
+      "id": "2509.10769",
+      "type": "paper",
+      "label": "AgentArch: A Comprehensive Benchmark to Evaluate Agent Architectures in Enterprise",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Tara Bogavelli et al.",
+      "url": "https://arxiv.org/abs/2509.10769",
+      "cited_by": []
+    },
+    {
+      "id": "2509.13160",
+      "type": "paper",
+      "label": "FinSearchComp: Towards a Realistic, Expert-Level Evaluation of Financial Search and Reasoning",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Liang Hu et al.",
+      "url": "https://arxiv.org/abs/2509.13160",
+      "cited_by": []
+    },
+    {
+      "id": "2509.15248",
+      "type": "paper",
+      "label": "Synthetic Bootstrapped Pretraining",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Zitong Yang et al.",
+      "url": "https://arxiv.org/abs/2509.15248",
+      "cited_by": []
+    },
+    {
+      "id": "2509.15279",
+      "type": "paper",
+      "label": "Fleming-R1: Toward Expert-Level Medical Reasoning via Reinforcement Learning",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Chi Liu et al.",
+      "url": "https://arxiv.org/abs/2509.15279",
+      "cited_by": []
+    },
+    {
+      "id": "2509.16941",
+      "type": "paper",
+      "label": "SWE-Bench Pro: Can AI Agents Solve Long-Horizon Software Engineering Tasks?",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Xiang Deng et al.",
+      "url": "https://arxiv.org/abs/2509.16941",
+      "cited_by": []
+    },
+    {
+      "id": "2510.00866",
+      "type": "paper",
+      "label": "The Data-Quality Illusion: Rethinking Classifier-based Quality Filtering for LLM Pretraining (Removing Noise, not Finding Gold)",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Thiziri Nait Saada et al.",
+      "url": "https://arxiv.org/abs/2510.00866",
+      "cited_by": []
+    },
+    {
+      "id": "2510.01631",
+      "type": "paper",
+      "label": "Demystifying Synthetic Data in LLM Pre-training: A Systematic Study of Scaling Laws, Benefits, and Pitfalls",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Feiyang Kang et al.",
+      "url": "https://arxiv.org/abs/2510.01631",
+      "cited_by": []
+    },
+    {
+      "id": "2510.10274",
+      "type": "paper",
+      "label": "X-VLA: Soft-Prompted Transformer as Scalable Cross-Embodiment Vision-Language-Action Model",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Jinliang Zheng et al.",
+      "url": "https://arxiv.org/abs/2510.10274",
+      "cited_by": []
+    },
+    {
+      "id": "2510.16657",
+      "type": "paper",
+      "label": "Escaping Model Collapse via Synthetic Data Verification: Near-term Improvements and Long-term Convergence",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Bingji Yi et al.",
+      "url": "https://arxiv.org/abs/2510.16657",
+      "cited_by": []
+    },
+    {
+      "id": "2510.16880",
+      "type": "paper",
+      "label": "Chem-R: Learning to Reason as a Chemist",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Weida Wang et al.",
+      "url": "https://arxiv.org/abs/2510.16880",
+      "cited_by": []
+    },
+    {
+      "id": "2511.13612",
+      "type": "paper",
+      "label": "P1: Mastering Physics Olympiads with Reinforcement Learning",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Jiacheng Chen et al.",
+      "url": "https://arxiv.org/abs/2511.13612",
+      "cited_by": []
+    },
+    {
+      "id": "2511.16108",
+      "type": "paper",
+      "label": "SkyRL-Agent: Efficient RL Training for Multi-turn LLM Agent",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Shiyi Cao et al.",
+      "url": "https://arxiv.org/abs/2511.16108",
+      "cited_by": []
+    },
+    {
+      "id": "2602.05281",
+      "type": "paper",
+      "label": "Back to Basics: Revisiting Exploration in Reinforcement Learning for LLM Reasoning via Generative Probabilities",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2026,
+      "authors": "Pengyi Li et al.",
+      "url": "https://arxiv.org/abs/2602.05281",
+      "cited_by": []
+    },
+    {
+      "id": "2602.03516",
+      "type": "paper",
+      "label": "Not All Negative Samples Are Equal: LLMs Learn Better from Plausible Reasoning",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Zixiang Di et al.",
+      "url": "https://arxiv.org/abs/2602.03516",
+      "cited_by": []
+    },
+    {
+      "id": "2601.05635",
+      "type": "paper",
+      "label": "Continual Pretraining on Encrypted Synthetic Data for Privacy-Preserving LLMs",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Honghao Liu et al.",
+      "url": "https://arxiv.org/abs/2601.05635",
+      "cited_by": []
+    },
+    {
+      "id": "2602.05400",
+      "type": "paper",
+      "label": "OPUS: Towards Efficient and Principled Data Selection in Large Language Model Pre-training in Every Iteration",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Shaobo Wang et al.",
+      "url": "https://arxiv.org/abs/2602.05400",
+      "cited_by": []
+    },
+    {
+      "id": "2603.26164",
+      "type": "paper",
+      "label": "DataFlex: A Unified Framework for Data-Centric Dynamic Training of Large Language Models",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Hao Liang et al.",
+      "url": "https://arxiv.org/abs/2603.26164",
+      "cited_by": []
+    },
+    {
+      "id": "2603.00889",
+      "type": "paper",
+      "label": "CHIMERA: Compact Synthetic Data for Generalizable LLM Reasoning",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Xinyu Zhu et al.",
+      "url": "https://arxiv.org/abs/2603.00889",
+      "cited_by": []
+    },
+    {
+      "id": "2602.16747",
+      "type": "paper",
+      "label": "LiveClin: A Live Clinical Benchmark without Leakage",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Xidong Wang et al.",
+      "url": "https://arxiv.org/abs/2602.16747",
+      "cited_by": []
+    },
+    {
+      "id": "2601.16669",
+      "type": "paper",
+      "label": "PLawBench: A Rubric-Based Benchmark for Evaluating LLMs in Real-World Legal Practice",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Yuzhen Shi et al.",
+      "url": "https://arxiv.org/abs/2601.16669",
+      "cited_by": []
+    },
+    {
+      "id": "2603.19225",
+      "type": "paper",
+      "label": "FinTradeBench: A Financial Reasoning Benchmark for LLMs",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Yogesh Agrawal et al.",
+      "url": "https://arxiv.org/abs/2603.19225",
+      "cited_by": []
+    },
+    {
+      "id": "2602.10171",
+      "type": "paper",
+      "label": "EvoCodeBench: A Human-Performance Benchmark for Self-Evolving LLM-Driven Coding Systems",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Wentao Zhang et al.",
+      "url": "https://arxiv.org/abs/2602.10171",
+      "cited_by": []
+    },
+    {
+      "id": "2602.11210",
+      "type": "paper",
+      "label": "SWE-MiniSandbox: Container-Free Reinforcement Learning for Building Software Engineering Agents",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Danlong Yuan et al.",
+      "url": "https://arxiv.org/abs/2602.11210",
+      "cited_by": []
+    },
+    {
+      "id": "2602.11354",
+      "type": "paper",
+      "label": "ReplicatorBench: Benchmarking LLM Agents for Replicability in Social and Behavioral Sciences",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Bang Nguyen et al.",
+      "url": "https://arxiv.org/abs/2602.11354",
+      "cited_by": []
+    },
+    {
+      "id": "2507.18071",
+      "type": "paper",
+      "label": "Group Sequence Policy Optimization",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Chujie Zheng et al. (Qwen Team, Alibaba)",
+      "url": "https://arxiv.org/abs/2507.18071",
+      "cited_by": []
+    },
+    {
+      "id": "2507.20534",
+      "type": "paper",
+      "label": "Kimi K2: Open Agentic Intelligence",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Kimi Team (Moonshot AI)",
+      "url": "https://arxiv.org/abs/2507.20534",
+      "cited_by": []
+    },
+    {
+      "id": "2510.05592",
+      "type": "paper",
+      "label": "In-the-Flow Agentic System Optimization for Effective Planning and Tool Use",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Zhuofeng Li et al.",
+      "url": "https://arxiv.org/abs/2510.05592",
+      "cited_by": []
+    },
+    {
+      "id": "2510.13786",
+      "type": "paper",
+      "label": "The Art of Scaling Reinforcement Learning Compute for LLMs",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Devvrit Khatri, Lovish Madaan et al. (incl. Rishabh Agarwal)",
+      "url": "https://arxiv.org/abs/2510.13786",
+      "cited_by": []
+    },
+    {
+      "id": "2512.02556",
+      "type": "paper",
+      "label": "DeepSeek-V3.2: Pushing the Frontier of Open Large Language Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "DeepSeek-AI",
+      "url": "https://arxiv.org/abs/2512.02556",
+      "cited_by": []
+    },
+    {
+      "id": "2502.11089",
+      "type": "paper",
+      "label": "Native Sparse Attention: Hardware-Aligned and Natively Trainable Sparse Attention",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Jingyang Yuan et al. (DeepSeek-AI)",
+      "url": "https://arxiv.org/abs/2502.11089",
+      "cited_by": []
+    },
+    {
+      "id": "2502.16982",
+      "type": "paper",
+      "label": "Muon is Scalable for LLM Training",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Jingyuan Liu et al. (Moonshot AI)",
+      "url": "https://arxiv.org/abs/2502.16982",
+      "cited_by": []
+    },
+    {
+      "id": "2501.08313",
+      "type": "paper",
+      "label": "MiniMax-01: Scaling Foundation Models with Lightning Attention",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "MiniMax et al.",
+      "url": "https://arxiv.org/abs/2501.08313",
+      "cited_by": []
+    },
+    {
+      "id": "2508.06471",
+      "type": "paper",
+      "label": "GLM-4.5: Agentic, Reasoning, and Coding (ARC) Foundation Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "GLM-4.5 Team (Zhipu AI)",
+      "url": "https://arxiv.org/abs/2508.06471",
+      "cited_by": []
+    },
+    {
+      "id": "2605.26494",
+      "type": "paper",
+      "label": "The MiniMax-M2 Series: Mini Activations Unleashing Max Real-World Intelligence",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2026,
+      "authors": "MiniMax",
+      "url": "https://arxiv.org/abs/2605.26494",
+      "cited_by": []
+    },
+    {
+      "id": "2502.08606",
+      "type": "paper",
+      "label": "Distillation Scaling Laws",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Dan Busbridge, Amitis Shidani, Floris Weers, Jason Ramapuram, Etai Littwin, Russ Webb (Apple)",
+      "url": "https://arxiv.org/abs/2502.08606",
+      "cited_by": []
+    },
+    {
+      "id": "2509.14786",
+      "type": "paper",
+      "label": "Pre-training under infinite compute",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Konwoo Kim, Suhas Kotha, Percy Liang, Tatsunori Hashimoto (Stanford)",
+      "url": "https://arxiv.org/abs/2509.14786",
+      "cited_by": []
+    },
+    {
+      "id": "2507.12466",
+      "type": "paper",
+      "label": "Language Models Improve When Pretraining Data Matches Target Tasks",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "David Mizrahi, Anders Boesen Lindbo Larsen, Jesse Allardice, Suzie Petryk et al. (Apple)",
+      "url": "https://arxiv.org/abs/2507.12466",
+      "cited_by": []
+    },
+    {
+      "id": "2511.07317",
+      "type": "paper",
+      "label": "RLVE: Scaling Up Reinforcement Learning for Language Models with Adaptive Verifiable Environments",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Zhiyuan Zeng, Hamish Ivison, Yiping Wang, Lifan Yuan et al. (UW / Allen AI / UIUC)",
+      "url": "https://arxiv.org/abs/2511.07317",
+      "cited_by": []
+    },
+    {
+      "id": "2601.16443",
+      "type": "paper",
+      "label": "Endless Terminals: Scaling RL Environments for Terminal Agents",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Kanishk Gandhi, Shivam Garg, Noah D. Goodman, Dimitris Papailiopoulos",
+      "url": "https://arxiv.org/abs/2601.16443",
+      "cited_by": []
+    },
+    {
+      "id": "2601.21929",
+      "type": "paper",
+      "label": "LoRIF: Low-Rank Influence Functions for Scalable Training Data Attribution",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Shuangqi Li, Hieu Le, Jingyi Xu, Mathieu Salzmann (EPFL)",
+      "url": "https://arxiv.org/abs/2601.21929",
+      "cited_by": []
+    },
+    {
+      "id": "2602.15210",
+      "type": "paper",
+      "label": "UberWeb: Insights from Multilingual Curation for a 20-Trillion-Token Dataset",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Aldo Gael Carranza, Kaleigh Mentzer, Ricardo Pio Monti, Alex Fang et al. (DatologyAI)",
+      "url": "https://arxiv.org/abs/2602.15210",
+      "cited_by": []
+    },
+    {
+      "id": "2502.18449",
+      "type": "paper",
+      "label": "SWE-RL: Advancing LLM Reasoning via Reinforcement Learning on Open Software Evolution",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Yuxiang Wei, Olivier Duchenne, Jade Copet, Quentin Carbonneaux, Lingming Zhang, Daniel Fried, Gabriel Synnaeve, Rishabh Singh, Sida I. Wang (Meta)",
+      "url": "https://arxiv.org/abs/2502.18449",
+      "cited_by": []
+    },
+    {
+      "id": "2502.12115",
+      "type": "paper",
+      "label": "SWE-Lancer: Can Frontier LLMs Earn $1 Million from Real-World Freelance Software Engineering?",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Samuel Miserendino, Michele Wang, Tejal Patwardhan, Johannes Heidecke (OpenAI)",
+      "url": "https://arxiv.org/abs/2502.12115",
+      "cited_by": []
+    },
+    {
+      "id": "2505.22954",
+      "type": "paper",
+      "label": "Darwin Godel Machine: Open-Ended Evolution of Self-Improving Agents",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Jenny Zhang, Shengran Hu, Cong Lu, Robert Lange, Jeff Clune (Sakana AI / UBC)",
+      "url": "https://arxiv.org/abs/2505.22954",
+      "cited_by": []
+    },
+    {
+      "id": "2504.21801",
+      "type": "paper",
+      "label": "DeepSeek-Prover-V2: Advancing Formal Mathematical Reasoning via Reinforcement Learning for Subgoal Decomposition",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Z.Z. Ren, Zhihong Shao, Junxiao Song, Huajian Xin, Daya Guo, Chong Ruan, et al. (DeepSeek-AI)",
+      "url": "https://arxiv.org/abs/2504.21801",
+      "cited_by": []
+    },
+    {
+      "id": "2504.11354",
+      "type": "paper",
+      "label": "Kimina-Prover Preview: Towards Large Formal Reasoning Models with Reinforcement Learning",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Haiming Wang, Mert Unsal, Xiaohan Lin, Mantas Baksys, Junqi Liu, Flood Sung, Stanislas Polu, Zhilin Yang, Jia Li, et al. (Numina / Moonshot AI / Project Numina)",
+      "url": "https://arxiv.org/abs/2504.11354",
+      "cited_by": []
+    },
+    {
+      "id": "2508.03613",
+      "type": "paper",
+      "label": "Goedel-Prover-V2: Scaling Formal Theorem Proving with Scaffolded Data Synthesis and Self-Correction",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Yong Lin, Shange Tang, Bohan Lyu, Kaiyu Yang, Yejin Choi, Danqi Chen, Sanjeev Arora, Chi Jin, et al. (Princeton / NVIDIA / Stanford)",
+      "url": "https://arxiv.org/abs/2508.03613",
+      "cited_by": []
+    },
+    {
+      "id": "2504.08066",
+      "type": "paper",
+      "label": "The AI Scientist-v2: Workshop-Level Automated Scientific Discovery via Agentic Tree Search",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "Yutaro Yamada, Robert Tjarko Lange, Cong Lu, Shengran Hu, Chris Lu, Jakob Foerster, Jeff Clune, David Ha (Sakana AI)",
+      "url": "https://arxiv.org/abs/2504.08066",
+      "cited_by": []
+    },
+    {
+      "id": "2605.01417",
+      "type": "paper",
+      "label": "Medmarks: A Comprehensive Open-Source LLM Benchmark Suite for Medical Tasks",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Medmarks Team et al.",
+      "url": "https://arxiv.org/abs/2605.01417",
+      "cited_by": []
+    },
+    {
+      "id": "2602.10367",
+      "type": "paper",
+      "label": "LiveMedBench: A Contamination-Free Medical Benchmark for LLMs with Automated Rubric Evaluation",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "LiveMedBench Team et al.",
+      "url": "https://arxiv.org/abs/2602.10367",
+      "cited_by": []
+    },
+    {
+      "id": "2606.24155",
+      "type": "paper",
+      "label": "MedBench v5: A Dynamic, Process-Oriented, and Hallucination-Aware Benchmark for Clinical Multimodal Models",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "MedBench v5 Team et al.",
+      "url": "https://arxiv.org/abs/2606.24155",
+      "cited_by": []
+    },
+    {
+      "id": "2605.29738",
+      "type": "paper",
+      "label": "Multi-Legal-Bench: Evaluating LLMs on Legal Reasoning Across Jurisdictions, Languages, and Legal Traditions",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Multi-Legal-Bench Team et al.",
+      "url": "https://arxiv.org/abs/2605.29738",
+      "cited_by": []
+    },
+    {
+      "id": "2512.04578",
+      "type": "paper",
+      "label": "LexGenius: An Expert-Level Benchmark for Large Language Models in Legal General Intelligence",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2025,
+      "authors": "LexGenius Team et al.",
+      "url": "https://arxiv.org/abs/2512.04578",
+      "cited_by": []
+    },
+    {
+      "id": "2605.28359",
+      "type": "paper",
+      "label": "From Knowing to Doing: A Memory-Controlled Benchmark for LLM Trading Agents on Stock Markets",
+      "theme": "Data",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "KTD-Fin Team et al.",
+      "url": "https://arxiv.org/abs/2605.28359",
+      "cited_by": []
+    },
+    {
+      "id": "2604.05912",
+      "type": "paper",
+      "label": "FrontierFinance: A Long-Horizon Computer-Use Benchmark of Real-World Financial Tasks",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "FrontierFinance Team et al.",
+      "url": "https://arxiv.org/abs/2604.05912",
+      "cited_by": []
+    },
+    {
+      "id": "2601.13770",
+      "type": "paper",
+      "label": "Look-Ahead-Bench: a Standardized Benchmark of Look-ahead Bias in Point-in-Time LLMs for Finance",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Look-Ahead-Bench Team et al.",
+      "url": "https://arxiv.org/abs/2601.13770",
+      "cited_by": []
+    },
+    {
+      "id": "2505.11831",
+      "type": "paper",
+      "label": "ARC-AGI-2: A New Challenge for Frontier AI Reasoning Systems",
+      "theme": "Model training",
+      "themes": [
+        "Model training"
+      ],
+      "year": 2025,
+      "authors": "Francois Chollet et al.",
+      "url": "https://arxiv.org/abs/2505.11831",
+      "cited_by": []
+    },
+    {
+      "id": "2601.11868",
+      "type": "paper",
+      "label": "Terminal-Bench: Benchmarking Agents on Hard, Realistic Tasks in Command Line Interfaces",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Mike A. Merrill et al.",
+      "url": "https://arxiv.org/abs/2601.11868",
+      "cited_by": []
+    },
+    {
+      "id": "2506.12286",
+      "type": "paper",
+      "label": "The SWE-Bench Illusion: When State-of-the-Art LLMs Remember Instead of Reason",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Shanchao Liang et al.",
+      "url": "https://arxiv.org/abs/2506.12286",
+      "cited_by": []
+    },
+    {
+      "id": "2509.17765",
+      "type": "paper",
+      "label": "Qwen3-Omni Technical Report",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2025,
+      "authors": "Qwen Team (Alibaba) et al.",
+      "url": "https://arxiv.org/abs/2509.17765",
+      "cited_by": []
+    },
+    {
+      "id": "2606.17846",
+      "type": "paper",
+      "label": "Qwen-RobotManip Technical Report: Alignment Unlocks Scale for Robotic Manipulation Foundation Models",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Haoqi Yuan et al.",
+      "url": "https://arxiv.org/abs/2606.17846",
+      "cited_by": []
+    },
+    {
+      "id": "2606.18112",
+      "type": "paper",
+      "label": "Qwen-RobotNav Technical Report: A Scalable Navigation Model Designed for an Agentic Navigation System",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Jiazhao Zhang et al.",
+      "url": "https://arxiv.org/abs/2606.18112",
+      "cited_by": []
+    },
+    {
+      "id": "2606.24893",
+      "type": "paper",
+      "label": "AgentOdyssey: Open-Ended Long-Horizon Text Game Generation for Test-Time Continual Learning Agents",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Zheyuan Zhang et al.",
+      "url": "https://arxiv.org/abs/2606.24893",
+      "cited_by": []
+    },
+    {
+      "id": "2606.25610",
+      "type": "paper",
+      "label": "The Galaxy's Guide to the Tokenizer: A Benchmark for Scientific Foundation Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Sogol Sanjaripour et al.",
+      "url": "https://arxiv.org/abs/2606.25610",
+      "cited_by": []
+    },
+    {
+      "id": "2606.26978",
+      "type": "paper",
+      "label": "To Run or Not to Run: Analyzing the Cost-Effectiveness of Code Execution in LLM-Based Program Repair",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Zhihao Lin et al.",
+      "url": "https://arxiv.org/abs/2606.26978",
+      "cited_by": []
+    },
+    {
+      "id": "2606.26979",
+      "type": "paper",
+      "label": "How Much Static Structure Do Code Agents Need? A Study of Deterministic Anchoring",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Zhihao Lin et al.",
+      "url": "https://arxiv.org/abs/2606.26979",
+      "cited_by": []
+    },
+    {
+      "id": "2606.27537",
+      "type": "paper",
+      "label": "MemoBench: Benchmarking World Modeling in Dynamically Changing Environments",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Haoyu Chen et al.",
+      "url": "https://arxiv.org/abs/2606.27537",
+      "cited_by": []
+    },
+    {
+      "id": "2606.27978",
+      "type": "paper",
+      "label": "Parallel Rollout Approximation for Pixel-Space Autoregressive Image Generation",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Jiayi Xu et al.",
+      "url": "https://arxiv.org/abs/2606.27978",
+      "cited_by": []
+    },
+    {
+      "id": "2606.27457",
+      "type": "paper",
+      "label": "Cluster, Route, Escalate: Cascaded Framework for Cost-Aware LLM Serving",
+      "theme": "Data",
+      "themes": [
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Yasmin Moslem et al.",
+      "url": "https://arxiv.org/abs/2606.27457",
+      "cited_by": []
+    },
+    {
+      "id": "2606.28057",
+      "type": "paper",
+      "label": "MultiHashFormer: Hash-based Generative Language Models",
+      "theme": "Verticals",
+      "themes": [
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Huiyin Xue et al.",
+      "url": "https://arxiv.org/abs/2606.28057",
+      "cited_by": []
+    },
+    {
+      "id": "2606.26015",
+      "type": "paper",
+      "label": "The Tatoxa System for Text Detoxification in Low-Resource Languages: The Case of Tatar",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "year": 2026,
+      "authors": "Ilseyar Alimova et al.",
+      "url": "https://arxiv.org/abs/2606.26015",
+      "cited_by": []
+    },
+    {
+      "id": "2511.07397",
+      "type": "paper",
+      "label": "Thinking While Speaking: Inference-Time Knowledge Transfer for Responsive and Intelligent Conversational Voice Agents",
+      "theme": "Model training",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "year": 2026,
+      "authors": "Vidya Srinivas et al.",
+      "url": "https://arxiv.org/abs/2511.07397",
+      "cited_by": []
+    },
+    {
+      "id": "i01",
+      "type": "insight",
+      "label": "The data wall makes verifiable-reward environments the next training-data asset class",
+      "insight_type": "opportunity",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i02",
+      "type": "insight",
+      "label": "Capability leverage has shifted from compute to data engineering",
+      "insight_type": "trend",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i03",
+      "type": "insight",
+      "label": "More data is not monotonically good — its marginal value can go negative",
+      "insight_type": "contradiction",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i04",
+      "type": "insight",
+      "label": "Proprietary real data is the collapse-proof anchor — verticals that own it are defensible",
+      "insight_type": "vertical",
+      "themes": [
+        "Data",
+        "Verticals"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i05",
+      "type": "insight",
+      "label": "Data curation is compute-relative — it's a recurring service, not a one-time dataset",
+      "insight_type": "opportunity",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i06",
+      "type": "insight",
+      "label": "Verifiable-outcome verticals are the selection criterion for what data to build",
+      "insight_type": "vertical",
+      "themes": [
+        "Model training"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i07",
+      "type": "insight",
+      "label": "RLVR often elicits latent skill rather than teaching it — so data matters most where skill is absent",
+      "insight_type": "contradiction",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i08",
+      "type": "insight",
+      "label": "Aggregate benchmarks mislead about where data is needed — distribution-matched eval is required",
+      "insight_type": "gap",
+      "themes": [
+        "Model training"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i09",
+      "type": "insight",
+      "label": "Static benchmarks decay — evaluation is a recurring, contamination-free data product",
+      "insight_type": "opportunity",
+      "themes": [
+        "Model training"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i10",
+      "type": "insight",
+      "label": "The scarce good is rare-tail coverage — and verticals are the web's underrepresented tails",
+      "insight_type": "gap",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 5
+    },
+    {
+      "id": "i11",
+      "type": "insight",
+      "label": "In a vertical, the corpus is the durable moat — methods commoditize",
+      "insight_type": "trend",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i12",
+      "type": "insight",
+      "label": "Deployment economics are fragmenting models into many small specialists — multiplying vertical data demand",
+      "insight_type": "trend",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i13",
+      "type": "insight",
+      "label": "Self-improvement has a ceiling without external verification — human-anchored data stays scarce",
+      "insight_type": "opportunity",
+      "themes": [
+        "Model training",
+        "Data"
+      ],
+      "n_papers": 4
+    },
+    {
+      "id": "i14",
+      "type": "insight",
+      "label": "AI's biggest vertical wins share one pattern: proprietary data plus checkable outcomes",
+      "insight_type": "vertical",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "n_papers": 5
+    },
+    {
+      "id": "i15",
+      "type": "insight",
+      "label": "A vertical scorecard: where proprietary data × verifiable outcomes actually point",
+      "insight_type": "vertical",
+      "themes": [
+        "Model training",
+        "Verticals"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i16",
+      "type": "insight",
+      "label": "The reasoning-RL boom makes verifiable vertical data the scarce input — connecting training, data, and verticals",
+      "insight_type": "opportunity",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "n_papers": 6
+    },
+    {
+      "id": "i17",
+      "type": "insight",
+      "label": "Does RL teach or just elicit? The answer decides whether new capability needs new vertical data",
+      "insight_type": "contradiction",
+      "themes": [
+        "Model training",
+        "Data",
+        "Verticals"
+      ],
+      "n_papers": 4
+    }
+  ],
+  "edges": [
+    {
+      "src": "theme:Model training",
+      "dst": "1706.03741",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "1707.06347",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "1901.08746",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "1910.10683",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2001.08361",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2007.15779",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2009.13081",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2010.14701",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2101.00027",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2009.03300",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2102.01293",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2102.06701",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2103.03874",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2107.03374",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2110.14168",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "alphafold-2021",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2107.06499",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2203.02155",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2203.14465",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2203.15556",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2204.05862",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2205.10487",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2206.04615",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2206.07682",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2206.14486",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2206.14858",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2210.09261",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2210.10341",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2210.10760",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2210.11610",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2210.14891",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2211.04325",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2211.09110",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2211.14275",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2212.08073",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2212.09689",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2212.10560",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2212.13138",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2302.03169",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2303.09540",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2303.17564",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2304.12244",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2304.15004",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.02301",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2305.06161",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2305.09617",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.10429",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.13230",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.15717",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2305.16264",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.16264",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2305.17493",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2305.18290",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2305.20050",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2306.01116",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2306.02707",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2306.05443",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2306.05685",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2306.06031",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2306.08568",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2306.11644",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2307.01850",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2308.01825",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2308.03688",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2308.06259",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2308.08998",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2308.11462",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2308.12284",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2308.12950",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2309.00267",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2309.04564",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2309.05463",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2309.12284",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2310.06786",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2310.10631",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2311.12022",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2311.12983",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2311.16079",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2312.06585",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2312.08935",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "esm2-science-2023",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2308.08493",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2310.06770",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2401.00448",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2401.10020",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2401.10020",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2401.14196",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2401.16380",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2402.00159",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2402.01306",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2402.03300",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2402.03300",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2402.04177",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2402.09739",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2402.16827",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2403.03883",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2403.04132",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2403.06563",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2403.07974",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2403.13787",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2403.16952",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2404.01413",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2404.07177",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2404.07503",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2404.14219",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2405.10938",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2405.14734",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2406.01574",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2406.04244",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2406.08464",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2406.11794",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2406.11794",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2406.17557",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2406.19314",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2407.01492",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2410.03083",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2411.04330",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2411.04872",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2411.15124",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2412.02595",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2412.19437",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2407.20177",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2501.12599",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2501.12948",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2501.14249",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2501.18362",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2501.19393",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2502.02737",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.03387",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2502.10341",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.12118",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2502.14709",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2503.14476",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.06214",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.13837",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.20879",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2505.05427",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2505.07293",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2505.09388",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2505.12864",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2505.19457",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2505.19501",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2505.20411",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2505.22617",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2505.24864",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2506.04178",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2506.05209",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2506.07982",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2506.10910",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2506.10947",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2506.11425",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2506.18123",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2507.03253",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2508.03501",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2508.10975",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2508.15096",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2509.04796",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2509.10769",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2509.13160",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2509.15248",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2509.15279",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2509.16941",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2510.00866",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2510.01631",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2510.10274",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2510.16657",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2510.16880",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2511.13612",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2511.16108",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2602.05281",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2602.03516",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2602.03516",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2601.05635",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2602.05400",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2603.26164",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2603.00889",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2603.00889",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2602.16747",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2601.16669",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2603.19225",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2602.10171",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2602.10171",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2602.11210",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2602.11210",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2602.11354",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2507.18071",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2507.20534",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2507.20534",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2510.05592",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2510.13786",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2512.02556",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2512.02556",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.11089",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.16982",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2501.08313",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2508.06471",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2605.26494",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.08606",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2509.14786",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2509.14786",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2507.12466",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2511.07317",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2511.07317",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2601.16443",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2601.16443",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2601.21929",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2602.15210",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2502.18449",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2502.18449",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2502.12115",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2502.12115",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2505.22954",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.21801",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2504.21801",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.11354",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2508.03613",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2508.03613",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2504.08066",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2504.08066",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2605.01417",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2605.01417",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2605.01417",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2602.10367",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2602.10367",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.24155",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.24155",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2605.29738",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2605.29738",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2512.04578",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2512.04578",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2605.28359",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2605.28359",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2604.05912",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2601.13770",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2601.13770",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2601.13770",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2505.11831",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2601.11868",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2506.12286",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2509.17765",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2509.17765",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.17846",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.17846",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.17846",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.18112",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.18112",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.18112",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.24893",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.24893",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.25610",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.26978",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.26979",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.26979",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.26979",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.27537",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.27978",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.27978",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.27457",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2606.28057",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2606.26015",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2606.26015",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Model training",
+      "dst": "2511.07397",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Data",
+      "dst": "2511.07397",
+      "relation": "contains"
+    },
+    {
+      "src": "theme:Verticals",
+      "dst": "2511.07397",
+      "relation": "contains"
+    },
+    {
+      "src": "i01",
+      "dst": "2211.04325",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "2305.16264",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "2205.10487",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "2411.15124",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "2501.12948",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "2305.20050",
+      "relation": "supports"
+    },
+    {
+      "src": "i01",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i01",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i02",
+      "dst": "2203.15556",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "2306.11644",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "2305.02301",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "2305.10429",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "2407.01492",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "2406.11794",
+      "relation": "supports"
+    },
+    {
+      "src": "i02",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i02",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i03",
+      "dst": "2205.10487",
+      "relation": "supports"
+    },
+    {
+      "src": "i03",
+      "dst": "2305.13230",
+      "relation": "supports"
+    },
+    {
+      "src": "i03",
+      "dst": "2411.04330",
+      "relation": "supports"
+    },
+    {
+      "src": "i03",
+      "dst": "2206.14486",
+      "relation": "supports"
+    },
+    {
+      "src": "i03",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i03",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i04",
+      "dst": "2305.17493",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "2307.01850",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "2404.01413",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "2303.17564",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "alphafold-2021",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "2311.16079",
+      "relation": "supports"
+    },
+    {
+      "src": "i04",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i04",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i05",
+      "dst": "2404.07177",
+      "relation": "supports"
+    },
+    {
+      "src": "i05",
+      "dst": "2401.00448",
+      "relation": "supports"
+    },
+    {
+      "src": "i05",
+      "dst": "2411.04330",
+      "relation": "supports"
+    },
+    {
+      "src": "i05",
+      "dst": "2402.09739",
+      "relation": "supports"
+    },
+    {
+      "src": "i05",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i05",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i06",
+      "dst": "2211.14275",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "2305.20050",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "2312.08935",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "2411.15124",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "2310.06770",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "2411.04872",
+      "relation": "supports"
+    },
+    {
+      "src": "i06",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i07",
+      "dst": "2506.10947",
+      "relation": "supports"
+    },
+    {
+      "src": "i07",
+      "dst": "2501.12948",
+      "relation": "supports"
+    },
+    {
+      "src": "i07",
+      "dst": "2401.10020",
+      "relation": "supports"
+    },
+    {
+      "src": "i07",
+      "dst": "2305.20050",
+      "relation": "supports"
+    },
+    {
+      "src": "i07",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i07",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i08",
+      "dst": "2304.15004",
+      "relation": "supports"
+    },
+    {
+      "src": "i08",
+      "dst": "2206.07682",
+      "relation": "supports"
+    },
+    {
+      "src": "i08",
+      "dst": "2402.04177",
+      "relation": "supports"
+    },
+    {
+      "src": "i08",
+      "dst": "2405.10938",
+      "relation": "supports"
+    },
+    {
+      "src": "i08",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i09",
+      "dst": "2406.01574",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "2501.14249",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "2406.04244",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "2406.19314",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "2403.07974",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "2504.20879",
+      "relation": "supports"
+    },
+    {
+      "src": "i09",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i10",
+      "dst": "2107.06499",
+      "relation": "supports"
+    },
+    {
+      "src": "i10",
+      "dst": "2308.12284",
+      "relation": "supports"
+    },
+    {
+      "src": "i10",
+      "dst": "2303.09540",
+      "relation": "supports"
+    },
+    {
+      "src": "i10",
+      "dst": "2206.14486",
+      "relation": "supports"
+    },
+    {
+      "src": "i10",
+      "dst": "2305.17493",
+      "relation": "supports"
+    },
+    {
+      "src": "i10",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i10",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i11",
+      "dst": "2007.15779",
+      "relation": "supports"
+    },
+    {
+      "src": "i11",
+      "dst": "2305.09617",
+      "relation": "supports"
+    },
+    {
+      "src": "i11",
+      "dst": "2310.10631",
+      "relation": "supports"
+    },
+    {
+      "src": "i11",
+      "dst": "2402.03300",
+      "relation": "supports"
+    },
+    {
+      "src": "i11",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i11",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i12",
+      "dst": "2401.00448",
+      "relation": "supports"
+    },
+    {
+      "src": "i12",
+      "dst": "2411.04330",
+      "relation": "supports"
+    },
+    {
+      "src": "i12",
+      "dst": "2404.14219",
+      "relation": "supports"
+    },
+    {
+      "src": "i12",
+      "dst": "2308.12950",
+      "relation": "supports"
+    },
+    {
+      "src": "i12",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i12",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i12",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i13",
+      "dst": "2305.15717",
+      "relation": "supports"
+    },
+    {
+      "src": "i13",
+      "dst": "2401.10020",
+      "relation": "supports"
+    },
+    {
+      "src": "i13",
+      "dst": "2312.06585",
+      "relation": "supports"
+    },
+    {
+      "src": "i13",
+      "dst": "2305.17493",
+      "relation": "supports"
+    },
+    {
+      "src": "i13",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i13",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i14",
+      "dst": "alphafold-2021",
+      "relation": "supports"
+    },
+    {
+      "src": "i14",
+      "dst": "esm2-science-2023",
+      "relation": "supports"
+    },
+    {
+      "src": "i14",
+      "dst": "2310.06770",
+      "relation": "supports"
+    },
+    {
+      "src": "i14",
+      "dst": "2411.04872",
+      "relation": "supports"
+    },
+    {
+      "src": "i14",
+      "dst": "2303.17564",
+      "relation": "supports"
+    },
+    {
+      "src": "i14",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i14",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i15",
+      "dst": "alphafold-2021",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "2310.06770",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "2411.04872",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "2305.09617",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "2311.16079",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "2308.11462",
+      "relation": "supports"
+    },
+    {
+      "src": "i15",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i15",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i16",
+      "dst": "2501.12948",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "2503.14476",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "2506.10947",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "2406.11794",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "2305.09617",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "2303.17564",
+      "relation": "supports"
+    },
+    {
+      "src": "i16",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i16",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i16",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i17",
+      "dst": "2504.13837",
+      "relation": "supports"
+    },
+    {
+      "src": "i17",
+      "dst": "2505.24864",
+      "relation": "supports"
+    },
+    {
+      "src": "i17",
+      "dst": "2305.17493",
+      "relation": "supports"
+    },
+    {
+      "src": "i17",
+      "dst": "2305.09617",
+      "relation": "supports"
+    },
+    {
+      "src": "i17",
+      "dst": "theme:Model training",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i17",
+      "dst": "theme:Data",
+      "relation": "draws-from"
+    },
+    {
+      "src": "i17",
+      "dst": "theme:Verticals",
+      "relation": "draws-from"
+    },
+    {
+      "src": "2206.07682",
+      "dst": "2304.15004",
+      "relation": "contradicts",
+      "note": "Emergence as real capability vs. metric artifact"
+    },
+    {
+      "src": "2404.01413",
+      "dst": "2305.17493",
+      "relation": "contradicts",
+      "note": "Collapse is avoidable (accumulate real) vs. inevitable"
+    },
+    {
+      "src": "2307.01850",
+      "dst": "2305.17493",
+      "relation": "agrees",
+      "note": "Self-consuming loops degrade quality & diversity"
+    },
+    {
+      "src": "2305.16264",
+      "dst": "2203.15556",
+      "relation": "extends",
+      "note": "Chinchilla extended to the data-constrained regime"
+    },
+    {
+      "src": "2401.00448",
+      "dst": "2203.15556",
+      "relation": "extends",
+      "note": "Chinchilla extended to account for inference cost"
+    },
+    {
+      "src": "2211.04325",
+      "dst": "2305.16264",
+      "relation": "agrees",
+      "note": "Data stock is finite; repetition won't save scaling"
+    },
+    {
+      "src": "2205.10487",
+      "dst": "2305.13230",
+      "relation": "agrees",
+      "note": "Repeated data causes degradation / overfitting"
+    },
+    {
+      "src": "2305.20050",
+      "dst": "2211.14275",
+      "relation": "extends",
+      "note": "Process reward models built on process-vs-outcome"
+    },
+    {
+      "src": "2312.08935",
+      "dst": "2305.20050",
+      "relation": "extends",
+      "note": "Automatic step labels remove the human from process reward"
+    },
+    {
+      "src": "2305.18290",
+      "dst": "2203.02155",
+      "relation": "extends",
+      "note": "DPO simplifies the InstructGPT RLHF pipeline"
+    },
+    {
+      "src": "2506.10947",
+      "dst": "2411.15124",
+      "relation": "contradicts",
+      "note": "RLVR gains may be elicitation, not teaching"
+    },
+    {
+      "src": "2306.11644",
+      "dst": "2406.11794",
+      "relation": "agrees",
+      "note": "Data quality/filtering beats raw scale"
+    },
+    {
+      "src": "2402.04177",
+      "dst": "2001.08361",
+      "relation": "contradicts",
+      "note": "Downstream task can diverge from loss scaling"
+    },
+    {
+      "src": "2007.15779",
+      "dst": "1901.08746",
+      "relation": "contradicts",
+      "note": "From-scratch domain pretraining vs. continual adaptation"
+    },
+    {
+      "src": "2305.15717",
+      "dst": "2306.02707",
+      "relation": "contradicts",
+      "note": "Imitation closes little capability gap vs. learns reasoning"
+    },
+    {
+      "src": "2403.07974",
+      "dst": "2107.03374",
+      "relation": "extends",
+      "note": "Contamination-free live coding eval vs. static HumanEval"
+    },
+    {
+      "src": "2406.19314",
+      "dst": "2406.04244",
+      "relation": "agrees",
+      "note": "Live regeneration as the answer to contamination"
+    },
+    {
+      "src": "esm2-science-2023",
+      "dst": "alphafold-2021",
+      "relation": "agrees",
+      "note": "Structured biological data moats drive both"
+    },
+    {
+      "src": "2308.12284",
+      "dst": "2107.06499",
+      "relation": "extends",
+      "note": "Diversity selection on top of deduplication"
+    },
+    {
+      "src": "2402.03300",
+      "dst": "2310.10631",
+      "relation": "agrees",
+      "note": "Mined/curated math corpora unlock reasoning"
+    },
+    {
+      "src": "i13",
+      "dst": "i04",
+      "relation": "extends",
+      "note": "Self-improvement ceiling reinforces the real-data anchor"
+    },
+    {
+      "src": "i11",
+      "dst": "i14",
+      "relation": "agrees",
+      "note": "Corpus-as-moat aligns with the proprietary-data win pattern"
+    },
+    {
+      "src": "i04",
+      "dst": "i14",
+      "relation": "agrees",
+      "note": "Real-data anchor underlies the proprietary-data win pattern"
+    },
+    {
+      "src": "i01",
+      "dst": "i06",
+      "relation": "agrees",
+      "note": "Data wall and verifiable-outcome verticals both point to RLVR data"
+    },
+    {
+      "src": "i03",
+      "dst": "i05",
+      "relation": "extends",
+      "note": "Negative marginal value motivates compute-relative curation"
+    },
+    {
+      "src": "i05",
+      "dst": "i12",
+      "relation": "extends",
+      "note": "Compute-relative curation multiplied across many small specialists"
+    },
+    {
+      "src": "i07",
+      "dst": "i06",
+      "relation": "contradicts",
+      "note": "Elicitation-vs-teaching complicates the verifiable-vertical thesis"
+    },
+    {
+      "src": "i14",
+      "dst": "i15",
+      "relation": "extends",
+      "note": "The two-axis filter operationalized into a ranked scorecard"
+    },
+    {
+      "src": "i02",
+      "dst": "i11",
+      "relation": "agrees",
+      "note": "Data-engineering leverage realized through proprietary corpora"
+    }
+  ]
+}

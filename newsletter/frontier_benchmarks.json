@@ -1,0 +1,134 @@
+{
+  "benchmarks": [
+    {
+      "benchmark": "GPQA Diamond",
+      "domain": "PhD-level reasoning",
+      "rows": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": "94.3%",
+          "source_url": "https://deepmind.google/models/gemini/pro/",
+          "source_quote": "GPQA Diamond — Gemini 3.1 Pro Thinking (No tools)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Deep Think",
+          "score": "93.8%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "GPQA Diamond (93.8%)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "score": "91.9%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "GPQA Diamond (91.9%)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Flash",
+          "score": "90.4%",
+          "source_url": "https://blog.google/products/gemini/gemini-3-flash/",
+          "source_quote": "GPQA Diamond (90.4%)",
+          "split": "No tools"
+        }
+      ]
+    },
+    {
+      "benchmark": "SWE-bench Verified",
+      "domain": "agentic coding",
+      "rows": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": "80.6%",
+          "source_url": "https://deepmind.google/models/gemini/pro/",
+          "source_quote": "SWE-Bench Verified — Gemini 3.1 Pro (Single attempt)",
+          "split": "single attempt"
+        },
+        {
+          "model": "Gemini 3 Flash",
+          "score": "78%",
+          "source_url": "https://blog.google/products/gemini/gemini-3-flash/",
+          "source_quote": "On SWE-bench Verified ... Gemini 3 Flash achieves a score of 78%",
+          "split": "single attempt"
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "score": "76.2%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "outperforms 2.5 Pro on SWE-bench Verified (76.2%)",
+          "split": "single attempt"
+        },
+        {
+          "model": "Kimi K2",
+          "score": "65.8",
+          "source_url": "https://arxiv.org/abs/2507.20534",
+          "source_quote": "Kimi K2 ... SWE-bench Verified 65.8",
+          "split": "agentic"
+        },
+        {
+          "model": "GLM-4.5",
+          "score": "64.2%",
+          "source_url": "https://arxiv.org/abs/2508.06471",
+          "source_quote": "GLM-4.5 ... 64.2% SWE-bench Verified",
+          "split": "agentic"
+        }
+      ]
+    },
+    {
+      "benchmark": "Humanity's Last Exam",
+      "domain": "frontier knowledge",
+      "rows": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": "44.4%",
+          "source_url": "https://deepmind.google/models/gemini/pro/",
+          "source_quote": "Humanity's Last Exam — Gemini 3.1 Pro (No tools)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Deep Think",
+          "score": "41.0%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "Humanity's Last Exam (41.0% without the use of tools)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "score": "37.5%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "Humanity's Last Exam (37.5% without the usage of any tools)",
+          "split": "No tools"
+        },
+        {
+          "model": "Gemini 3 Flash",
+          "score": "33.7%",
+          "source_url": "https://blog.google/products/gemini/gemini-3-flash/",
+          "source_quote": "Humanity's Last Exam (33.7% without tools)",
+          "split": "No tools"
+        }
+      ]
+    },
+    {
+      "benchmark": "Terminal-Bench 2.0",
+      "domain": "terminal agents",
+      "rows": [
+        {
+          "model": "Gemini 3.1 Pro",
+          "score": "68.5%",
+          "source_url": "https://deepmind.google/models/gemini/pro/",
+          "source_quote": "Terminal-Bench 2.0 — Gemini 3.1 Pro (Terminus-2 harness)",
+          "split": "Terminus-2 harness"
+        },
+        {
+          "model": "Gemini 3 Pro",
+          "score": "54.2%",
+          "source_url": "https://blog.google/products/gemini/gemini-3/",
+          "source_quote": "54.2% on Terminal-Bench 2.0",
+          "split": "default harness"
+        }
+      ]
+    }
+  ],
+  "caveat": "Every score was re-fetched from its source and links to it; vendors that publish benchmarks only as images (Anthropic) or block fetching (OpenAI) are absent. Numbers use each source's own harness — indicative across rows, not a controlled comparison."
+}

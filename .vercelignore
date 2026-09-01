@@ -1,0 +1,6 @@
+node_modules
+.vercel
+*.log
+.env.local
+localtest.js
+build-tools
